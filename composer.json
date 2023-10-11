@@ -1,0 +1,28 @@
+{
+    "name": "gwinn/boxberry-sdk",
+    "type": "library",
+    "description": "Boxberry API implementation",
+    "keywords": ["API","JSON","REST"],
+    "homepage": "https://github.com/gwinn/boxberry-sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Lushpai",
+            "email": "lushpai@gmail.com",
+            "role": "Owner"
+        },
+        {
+            "name": "Vladimir Kolchin",
+            "email": "kolchin.moon@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gwinn\\Boxberry\\": "src"
+        }
+    }
+}
