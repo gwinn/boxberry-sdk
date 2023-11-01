@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Calculate;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class DeliveryCostsRequest
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class DeliveryCosts
 {
@@ -27,7 +25,6 @@ class DeliveryCosts
      * @JMS\Type("string")
      * @JMS\SerializedName("price")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $price;
 
@@ -39,7 +36,6 @@ class DeliveryCosts
      * @JMS\Type("string")
      * @JMS\SerializedName("price_base")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $priceBase;
 
@@ -56,7 +52,6 @@ class DeliveryCosts
      * @JMS\Type("string")
      * @JMS\SerializedName("price_service")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $priceService;
 
@@ -68,7 +63,6 @@ class DeliveryCosts
      * @JMS\Type("string")
      * @JMS\SerializedName("delivery_period")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $deliveryPeriod;
 }

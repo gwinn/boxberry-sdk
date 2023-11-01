@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class Shop
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class Shop
 {
@@ -27,7 +25,6 @@ class Shop
      * @JMS\Type("string")
      * @JMS\SerializedName("name")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $name;
 
@@ -40,7 +37,6 @@ class Shop
      * @JMS\Type("string")
      * @JMS\SerializedName("name1")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $name1;
 }

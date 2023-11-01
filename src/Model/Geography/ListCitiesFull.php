@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Geography;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class ListCitiesFull
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class ListCitiesFull extends ListCities
 {

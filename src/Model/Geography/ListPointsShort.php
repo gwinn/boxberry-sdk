@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Geography;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class ListPointsShort
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class ListPointsShort
 {
@@ -27,7 +25,6 @@ class ListPointsShort
      * @JMS\Type("string")
      * @JMS\SerializedName("Code")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $code;
 
@@ -39,7 +36,6 @@ class ListPointsShort
      * @JMS\Type("string")
      * @JMS\SerializedName("CityCode")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $cityCode;
 
@@ -51,7 +47,6 @@ class ListPointsShort
      * @JMS\Type("string")
      * @JMS\SerializedName("CityName")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $cityName;
 
@@ -63,7 +58,6 @@ class ListPointsShort
      * @JMS\Type("string")
      * @JMS\SerializedName("UpdateDate")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $updateDate;
 }

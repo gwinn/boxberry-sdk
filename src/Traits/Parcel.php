@@ -3,16 +3,16 @@
 namespace Gwinn\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
+use Gwinn\Boxberry\Exceptions\ApiException;
 use Gwinn\Boxberry\Model\CreateOrder\ParcelCreate;
-use Gwinn\Boxberry\Model\CreateOrder\ParselSend;
-use Gwinn\Boxberry\Model\OrderInfo\ParselCheck;
-use Gwinn\Boxberry\Model\OrderInfo\ParselList;
-use Gwinn\Boxberry\Model\OrderInfo\ParselSendStory;
-use Gwinn\Boxberry\Model\OrderInfo\ParselStory;
+use Gwinn\Boxberry\Model\CreateOrder\ParcelSend;
+use Gwinn\Boxberry\Model\OrderInfo\ParcelCheck;
+use Gwinn\Boxberry\Model\OrderInfo\ParcelList;
+use Gwinn\Boxberry\Model\OrderInfo\ParcelSendStory;
+use Gwinn\Boxberry\Model\OrderInfo\ParcelStory;
 use Gwinn\Boxberry\Model\ParselDel;
 use Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
 use Gwinn\Boxberry\Model\Response\Response;
-use Gwinn\Boxberry\Model;
 
 /**
  * Class Parcel
@@ -33,14 +33,14 @@ trait Parcel
      * @param ParcelCreateRequest $request
      *
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
     public function parcelCreate(ParcelCreateRequest $request): Response
     {
         $options = [
             'form_params' => [
                 'token' => $this->token,
-                'method' => ucfirst(__FUNCTION__),
+                'method' => 'ParselCreate',
                 'sdata' => $this->serializer->serialize($request, 'json')
             ]
          ];
@@ -58,9 +58,9 @@ trait Parcel
      * @param string $to Код    период до в формате YYYYMMDD
      *
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
-    public function parselSendStory(string $from = '', string $to = ''): Response
+    public function parcelSendStory(string $from = '', string $to = ''): Response
     {
         $queryParam = array_merge(
             $this->params,
@@ -68,7 +68,7 @@ trait Parcel
                 'query' => array_merge(
                     [
                         'token' => $this->token,
-                        'method' => ucfirst(__FUNCTION__)
+                        'method' => 'ParselSendStory'
                     ],
                     array_filter([
                         'from' => $from ?: false,
@@ -83,7 +83,7 @@ trait Parcel
                 self::API_URL,
                 $queryParam
             ),
-            sprintf('array<%s>', ParselSendStory::class)
+            sprintf('array<%s>', ParcelSendStory::class)
         ));
     }
 
@@ -94,20 +94,23 @@ trait Parcel
      * @group parcels
      *
      * @param string $imIds Код отслеживания отправления
-     *
+     * @param string $shippingDate
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
-    public function parselSend(string $imIds): Response
+    public function parcelSend(string $imIds, string $shippingDate=''): Response
     {
         $queryParam = array_merge(
             $this->params,
             [
                 'query' => [
                     'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__),
-                    'ImIds' => $imIds
-                ]
+                    'method' => 'ParselSend',
+                    'ImIds' => $imIds,
+                ],
+                array_filter([
+                    'shippingDate'=>$shippingDate ?: false,
+                ])
             ]
         );
 
@@ -116,7 +119,7 @@ trait Parcel
                 self::API_URL,
                 $queryParam
             ),
-            sprintf('array<%s>', ParselSend::class)
+            sprintf('array<%s>', ParcelSend::class)
         ));
     }
 
@@ -127,12 +130,12 @@ trait Parcel
      * @group parcels
      *
      * @param string $from период с в формате YYYYMMDD
-     * @param string $to Код    период до в формате YYYYMMDD
+     * @param string $to период до в формате YYYYMMDD
      *
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
-    public function parselStory(string $from = '', string $to = ''): Response
+    public function parcelStory(string $from = '', string $to = ''): Response
     {
         $queryParam = array_merge(
             $this->params,
@@ -140,7 +143,7 @@ trait Parcel
                 'query' => array_merge(
                     [
                         'token' => $this->token,
-                        'method' => ucfirst(__FUNCTION__)
+                        'method' => 'ParselStory'
                     ],
                     array_filter([
                         'from' => $from ?: false,
@@ -155,59 +158,27 @@ trait Parcel
                 self::API_URL,
                 $queryParam
             ),
-            sprintf('array<%s>', ParselStory::class)
-        ));
-    }
-
-    /**
-     * Позволяет удалить посылку, но только в том случае, если она не была проведена в акте.
-     * Внимание! сервис работает только с посылками созданными через API ЛК
-     *
-     * @group parcels
-     *
-     * @param string $imId Код отслеживания отправления
-     *
-     * @return Response
-     * @throws GuzzleException
-     */
-    public function parselDel(string $imId): Response
-    {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__),
-                    'ImId' => $imId
-                ]
-            ]
-        );
-
-        return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
-            sprintf('array<%s>', ParselDel::class)
+            sprintf('array<%s>', ParcelStory::class)
         ));
     }
 
     /**
      * Позволяет получить список всех трекинг кодов посылок которые есть в кабинете но не были сформированы в акт.
-     * Строка сразу имеет вид необходимый для интеграции в метод ParselSend.
+     * Строка сразу имеет вид необходимый для интеграции в метод ParcelSend.
      *
      * @group parcels
      *
      * @return Response
+     * @throws GuzzleException|ApiException
      */
-    public function parselList(): Response
+    public function parcelList(): Response
     {
         $queryParam = array_merge(
             $this->params,
             [
                 'query' => [
                     'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__)
+                    'method' => 'ParselList',
                 ]
             ]
         );
@@ -217,7 +188,7 @@ trait Parcel
                 self::API_URL,
                 $queryParam
             ),
-            sprintf('array<%s>', ParselList::class)
+            sprintf('array<%s>', ParcelList::class)
         ));
     }
 
@@ -230,16 +201,16 @@ trait Parcel
      * @param string $imId Код отслеживания отправления
      *
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
-    public function parselCheck(string $imId): Response
+    public function parcelCheck(string $imId): Response
     {
         $queryParam = array_merge(
             $this->params,
             [
                 'query' => [
                     'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__),
+                    'method' => 'ParselCheck',
                     'ImId' => $imId
                 ]
             ]
@@ -250,7 +221,7 @@ trait Parcel
                 self::API_URL,
                 $queryParam
             ),
-            sprintf('array<%s>', ParselCheck::class)
+            sprintf('array<%s>', ParcelCheck::class)
         ));
     }
 }

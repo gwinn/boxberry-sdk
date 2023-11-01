@@ -1,0 +1,20 @@
+{
+  "token": "d6f33e419c16131e5325cbd84d5d6000",
+  "method": "CreateIntake",
+  "zip": "620100",
+  "city": "Екатеринбург",
+  "street": "Сибирский тракт",
+  "house": "12",
+  "building": "1",
+  "housing": "",
+  "flat": "501",
+  "contact_person": "Иванов Иван",
+  "contact_phone": "9874561236",
+  "taking_date": "23.04.2021",
+  "taking_time_from": "10:00",
+  "taking_time_to": "18:00",
+  "seats_count": "3",
+  "volume": "5",
+  "weight": "1",
+  "comment": ""
+}

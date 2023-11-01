@@ -3,6 +3,7 @@
 namespace Gwinn\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
+use Gwinn\Boxberry\Exceptions\ApiException;
 use Gwinn\Boxberry\Model\AccrualOfServices\ListServices;
 use Gwinn\Boxberry\Model\Geography\CourierListCities;
 use Gwinn\Boxberry\Model\Geography\ListCities;
@@ -34,7 +35,7 @@ trait Lists
      * @param string $countryCode Код страны
      *
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
     public function listCities(string $countryCode = ''): Response
     {
@@ -63,17 +64,19 @@ trait Lists
      *
      * @group lists
      *
+     * @param string $countryCode
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
-    public function listCitiesFull(): Response
+    public function listCitiesFull(string $countryCode = ''): Response
     {
         $queryParam = array_merge(
             $this->params,
             array_filter([
                 'query' => [
                     'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__)
+                    'method' => ucfirst(__FUNCTION__),
+                    'CountryCode' => $countryCode ?: false
                 ]
             ])
         );
@@ -93,15 +96,18 @@ trait Lists
      *
      * @group lists
      *
-     * @param boolean $prepaid Cписок всех ПВЗ
-     * @param string $citycode Cписок ПВЗ в городе
-     *
+     * @param string $countryCode
+     * @param string $citycode
+     * @param boolean $prepaid
+     * @param bool $isIncludePostamat
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
     public function listPoints(
+        string $countryCode = '',
+        string $citycode = '',
         bool $prepaid = false,
-        string $citycode = ''
+        bool $isIncludePostamat = false
     ): Response {
         $queryParam = array_merge(
             $this->params,
@@ -110,10 +116,12 @@ trait Lists
                     [
                         'token' => $this->token,
                         'method' => ucfirst(__FUNCTION__),
-                        'prepaid' => (int) ($prepaid ?: false)
+                        'prepaid' => (int) ($prepaid ?: false),
+                        'is_include_postamat' => (int) ($isIncludePostamat ?: false),
                     ],
                     array_filter([
-                        'CityCode' => $citycode ?: false
+                        'CountryCode' => $countryCode ?: false,
+                        'CityCode' => $citycode ?: false,
                     ])
                 )
             ]
@@ -134,12 +142,14 @@ trait Lists
      *
      * @group lists
      *
+     * @param string $countryCode
      * @param string $citycode Параметр города
      *
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
     public function listPointsShort(
+        string $countryCode = '',
         string $citycode = ''
     ): Response {
         $queryParam = array_merge(
@@ -151,6 +161,7 @@ trait Lists
                         'method' => ucfirst(__FUNCTION__)
                     ],
                     array_filter([
+                        'CountryCode' => $countryCode ?: false,
                         'CityCode' => $citycode ?: false
                     ])
                 )
@@ -174,7 +185,7 @@ trait Lists
      * @param string $imId Код отслеживания заказа
      *
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
     public function listServices(string $imId = ''): Response
     {
@@ -206,7 +217,7 @@ trait Lists
      * @param string $imId Код отслеживания заказа
      *
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
     public function listStatuses(string $imId = ''): Response
     {
@@ -238,7 +249,7 @@ trait Lists
      * @param string $imId Код отслеживания заказа
      *
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
     public function listStatusesFull(string $imId = ''): Response
     {
@@ -268,7 +279,7 @@ trait Lists
      * @group lists
      *
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
     public function listZips(): Response
     {
@@ -297,7 +308,7 @@ trait Lists
      * @group lists
      *
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
     public function courierListCities(): Response
     {
@@ -326,7 +337,7 @@ trait Lists
      * @group lists
      *
      * @return Response
-     * @throws GuzzleException
+     * @throws GuzzleException|ApiException
      */
     public function pointsForParcels(): Response
     {

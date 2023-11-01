@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Geography;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class ZipCheck
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class ZipCheck
 {
@@ -27,7 +25,6 @@ class ZipCheck
      * @JMS\Type("boolean")
      * @JMS\SerializedName("ExpressDelivery")
      *
-     * @Annotations\FakeMockField()
      */
     public $expressDelivery;
 
@@ -39,7 +36,6 @@ class ZipCheck
      * @JMS\Type("integer")
      * @JMS\SerializedName("ZoneExpressDelivery")
      *
-     * @Annotations\FakeMockField()
      */
     public $zoneExpressDelivery;
 
@@ -51,7 +47,6 @@ class ZipCheck
      * @JMS\Type("integer")
      * @JMS\SerializedName("Remoteness")
      *
-     * @Annotations\FakeMockField()
      */
     public $remoteness;
 }

@@ -6,21 +6,19 @@ use Gwinn\Boxberry\Model\OrderInfo\ParcelInfo\CourierDelivery;
 use Gwinn\Boxberry\Model\OrderInfo\ParcelInfo\PickupPoint;
 use Gwinn\Boxberry\Model\OrderInfo\ParcelInfo\RecipientData;
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
- * Class ParselList
+ * Class ParcelList
  *
  * @category Models
- * @package  SaaS\Service\Boxberry\Model
+ * @package  Gwinn\Boxberry\Model
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
-class ParselInfo
+class ParcelInfo
 {
     /**
      * Номер заказа в интернет-магазине
@@ -30,7 +28,6 @@ class ParselInfo
      * @JMS\Type("string")
      * @JMS\SerializedName("order_id")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $orderId;
 
@@ -42,7 +39,6 @@ class ParselInfo
      * @JMS\Type("string")
      * @JMS\SerializedName("track_number")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $trackNumber;
 
@@ -54,7 +50,6 @@ class ParselInfo
      * @JMS\Type("string")
      * @JMS\SerializedName("declared_cost")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $declaredCost;
 
@@ -66,7 +61,6 @@ class ParselInfo
      * @JMS\Type("string")
      * @JMS\SerializedName("payment_amount")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $paymentAmount;
 
@@ -78,7 +72,6 @@ class ParselInfo
      * @JMS\Type("string")
      * @JMS\SerializedName("delivery_cost")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $deliveryCost;
 
@@ -90,7 +83,6 @@ class ParselInfo
      * @JMS\Type("string")
      * @JMS\SerializedName("delivery_type")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $deliveryType;
 
@@ -102,7 +94,6 @@ class ParselInfo
      * @JMS\Type("Gwinn\Boxberry\Model\OrderInfo\ParcelInfo\CourierDelivery")
      * @JMS\SerializedName("courier_delivery")
      *
-     * @Annotations\FakeMockField()
      */
     public $courierDelivery;
 
@@ -114,7 +105,6 @@ class ParselInfo
      * @JMS\Type("Gwinn\Boxberry\Model\OrderInfo\ParcelInfo\PickupPoint")
      * @JMS\SerializedName("pickup_point")
      *
-     * @Annotations\FakeMockField()
      */
     public $pickupPoint;
 
@@ -126,7 +116,6 @@ class ParselInfo
      * @JMS\Type("Gwinn\Boxberry\Model\OrderInfo\ParcelInfo\RecipientData")
      * @JMS\SerializedName("recipient_data")
      *
-     * @Annotations\FakeMockField()
      */
     public $recipientData;
 
@@ -138,7 +127,6 @@ class ParselInfo
      * @JMS\Type("array<Gwinn\Boxberry\Model\OrderInfo\ParcelInfo\Products>")
      * @JMS\SerializedName("products")
      *
-     * @Annotations\FakeMockField()
      */
     public $products = [];
 
@@ -150,7 +138,6 @@ class ParselInfo
      * @JMS\Type("array<Gwinn\Boxberry\Model\OrderInfo\ParcelInfo\BoxesData>")
      * @JMS\SerializedName("boxes_data")
      *
-     * @Annotations\FakeMockField()
      */
     public $boxesData = [];
 
@@ -162,7 +149,6 @@ class ParselInfo
      * @JMS\Type("string")
      * @JMS\SerializedName("issue_type")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $issueType;
 }

@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Geography;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class ListZips
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class ListZips
 {
@@ -27,7 +25,6 @@ class ListZips
      * @JMS\Type("string")
      * @JMS\SerializedName("Zip")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $zip;
 
@@ -39,7 +36,6 @@ class ListZips
      * @JMS\Type("string")
      * @JMS\SerializedName("City")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $city;
 
@@ -51,7 +47,6 @@ class ListZips
      * @JMS\Type("string")
      * @JMS\SerializedName("Region")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $region;
 
@@ -63,7 +58,6 @@ class ListZips
      * @JMS\Type("string")
      * @JMS\SerializedName("Area")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $area;
 
@@ -75,7 +69,6 @@ class ListZips
      * @JMS\Type("integer")
      * @JMS\SerializedName("ZoneExpressDelivery")
      *
-     * @Annotations\FakeMockField()
      */
     public $zoneExpressDelivery;
 
@@ -87,7 +80,6 @@ class ListZips
      * @JMS\Type("integer")
      * @JMS\SerializedName("Remoteness")
      *
-     * @Annotations\FakeMockField()
      */
     public $remoteness;
 }

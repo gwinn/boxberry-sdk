@@ -2,7 +2,6 @@
 
 namespace Gwinn\Boxberry\Model\Tracking\ListStatusesFull;
 
-use Er1z\FakeMock\Annotations;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -15,7 +14,6 @@ use JMS\Serializer\Annotation as JMS;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class Products
 {
@@ -27,7 +25,6 @@ class Products
      * @JMS\Type("string")
      * @JMS\SerializedName("Name")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $name;
 
@@ -39,7 +36,7 @@ class Products
      * @JMS\Type("integer")
      * @JMS\SerializedName("Give")
      *
-     * @Annotations\FakeMockField()
+
      */
     public $give;
 
@@ -51,7 +48,7 @@ class Products
      * @JMS\Type("integer")
      * @JMS\SerializedName("Return")
      *
-     * @Annotations\FakeMockField()
+
      */
     public $return;
 
@@ -63,7 +60,6 @@ class Products
      * @JMS\Type("string")
      * @JMS\SerializedName("Item_ID")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $itemId;
 }

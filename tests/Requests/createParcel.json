@@ -1,0 +1,52 @@
+{
+  "token":"d6f33e419c16131e5325cbd84d5d6000",
+  "method":"ParselCreate",
+  "sdata":{
+    "partner_token": "",
+    "updateByTrack": "",
+    "order_id": "Тестовый заказ 001",
+    "PalletNumber": "",
+    "barcode": "",
+    "price": "2000.00",
+    "payment_sum": "2000.00",
+    "delivery_sum": "250.00",
+    "vid": "2",
+    "kurdost": {
+      "index": "",
+      "citi": "Нижний Новгород",
+      "addressp": "ул Дружбы, д 5",
+      "delivery_date": "",
+      "timesfrom1": "",
+      "timesto1": "",
+      "comentk": ""
+    },
+    "shop": {
+      "name": "",
+      "name1": "010"
+    },
+    "customer": {
+      "fio": "Иванов Иван Иванович",
+      "phone": "9001122333",
+      "phone2": "",
+      "email": ""
+    },
+    "items": [{
+      "id": "252112-dget",
+      "name": "Куртка детская",
+      "UnitName": "шт.",
+      "nds": "",
+      "price": "1750",
+      "quantity": "1",
+      "marking_crpt": ""
+    }],
+    "notice": "",
+    "weights": {
+      "weight": "400",
+      "barcode": "",
+      "x": "20",
+      "y": "20",
+      "z": "10"
+    },
+    "issue": "1"
+  }
+}

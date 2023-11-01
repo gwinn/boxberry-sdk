@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Geography;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class ListCities
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class ListCities
 {
@@ -27,7 +25,6 @@ class ListCities
      * @JMS\Type("string")
      * @JMS\SerializedName("Name")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $name;
 
@@ -39,7 +36,6 @@ class ListCities
      * @JMS\Type("string")
      * @JMS\SerializedName("Code")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $code;
 
@@ -51,7 +47,6 @@ class ListCities
      * @JMS\Type("string")
      * @JMS\SerializedName("CountryCode")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $countryCode;
 
@@ -63,7 +58,6 @@ class ListCities
      * @JMS\Type("string")
      * @JMS\SerializedName("Prefix")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $prefix;
 
@@ -75,7 +69,6 @@ class ListCities
      * @JMS\Type("integer")
      * @JMS\SerializedName("ReceptionLaP")
      *
-     * @Annotations\FakeMockField()
      */
     public $receptionLaP;
 
@@ -87,7 +80,6 @@ class ListCities
      * @JMS\Type("integer")
      * @JMS\SerializedName("DeliveryLaP")
      *
-     * @Annotations\FakeMockField()
      */
     public $deliveryLaP;
 
@@ -99,7 +91,6 @@ class ListCities
      * @JMS\Type("integer")
      * @JMS\SerializedName("Reception")
      *
-     * @Annotations\FakeMockField()
      */
     public $reception;
 
@@ -111,7 +102,6 @@ class ListCities
      * @JMS\Type("integer")
      * @JMS\SerializedName("ForeignReceptionReturns")
      *
-     * @Annotations\FakeMockField()
      */
     public $foreignReceptionReturns;
 
@@ -123,7 +113,6 @@ class ListCities
      * @JMS\Type("integer")
      * @JMS\SerializedName("Terminal")
      *
-     * @Annotations\FakeMockField()
      */
     public $terminal;
 
@@ -135,7 +124,6 @@ class ListCities
      * @JMS\Type("string")
      * @JMS\SerializedName("Kladr")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $kladr;
 
@@ -147,7 +135,6 @@ class ListCities
      * @JMS\Type("string")
      * @JMS\SerializedName("Region")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $region;
 
@@ -159,7 +146,6 @@ class ListCities
      * @JMS\Type("string")
      * @JMS\SerializedName("UniqName")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $uniqName;
 
@@ -171,7 +157,6 @@ class ListCities
      * @JMS\Type("string")
      * @JMS\SerializedName("District")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $district;
 
@@ -183,7 +168,6 @@ class ListCities
      * @JMS\Type("integer")
      * @JMS\SerializedName("CourierReception")
      *
-     * @Annotations\FakeMockField()
      */
     public $courierReception;
 }

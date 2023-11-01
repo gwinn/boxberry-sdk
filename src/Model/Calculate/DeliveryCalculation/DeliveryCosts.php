@@ -3,19 +3,17 @@
 namespace Gwinn\Boxberry\Model\Calculate\DeliveryCalculation;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class DeliveryCostsRequest
  *
  * @category Models
- * @package  SaaS\Service\Boxberry\Model
+ * @package  Gwinn\Boxberry\Model
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class DeliveryCosts
 {
@@ -27,7 +25,6 @@ class DeliveryCosts
      * @JMS\Type("string")
      * @JMS\SerializedName("PriceService")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $priceService;
 
@@ -39,7 +36,6 @@ class DeliveryCosts
      * @JMS\Type("string")
      * @JMS\SerializedName("TotalPrice")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $totalPrice;
 
@@ -53,7 +49,6 @@ class DeliveryCosts
      * @JMS\Type("integer")
      * @JMS\SerializedName("DeliveryTypeId")
      *
-     * @Annotations\FakeMockField()
      */
     public $deliveryTypeId;
 
@@ -65,7 +60,6 @@ class DeliveryCosts
      * @JMS\Type("integer")
      * @JMS\SerializedName("DeliveryPeriod")
      *
-     * @Annotations\FakeMockField()
      */
     public $deliveryPeriod;
 
@@ -77,7 +71,6 @@ class DeliveryCosts
      * @JMS\Type("string")
      * @JMS\SerializedName("PriceBase")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $priceBase;
 }

@@ -8,4 +8,4 @@ vendor/
 /.idea
 composer
 phpunit.phar
-/var/*
+var/*

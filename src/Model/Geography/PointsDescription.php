@@ -3,19 +3,17 @@
 namespace Gwinn\Boxberry\Model\Geography;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class PointsDescription
  *
  * @category Models
- * @package  SaaS\Service\Boxberry\Model
+ * @package  Gwinn\Boxberry\Model
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class PointsDescription
 {
@@ -30,7 +28,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("Name")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $name;
 
@@ -42,7 +39,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("Organization")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $organization;
 
@@ -54,7 +50,6 @@ class PointsDescription
      * @JMS\Type("integer")
      * @JMS\SerializedName("ZipCode")
      *
-     * @Annotations\FakeMockField()
      */
     public $zipCode;
 
@@ -66,7 +61,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("Country")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $country;
 
@@ -78,7 +72,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("Area")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $area;
 
@@ -90,7 +83,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("CityCode")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $cityCode;
 
@@ -102,7 +94,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("CityName")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $cityName;
 
@@ -114,7 +105,6 @@ class PointsDescription
      * @JMS\Type("integer")
      * @JMS\SerializedName("Settlement")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $settlement;
 
@@ -126,7 +116,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("Metro")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $metro;
 
@@ -138,7 +127,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("Street")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $street;
 
@@ -150,7 +138,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("House")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $house;
 
@@ -162,7 +149,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("Structure")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $structure;
 
@@ -174,7 +160,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("Housing")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $housing;
 
@@ -186,7 +171,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("Apartment")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $apartment;
 
@@ -198,7 +182,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("Address")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $address;
 
@@ -210,7 +193,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("AddressReduce")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $addressReduce;
 
@@ -222,7 +204,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("GPS")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $gps;
 
@@ -234,7 +215,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("TripDescription")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $tripDescription;
 
@@ -246,7 +226,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("Phone")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $phone;
 
@@ -258,7 +237,6 @@ class PointsDescription
      * @JMS\Type("boolean")
      * @JMS\SerializedName("ForeignOnlineStoresOnly")
      *
-     * @Annotations\FakeMockField()
      */
     public $foreignOnlineStoresOnly;
 
@@ -272,7 +250,6 @@ class PointsDescription
      * @JMS\Type("boolean")
      * @JMS\SerializedName("PrepaidOrdersOnly")
      *
-     * @Annotations\FakeMockField()
      */
     public $prepaidOrdersOnly;
 
@@ -284,7 +261,6 @@ class PointsDescription
      * @JMS\Type("boolean")
      * @JMS\SerializedName("Acquiring")
      *
-     * @Annotations\FakeMockField()
      */
     public $acquiring;
 
@@ -298,7 +274,6 @@ class PointsDescription
      * @JMS\Type("boolean")
      * @JMS\SerializedName("DigitalSignature")
      *
-     * @Annotations\FakeMockField()
      */
     public $digitalSignature;
 
@@ -310,7 +285,6 @@ class PointsDescription
      * @JMS\Type("integer")
      * @JMS\SerializedName("TypeOfOffice")
      *
-     * @Annotations\FakeMockField()
      */
     public $typeOfOffice;
 
@@ -322,7 +296,6 @@ class PointsDescription
      * @JMS\Type("boolean")
      * @JMS\SerializedName("CourierDelivery")
      *
-     * @Annotations\FakeMockField()
      */
     public $courierDelivery;
 
@@ -334,7 +307,6 @@ class PointsDescription
      * @JMS\Type("boolean")
      * @JMS\SerializedName("Reception")
      *
-     * @Annotations\FakeMockField()
      */
     public $reception;
 
@@ -346,7 +318,6 @@ class PointsDescription
      * @JMS\Type("boolean")
      * @JMS\SerializedName("ReceptionLaP")
      *
-     * @Annotations\FakeMockField()
      */
     public $receptionLaP;
 
@@ -358,7 +329,6 @@ class PointsDescription
      * @JMS\Type("boolean")
      * @JMS\SerializedName("DeliveryLaP")
      *
-     * @Annotations\FakeMockField()
      */
     public $deliveryLaP;
 
@@ -370,7 +340,6 @@ class PointsDescription
      * @JMS\Type("integer")
      * @JMS\SerializedName("LoadLimit")
      *
-     * @Annotations\FakeMockField()
      */
     public $loadLimit;
 
@@ -382,7 +351,6 @@ class PointsDescription
      * @JMS\Type("integer")
      * @JMS\SerializedName("VolumeLimit")
      *
-     * @Annotations\FakeMockField()
      */
     public $volumeLimit;
 
@@ -394,7 +362,6 @@ class PointsDescription
      * @JMS\Type("boolean")
      * @JMS\SerializedName("EnablePartialDelivery")
      *
-     * @Annotations\FakeMockField()
      */
     public $enablePartialDelivery;
 
@@ -406,7 +373,6 @@ class PointsDescription
      * @JMS\Type("boolean")
      * @JMS\SerializedName("EnableFitting")
      *
-     * @Annotations\FakeMockField()
      */
     public $enableFitting;
 
@@ -418,7 +384,6 @@ class PointsDescription
      * @JMS\Type("boolean")
      * @JMS\SerializedName("fittingType")
      *
-     * @Annotations\FakeMockField()
      */
     public $fittingType;
 
@@ -440,7 +405,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("CountryCode")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $countryCode;
 
@@ -455,7 +419,6 @@ class PointsDescription
      * @JMS\Type("integer")
      * @JMS\SerializedName("TransType")
      *
-     * @Annotations\FakeMockField()
      */
     public $transType;
 
@@ -467,7 +430,6 @@ class PointsDescription
      * @JMS\Type("integer")
      * @JMS\SerializedName("InterRefunds")
      *
-     * @Annotations\FakeMockField()
      */
     public $interRefunds;
 
@@ -479,7 +441,6 @@ class PointsDescription
      * @JMS\Type("integer")
      * @JMS\SerializedName("ExpressReception")
      *
-     * @Annotations\FakeMockField()
      */
     public $expressReception;
 
@@ -491,7 +452,6 @@ class PointsDescription
      * @JMS\Type("integer")
      * @JMS\SerializedName("Terminal")
      *
-     * @Annotations\FakeMockField()
      */
     public $terminal;
 
@@ -503,7 +463,6 @@ class PointsDescription
      * @JMS\Type("integer")
      * @JMS\SerializedName("IssuanceBoxberry")
      *
-     * @Annotations\FakeMockField()
      */
     public $issuanceBoxberry;
 
@@ -517,7 +476,6 @@ class PointsDescription
      * @JMS\Type("string")
      * @JMS\SerializedName("schedule")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $schedule;
 
@@ -529,7 +487,6 @@ class PointsDescription
      * @JMS\Type("boolean")
      * @JMS\SerializedName("Postamat")
      *
-     * @Annotations\FakeMockField()
      */
     public $postamat;
 }

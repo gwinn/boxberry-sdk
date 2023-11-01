@@ -3,19 +3,17 @@
 namespace Gwinn\Boxberry\Model\Geography;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class PointsForParcels
  *
  * @category Models
- * @package  SaaS\Service\Boxberry\Model
+ * @package  Gwinn\Boxberry\Model
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class PointsForParcels
 {
@@ -27,7 +25,6 @@ class PointsForParcels
      * @JMS\Type("string")
      * @JMS\SerializedName("Code")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $code;
 
@@ -39,7 +36,6 @@ class PointsForParcels
      * @JMS\Type("string")
      * @JMS\SerializedName("Name")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $name;
 
@@ -51,7 +47,6 @@ class PointsForParcels
      * @JMS\Type("string")
      * @JMS\SerializedName("City")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $city;
 }

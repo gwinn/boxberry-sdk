@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Response;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class Error
@@ -15,17 +14,30 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class Error
 {
     /**
-     * @var string $error
+     * @var string $err
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("err")
+     */
+    public $err;
+
+    /**
+     * @var boolean $error
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
+     * @JMS\Type("boolean")
+     * @JMS\SerializedName("error")
      */
     public $error;
+
+    /**
+     * @var string $message
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("message")
+     */
+    public $message;
 }

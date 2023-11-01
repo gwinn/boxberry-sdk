@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Request;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class CreateIntakeRequest
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class CreateIntakeRequest
 {
@@ -27,7 +25,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("zip")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $zip;
 
@@ -39,7 +36,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("city")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $city;
 
@@ -51,7 +47,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("street")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $street;
 
@@ -63,7 +58,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("house")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $house;
 
@@ -75,7 +69,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("building")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $building;
 
@@ -87,7 +80,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("housing")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $housing;
 
@@ -99,7 +91,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("flat")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $flat;
 
@@ -111,7 +102,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("contact_person")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $contactPerson;
 
@@ -123,7 +113,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("contact_phone")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $contactPhone;
 
@@ -135,7 +124,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("taking_date")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $takingDate;
 
@@ -147,7 +135,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("taking_time_from")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $takingTimeFrom;
 
@@ -159,7 +146,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("taking_time_to")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $takingTimeTo;
 
@@ -171,7 +157,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("seats_count")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $seatsCount;
 
@@ -183,7 +168,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("volume")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $volume;
 
@@ -195,7 +179,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("weight")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $weight;
 
@@ -207,7 +190,6 @@ class CreateIntakeRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("comment")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $comment;
 }

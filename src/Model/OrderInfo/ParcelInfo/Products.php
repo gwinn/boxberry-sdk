@@ -2,20 +2,18 @@
 
 namespace Gwinn\Boxberry\Model\OrderInfo\ParcelInfo;
 
-use Er1z\FakeMock\Annotations;
 use JMS\Serializer\Annotation as JMS;
 
 /**
  * Class CourierDelivery
  *
  * @category Models
- * @package  SaaS\Service\Boxberry\Model
+ * @package  Gwinn\Boxberry\Model
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class Products
 {
@@ -27,7 +25,6 @@ class Products
      * @JMS\Type("string")
      * @JMS\SerializedName("vendor_code")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $vendorCode;
 
@@ -39,7 +36,6 @@ class Products
      * @JMS\Type("string")
      * @JMS\SerializedName("name")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $name;
 
@@ -51,7 +47,6 @@ class Products
      * @JMS\Type("integer")
      * @JMS\SerializedName("nds")
      *
-     * @Annotations\FakeMockField()
      */
     public $nds;
 
@@ -63,7 +58,6 @@ class Products
      * @JMS\Type("string")
      * @JMS\SerializedName("price")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $price;
 
@@ -75,7 +69,6 @@ class Products
      * @JMS\Type("integer")
      * @JMS\SerializedName("quantity")
      *
-     * @Annotations\FakeMockField()
      */
     public $quantity;
 
@@ -87,7 +80,6 @@ class Products
      * @JMS\Type("string")
      * @JMS\SerializedName("marking_crpt")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $markingCrpt;
 }

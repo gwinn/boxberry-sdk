@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\AccrualOfServices;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class ListServices
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class ListServices
 {
@@ -27,7 +25,6 @@ class ListServices
      * @JMS\Type("string")
      * @JMS\SerializedName("Date")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $date;
 
@@ -39,7 +36,6 @@ class ListServices
      * @JMS\Type("string")
      * @JMS\SerializedName("Name")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $name;
 
@@ -51,7 +47,6 @@ class ListServices
      * @JMS\Type("string")
      * @JMS\SerializedName("Sum")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $sum;
 
@@ -63,7 +58,6 @@ class ListServices
      * @JMS\Type("integer")
      * @JMS\SerializedName("PaymentMethod")
      *
-     * @Annotations\FakeMockField()
      */
     public $paymentMethod;
 }

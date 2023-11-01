@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Request;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class DeliveryCostsRequest
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class DeliveryCostsRequest
 {
@@ -27,7 +25,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("weight")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $weight;
 
@@ -39,7 +36,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("targetstart")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $targetStart;
 
@@ -51,7 +47,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("target")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $target;
 
@@ -63,7 +58,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("ordersum")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $orderSum;
 
@@ -75,7 +69,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("deliverysum")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $deliverySum;
 
@@ -87,7 +80,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("paysum")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $paySum;
 
@@ -99,7 +91,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("height")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $height;
 
@@ -111,7 +102,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("width")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $width;
 
@@ -123,7 +113,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("depth")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $depth;
 
@@ -135,7 +124,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("zip")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $zip;
 
@@ -154,7 +142,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("sucrh")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $sucrh;
 
@@ -166,7 +153,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("cms")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $cms;
 
@@ -179,7 +165,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("url")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $url;
 
@@ -191,7 +176,6 @@ class DeliveryCostsRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("version")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $version;
 }

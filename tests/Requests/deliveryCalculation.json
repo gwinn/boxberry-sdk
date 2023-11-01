@@ -1,0 +1,20 @@
+{
+  "token": "5448637f804cb40d491cbcbe6e511942",
+  "method": "DeliveryCalculation",
+  "BoxSizes": [
+    {
+      "Width": 6.6,
+      "Height": 6,
+      "Depth": 6,
+      "Weight": 3700
+    }
+  ],
+  "RecipientCityId": "44",
+  "UseShopSettings": 1,
+  "PaySum": 0,
+  "OrderSum": 21699,
+  "CmsName": "test",
+  "Url": "https://test.ru/",
+  "Version": "2.2",
+  "TargetStop": "61241"
+}

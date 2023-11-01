@@ -3,10 +3,9 @@
 namespace Gwinn\Boxberry\Model\OrderInfo;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
- * Class ParselCheck
+ * Class ParcelCheck
  *
  * @category Models
  * @package  Gwinn\Boxberry\Model\OrderInfo
@@ -15,9 +14,8 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
-class ParselCheck
+class ParcelCheck
 {
     /**
      * Ссылка на печать этикетки
@@ -29,7 +27,6 @@ class ParselCheck
      * @JMS\Type("string")
      * @JMS\SerializedName("label")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $label;
 }

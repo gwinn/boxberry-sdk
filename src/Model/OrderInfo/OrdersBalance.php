@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\OrderInfo;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class OrdersBalance
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class OrdersBalance
 {
@@ -27,7 +25,6 @@ class OrdersBalance
      * @JMS\Type("string")
      * @JMS\SerializedName("ID")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $id;
 
@@ -39,7 +36,6 @@ class OrdersBalance
      * @JMS\Type("string")
      * @JMS\SerializedName("Status")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $status;
 
@@ -51,7 +47,6 @@ class OrdersBalance
      * @JMS\Type("string")
      * @JMS\SerializedName("Price")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $price;
 
@@ -63,7 +58,6 @@ class OrdersBalance
      * @JMS\Type("string")
      * @JMS\SerializedName("Delivery_sum")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $deliverySum;
 
@@ -75,7 +69,6 @@ class OrdersBalance
      * @JMS\Type("string")
      * @JMS\SerializedName("Payment_sum")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $paymentSum;
 }

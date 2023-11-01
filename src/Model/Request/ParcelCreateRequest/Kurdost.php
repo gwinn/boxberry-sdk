@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class Kurdost
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class Kurdost
 {
@@ -27,7 +25,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("index")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $index;
 
@@ -46,7 +43,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("citi")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $city;
 
@@ -58,7 +54,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("addressp")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $addressp;
 
@@ -72,7 +67,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("delivery_date")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $deliveryDate;
 
@@ -85,7 +79,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("timesfrom1")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $timesfrom1;
 
@@ -101,7 +94,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("timesto1")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $timesto1;
 
@@ -113,7 +105,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("timesfrom2")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $timesfrom2;
 
@@ -125,7 +116,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("timesto2")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $timesto2;
 
@@ -138,7 +128,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("timep")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $timep;
 
@@ -151,7 +140,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("comentk")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $comentk;
 
@@ -169,7 +157,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("type")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $type;
 
@@ -182,7 +169,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("fragile")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $fragile;
 
@@ -195,7 +181,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("strong")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $strong;
 
@@ -208,7 +193,6 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("optimize")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $optimize;
 
@@ -224,7 +208,6 @@ class Kurdost
      * @JMS\Type("integer")
      * @JMS\SerializedName("packing_type")
      *
-     * @Annotations\FakeMockField()
      */
     public $packingType;
 
@@ -233,12 +216,11 @@ class Kurdost
      * true - изменение упаковки в процессе транспортировки запрещено
      * false - изменение упаковки разрешено
      *
-     * @var boolean $packingStrict
+     * @var integer $packingStrict
      *
-     * @JMS\Type("boolean")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("packing_strict")
      *
-     * @Annotations\FakeMockField()
      */
     public $packingStrict;
 }

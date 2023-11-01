@@ -3,19 +3,17 @@
 namespace Gwinn\Boxberry\Model\Tracking;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class ListStatusesFull
  *
  * @category Models
- * @package  SaaS\Service\Boxberry\Model
+ * @package  Gwinn\Boxberry\Model
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class ListStatusesFull
 {
@@ -37,7 +35,7 @@ class ListStatusesFull
      * @JMS\Type("boolean")
      * @JMS\SerializedName("PD")
      *
-     * @Annotations\FakeMockField()
+
      */
     public $pd;
 
@@ -49,7 +47,6 @@ class ListStatusesFull
      * @JMS\Type("string")
      * @JMS\SerializedName("deliveryDate")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $deliveryDate;
 
@@ -62,7 +59,7 @@ class ListStatusesFull
      * @JMS\Type("integer")
      * @JMS\SerializedName("sum")
      *
-     * @Annotations\FakeMockField()
+
      */
     public $sum;
 
@@ -74,7 +71,6 @@ class ListStatusesFull
      * @JMS\Type("string")
      * @JMS\SerializedName("PaymentMethod")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $paymentMethod;
 
@@ -86,7 +82,7 @@ class ListStatusesFull
      * @JMS\Type("string")
      * @JMS\SerializedName("Weight")
      *
-     * @Annotations\FakeMockField()
+
      */
     public $weight;
 

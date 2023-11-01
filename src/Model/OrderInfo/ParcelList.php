@@ -3,10 +3,9 @@
 namespace Gwinn\Boxberry\Model\OrderInfo;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
- * Class ParselList
+ * Class ParcelList
  *
  * @category Models
  * @package  Gwinn\Boxberry\Model\OrderInfo
@@ -15,9 +14,8 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
-class ParselList
+class ParcelList
 {
     /**
      * список всех трекинг кодов посылок которые есть в кабинете но не были сформированы в акт
@@ -27,7 +25,6 @@ class ParselList
      * @JMS\Type("string")
      * @JMS\SerializedName("ImIds")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $imIds;
 }

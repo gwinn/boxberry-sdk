@@ -3,10 +3,9 @@
 namespace Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
- * Class Kurdost
+ * Class Export
  *
  * @category Models
  * @package  Gwinn\Boxberry\Model\Request\ParcelCreateRequest
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class Export
 {
@@ -27,7 +25,6 @@ class Export
      * @JMS\Type("string")
      * @JMS\SerializedName("index")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $index;
 
@@ -39,7 +36,6 @@ class Export
      * @JMS\Type("string")
      * @JMS\SerializedName("countryCode")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $countryCode;
 
@@ -51,7 +47,6 @@ class Export
      * @JMS\Type("string")
      * @JMS\SerializedName("cityCode")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $cityCode;
 
@@ -63,7 +58,6 @@ class Export
      * @JMS\Type("string")
      * @JMS\SerializedName("area")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $area;
 
@@ -75,7 +69,6 @@ class Export
      * @JMS\Type("string")
      * @JMS\SerializedName("street")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $street;
 
@@ -87,7 +80,6 @@ class Export
      * @JMS\Type("string")
      * @JMS\SerializedName("house")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $house;
 
@@ -99,7 +91,6 @@ class Export
      * @JMS\Type("string")
      * @JMS\SerializedName("flat")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $flat;
 
@@ -113,7 +104,6 @@ class Export
      * @JMS\Type("string")
      * @JMS\SerializedName("transporterGuid")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $transporterGuid;
 }

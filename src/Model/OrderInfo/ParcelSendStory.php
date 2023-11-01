@@ -3,21 +3,19 @@
 namespace Gwinn\Boxberry\Model\OrderInfo;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
- * Class ParselSendStory
+ * Class ParcelSendStory
  *
  * @category Models
- * @package  SaaS\Service\Boxberry\Model
+ * @package  Gwinn\Boxberry\Model
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
-class ParselSendStory
+class ParcelSendStory
 {
     /**
      * список трекинг кодов посылок в акте
@@ -27,7 +25,6 @@ class ParselSendStory
      * @JMS\Type("string")
      * @JMS\SerializedName("track")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $track;
 
@@ -39,7 +36,6 @@ class ParselSendStory
      * @JMS\Type("string")
      * @JMS\SerializedName("label")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $label;
 
@@ -51,7 +47,6 @@ class ParselSendStory
      * @JMS\Type("string")
      * @JMS\SerializedName("date")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $date;
 }

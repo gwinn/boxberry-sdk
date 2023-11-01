@@ -2,6 +2,7 @@
 namespace Gwinn\Boxberry;
 
 use GuzzleHttp\Client as GuzzleClient;
+use InvalidArgumentException;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\Serializer;
@@ -12,6 +13,7 @@ class Client
     use Traits\Lists;
     use Traits\Parcel;
     use Traits\Service;
+    use Traits\Order;
 
     const API_URL = 'https://api.boxberry.de/json.php';
     const CONFIG = [
@@ -47,11 +49,14 @@ class Client
     /**
      * Client constructor.
      *
-     * @param string    $token  api key value
+     * @param string $token api key value
      */
 
     public function __construct(string $token)
     {
+        if(empty($token)){
+            throw new InvalidArgumentException('token is required');
+        }
         $this->token = $token;
         $this->client = new GuzzleClient(self::CONFIG);
 

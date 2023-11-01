@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\CreateOrder;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class ParcelCreateRequest
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class ParcelCreate
 {
@@ -27,7 +25,6 @@ class ParcelCreate
      * @JMS\Type("string")
      * @JMS\SerializedName("track")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $track;
 
@@ -39,7 +36,6 @@ class ParcelCreate
      * @JMS\Type("string")
      * @JMS\SerializedName("notification")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $notification;
 
@@ -51,7 +47,6 @@ class ParcelCreate
      * @JMS\Type("string")
      * @JMS\SerializedName("label")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $label;
 }

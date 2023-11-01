@@ -3,10 +3,9 @@
 namespace Gwinn\Boxberry\Model\OrderInfo;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
- * Class ParselStory
+ * Class ParcelStory
  *
  * @category Models
  * @package  Gwinn\Boxberry\Model\OrderInfo
@@ -15,9 +14,8 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
-class ParselStory
+class ParcelStory
 {
     /**
      * трекинг код посылки
@@ -27,7 +25,6 @@ class ParselStory
      * @JMS\Type("string")
      * @JMS\SerializedName("track")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $track;
 
@@ -39,7 +36,6 @@ class ParselStory
      * @JMS\Type("string")
      * @JMS\SerializedName("label")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $label;
 
@@ -51,7 +47,6 @@ class ParselStory
      * @JMS\Type("string")
      * @JMS\SerializedName("date")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $date;
 
@@ -63,7 +58,6 @@ class ParselStory
      * @JMS\Type("boolean")
      * @JMS\SerializedName("send")
      *
-     * @Annotations\FakeMockField()
      */
     public $send;
 
@@ -75,7 +69,6 @@ class ParselStory
      * @JMS\Type("string")
      * @JMS\SerializedName("barcode")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $barcode;
 
@@ -87,7 +80,6 @@ class ParselStory
      * @JMS\Type("string")
      * @JMS\SerializedName("imid")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $imid;
 }

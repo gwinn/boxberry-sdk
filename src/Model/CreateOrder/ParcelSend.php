@@ -3,10 +3,9 @@
 namespace Gwinn\Boxberry\Model\CreateOrder;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
- * Class ParselSend
+ * Class ParcelSend
  *
  * @category Models
  * @package  Gwinn\Boxberry\Model\CreateOrder
@@ -15,9 +14,8 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
-class ParselSend
+class ParcelSend
 {
     /**
      * номер акта (штрих-код)
@@ -27,7 +25,6 @@ class ParselSend
      * @JMS\Type("string")
      * @JMS\SerializedName("id")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $id;
 
@@ -39,7 +36,6 @@ class ParselSend
      * @JMS\Type("string")
      * @JMS\SerializedName("label")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $label;
 
@@ -52,7 +48,6 @@ class ParselSend
      * @JMS\Type("string")
      * @JMS\SerializedName("url_tmc")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $urlTmc;
 
@@ -64,7 +59,6 @@ class ParselSend
      * @JMS\Type("string")
      * @JMS\SerializedName("sticker")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $sticker;
 }

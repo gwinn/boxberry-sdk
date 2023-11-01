@@ -7,7 +7,6 @@ use Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Export;
 use Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Kurdost;
 use Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Shop;
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class ParcelCreateRequest
@@ -20,7 +19,6 @@ use Er1z\FakeMock\Annotations;
  * @see      https://help.retailcrm.ru
  *
  * @JMS\ExclusionPolicy("all")
- * @Annotations\FakeMock()
  */
 class ParcelCreateRequest
 {
@@ -32,7 +30,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("partner_token")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $partnerToken;
 
@@ -45,7 +42,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("updateByTrack")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $updateByTrack;
 
@@ -57,7 +53,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("order_id")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $orderId;
 
@@ -69,7 +64,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("PalletNumber")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $palletNumber;
 
@@ -81,7 +75,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("barcode")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $barcode;
 
@@ -96,7 +89,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("price")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $price;
 
@@ -109,7 +101,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("payment_sum")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $paymentSum;
 
@@ -121,7 +112,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("delivery_sum")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $deliverySum;
 
@@ -137,7 +127,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("vid")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $vid;
 
@@ -150,7 +139,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("supplier_track")
      *
-     * @Annotations\FakeMockField()
      */
     public $supplierTrack;
 
@@ -162,7 +150,6 @@ class ParcelCreateRequest
      * @JMS\Type("Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Kurdost")
      * @JMS\SerializedName("kurdost")
      *
-     * @Annotations\FakeMockField()
      */
     public $kurdost;
 
@@ -178,7 +165,6 @@ class ParcelCreateRequest
      * @JMS\Type("Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Export")
      * @JMS\SerializedName("export")
      *
-     * @Annotations\FakeMockField()
      */
     public $export;
 
@@ -190,7 +176,6 @@ class ParcelCreateRequest
      * @JMS\Type("Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Shop")
      * @JMS\SerializedName("shop")
      *
-     * @Annotations\FakeMockField()
      */
     public $shop;
 
@@ -202,7 +187,6 @@ class ParcelCreateRequest
      * @JMS\Type("Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Customer")
      * @JMS\SerializedName("customer")
      *
-     * @Annotations\FakeMockField()
      */
     public $customer;
 
@@ -250,7 +234,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("issue")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $issue;
 
@@ -265,7 +248,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("fitting")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $fitting;
 
@@ -277,7 +259,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("sender_name")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $senderName;
 
@@ -290,7 +271,6 @@ class ParcelCreateRequest
      * @JMS\Type("string")
      * @JMS\SerializedName("AgregatorPointCargoCode")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $agregatorPointCargoCode;
 }

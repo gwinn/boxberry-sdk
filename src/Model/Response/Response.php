@@ -4,6 +4,8 @@ namespace Gwinn\Boxberry\Model\Response;
 
 use Gwinn\Boxberry\Exceptions\ApiException;
 use Gwinn\Boxberry\Exceptions\InvalidJsonException;
+use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use Psr\Http\Message\MessageInterface;
@@ -17,7 +19,7 @@ use Symfony\Component\Validator\ValidatorBuilder;
  * Class Response
  *
  * @category Models
- * @package  SaaS\Service\Boxberry\Model\Response
+ * @package  Gwinn\Boxberry\Model\Response
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
  * @link     http://retailcrm.ru
@@ -53,15 +55,16 @@ class Response implements ResponseInterface
      * Response constructor.
      *
      * @param ResponseInterface $response
-     * @param string            $className
+     * @param string $className
+     * @throws ApiException
      */
-    public function __construct(ResponseInterface $response, $className)
+    public function __construct(ResponseInterface $response, string $className)
     {
         $this->guzzleResponse = $response;
 
         $this->serializer = SerializerBuilder::create()->setPropertyNamingStrategy(
-            new \JMS\Serializer\Naming\SerializedNameAnnotationStrategy(
-                new \JMS\Serializer\Naming\IdenticalPropertyNamingStrategy()
+            new SerializedNameAnnotationStrategy(
+                new IdenticalPropertyNamingStrategy()
             )
         )->build();
 
@@ -75,14 +78,19 @@ class Response implements ResponseInterface
     /**
      * @param string $raw
      * @param string $className
+     * @return mixed
+     * @throws ApiException
      */
-    protected function serializeResponse(string $raw, string $className)
+    private function serializeResponse(string $raw, string $className ='')
     {
         try {
             $errors = $this->serializer->deserialize($raw, Error::class,  'json');
 
-            if (isset($errors->error)) {
-                throw new ApiException($errors->error);
+            if ($errors->error) {
+                throw new ApiException($errors->message);
+            }
+            if (isset($errors->err) && $errors->err !== 'false') {
+                throw new ApiException($errors->err);
             }
         } catch (RuntimeException $exception) {
         }

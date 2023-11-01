@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class Customer
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class Customer
 {
@@ -27,7 +25,6 @@ class Customer
      * @JMS\Type("string")
      * @JMS\SerializedName("fio")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $fio;
 
@@ -42,7 +39,6 @@ class Customer
      * @JMS\Type("string")
      * @JMS\SerializedName("phone")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $phone;
 
@@ -54,7 +50,6 @@ class Customer
      * @JMS\Type("string")
      * @JMS\SerializedName("phone2")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $phone2;
 
@@ -66,7 +61,6 @@ class Customer
      * @JMS\Type("string")
      * @JMS\SerializedName("email")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $email;
 
@@ -78,7 +72,6 @@ class Customer
      * @JMS\Type("string")
      * @JMS\SerializedName("name")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $name;
 
@@ -90,7 +83,6 @@ class Customer
      * @JMS\Type("string")
      * @JMS\SerializedName("address")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $address;
 
@@ -102,7 +94,6 @@ class Customer
      * @JMS\Type("string")
      * @JMS\SerializedName("inn")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $inn;
 
@@ -114,7 +105,6 @@ class Customer
      * @JMS\Type("string")
      * @JMS\SerializedName("kpp")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $kpp;
 
@@ -126,7 +116,6 @@ class Customer
      * @JMS\Type("string")
      * @JMS\SerializedName("r_s")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $rs;
 
@@ -138,7 +127,6 @@ class Customer
      * @JMS\Type("string")
      * @JMS\SerializedName("bank")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $bank;
 
@@ -150,7 +138,6 @@ class Customer
      * @JMS\Type("string")
      * @JMS\SerializedName("kor_s")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $kors;
 
@@ -162,7 +149,6 @@ class Customer
      * @JMS\Type("string")
      * @JMS\SerializedName("bik")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $bik;
 }

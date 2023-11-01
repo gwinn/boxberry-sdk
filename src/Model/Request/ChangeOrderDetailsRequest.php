@@ -1,52 +1,51 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\OrderInfo\ParcelInfo;
+namespace Gwinn\Boxberry\Model\Request;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CourierDelivery
+ * Class CreateIntakeRequest
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model
+ * @package  Gwinn\Boxberry\Model\Request
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
  */
-class RecipientData
+class ChangeOrderDetailsRequest
 {
+    use ChangeOrder\ChangeOrder;
+
     /**
      * ФИО получателя
      *
-     * @var string $fullName
+     * @var string $fio
      *
      * @JMS\Type("string")
-     * @JMS\SerializedName("full_name")
-     *
+     * @JMS\SerializedName("fio")
      */
-    public $fullName;
+    public $fio;
 
     /**
-     * Номер телефона получателя
+     * Телефон получателя (10 цифр)
      *
      * @var string $phone
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("phone")
-     *
      */
     public $phone;
 
     /**
-     * E-mail получателя для оповещений
+     * e-mail получателя
      *
      * @var string $email
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("email")
-     *
      */
     public $email;
 }

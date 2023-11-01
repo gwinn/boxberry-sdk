@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Tracking;
 
 use JMS\Serializer\Annotation as JMS;
-use Er1z\FakeMock\Annotations;
 
 /**
  * Class ListStatuses
@@ -15,7 +14,6 @@ use Er1z\FakeMock\Annotations;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class ListStatuses
 {
@@ -27,7 +25,6 @@ class ListStatuses
      * @JMS\Type("string")
      * @JMS\SerializedName("Date")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $date;
 
@@ -39,7 +36,6 @@ class ListStatuses
      * @JMS\Type("string")
      * @JMS\SerializedName("Name")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $name;
 
@@ -51,7 +47,6 @@ class ListStatuses
      * @JMS\Type("string")
      * @JMS\SerializedName("Comment")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $comment;
 }

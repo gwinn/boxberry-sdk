@@ -2,7 +2,6 @@
 
 namespace Gwinn\Boxberry\Model\Geography\PointsDescription;
 
-use Er1z\FakeMock\Annotations;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -15,7 +14,6 @@ use JMS\Serializer\Annotation as JMS;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 trait Terminal
 {
@@ -28,7 +26,6 @@ trait Terminal
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalCode")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $terminalCode;
 
@@ -40,7 +37,6 @@ trait Terminal
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalName")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $terminalName;
 
@@ -52,7 +48,6 @@ trait Terminal
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalOrganization")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $terminalOrganization;
 
@@ -64,7 +59,6 @@ trait Terminal
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalCityCode")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $terminalCityCode;
 
@@ -76,7 +70,6 @@ trait Terminal
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalCityName")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $terminalCityName;
 
@@ -88,7 +81,6 @@ trait Terminal
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalAddress")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $terminalAddress;
 
@@ -100,7 +92,6 @@ trait Terminal
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalPhone")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $terminalPhone;
 }

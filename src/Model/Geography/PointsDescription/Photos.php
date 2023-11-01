@@ -2,7 +2,6 @@
 
 namespace Gwinn\Boxberry\Model\Geography\PointsDescription;
 
-use Er1z\FakeMock\Annotations;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -15,7 +14,6 @@ use JMS\Serializer\Annotation as JMS;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 class Photos
 {
@@ -27,7 +25,6 @@ class Photos
      * @JMS\Type("string")
      * @JMS\SerializedName("photos")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $photos;
 }

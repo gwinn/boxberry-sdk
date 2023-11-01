@@ -2,20 +2,18 @@
 
 namespace Gwinn\Boxberry\Model\Geography\PointsDescription;
 
-use Er1z\FakeMock\Annotations;
 use JMS\Serializer\Annotation as JMS;
 
 /**
  * Class WorkShedule
  *
  * @category Models
- * @package  SaaS\Service\Boxberry\Model
+ * @package  Gwinn\Boxberry\Model
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  *
- * @Annotations\FakeMock()
  */
 trait WorkShedule
 {
@@ -27,7 +25,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkShedule")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workShedule;
 
@@ -39,7 +36,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkMoBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workMoBegin;
 
@@ -51,7 +47,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkMoEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workMoEnd;
 
@@ -63,7 +58,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkTuBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workTuBegin;
 
@@ -75,7 +69,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkTuEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workTuEnd;
 
@@ -87,7 +80,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkWeBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workWeBegin;
 
@@ -99,7 +91,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkWeEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workWeEnd;
 
@@ -111,7 +102,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkThBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workThBegin;
 
@@ -123,7 +113,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkThEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workThEnd;
 
@@ -135,7 +124,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkFrBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workFrBegin;
 
@@ -147,7 +135,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkFrEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workFrEnd;
 
@@ -159,7 +146,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkSaBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workSaBegin;
 
@@ -171,7 +157,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkSaEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workSaEnd;
 
@@ -183,7 +168,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkSuBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workSuBegin;
 
@@ -195,7 +179,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkSuEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $workSuEnd;
 
@@ -207,7 +190,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchMoBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchMoBegin;
 
@@ -219,7 +201,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchMoEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchMoEnd;
 
@@ -231,7 +212,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchTuBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchTuBegin;
 
@@ -243,7 +223,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchTuEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchTuEnd;
 
@@ -255,7 +234,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchWeBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchWeBegin;
 
@@ -267,7 +245,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchWeEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchWeEnd;
 
@@ -279,7 +256,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchThBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchThBegin;
 
@@ -291,7 +267,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchThEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchThEnd;
 
@@ -303,7 +278,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchFrBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchFrBegin;
 
@@ -315,7 +289,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchFrEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchFrEnd;
 
@@ -327,7 +300,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchSaBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchSaBegin;
 
@@ -339,7 +311,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchSaEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchSaEnd;
 
@@ -351,7 +322,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchSuBegin")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchSuBegin;
 
@@ -363,7 +333,6 @@ trait WorkShedule
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchSuEnd")
      *
-     * @Annotations\FakeMockField(faker="words", arguments={1, true})
      */
     public $lunchSuEnd;
 }
