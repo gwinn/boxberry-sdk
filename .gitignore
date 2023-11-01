@@ -1,0 +1,11 @@
+# Managed by Composer
+vendor/
+
+/composer.phar
+/composer.lock
+/*.xml
+/nbproject
+/.idea
+composer
+phpunit.phar
+/var/*
