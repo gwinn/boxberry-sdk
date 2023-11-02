@@ -17,8 +17,6 @@ use JMS\Serializer\Annotation as JMS;
  * @license  https://retailcrm.ru Proprietary
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
- *
- * @JMS\ExclusionPolicy("all")
  */
 class ParcelCreateRequest
 {
@@ -222,7 +220,8 @@ class ParcelCreateRequest
      *
      * @var array $weights
      *
-     * @JMS\Exclude("weights")
+     * @JMS\Type("array")
+     * @JMS\SerializedName("weights")
      */
     public $weights;
 

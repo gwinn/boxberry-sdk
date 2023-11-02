@@ -3,12 +3,13 @@ namespace Gwinn\Boxberry\Tests;
 
 use GuzzleHttp\Exception\GuzzleException;
 use Gwinn\Boxberry\Exceptions\ApiException;
-use Gwinn\Boxberry\Model\Calculate\DeliveryCosts;
-use Gwinn\Boxberry\Model\Request\DeliveryCostsRequest;
+use Gwinn\Boxberry\Model\CourierShipment\CreateIntake;
+use Gwinn\Boxberry\Model\OrderInfo\ParcelInfo;
+use Gwinn\Boxberry\Model\Request\ParcelInfoRequest;
 use JsonException;
 
 /**
- * Class DeliveryCostsTest
+ * Class CreateIntakeTest
  *
  * @package  Gwinn\Boxberry\Tests
  * @author   RetailDriver LLC <integration@retailcrm.ru>
@@ -16,7 +17,7 @@ use JsonException;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
-class DeliveryCostsTest extends TestCase
+class ParcelInfoTest extends TestCase
 {
     /**
      * @throws JsonException
@@ -26,22 +27,21 @@ class DeliveryCostsTest extends TestCase
         parent::setUp();
         $this->request = $this->serializer->deserialize(
             file_get_contents(
-                self::REQUESTS_FOLDER . 'deliveryCosts.json'
+                self::REQUESTS_FOLDER . 'parcelInfo.json'
             ),
-            DeliveryCostsRequest::class,
-            'json'
-        );
+            ParcelInfoRequest::class,
+            'json');
     }
 
     /**
      * @throws ApiException
      * @throws GuzzleException
      */
-    public function testDeliveryCosts(): void
+    public function testParcelInfo(): void
     {
-        $response = $this->client->deliveryCosts($this->request);
+        $response = $this->client->parcelInfo($this->request);
 
         static::assertResponse($response);
-        static::assertInstanceOf(DeliveryCosts::class, $response->getResponse());
+        static::assertResponseList($response,ParcelInfo::class, 'array');
     }
 }

@@ -3,7 +3,7 @@
   "method": "DeliveryCalculation",
   "BoxSizes": [
     {
-      "Width": 6.6,
+      "Width": 6,
       "Height": 6,
       "Depth": 6,
       "Weight": 3700
@@ -16,5 +16,5 @@
   "CmsName": "test",
   "Url": "https://test.ru/",
   "Version": "2.2",
-  "TargetStop": "61241"
+  "TargetStop": "1"
 }

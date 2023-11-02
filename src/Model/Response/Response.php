@@ -58,7 +58,7 @@ class Response implements ResponseInterface
      * @param string $className
      * @throws ApiException
      */
-    public function __construct(ResponseInterface $response, string $className)
+    public function __construct(ResponseInterface $response, string $className='')
     {
         $this->guzzleResponse = $response;
 
@@ -84,18 +84,22 @@ class Response implements ResponseInterface
     private function serializeResponse(string $raw, string $className ='')
     {
         try {
-            $errors = $this->serializer->deserialize($raw, Error::class,  'json');
-
-            if ($errors->error) {
+            $errors = $this->serializer->deserialize($raw, Error::class, 'json');
+            if (!empty($errors->message) && ($errors->error || $errors->err_bool)) {
                 throw new ApiException($errors->message);
             }
-            if (isset($errors->err) && $errors->err !== 'false') {
-                throw new ApiException($errors->err);
+            if (!empty($errors->err_string)) {
+                throw new ApiException($errors->err_string);
             }
         } catch (RuntimeException $exception) {
         }
-
         unset($exception);
+
+        if(empty($className)){
+            return [
+                'status'=>'success'
+            ];
+        }
 
         try {
             $response = $this->serializer->deserialize($raw, $className, 'json');

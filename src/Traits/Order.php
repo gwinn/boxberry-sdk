@@ -34,7 +34,7 @@ trait Order
     /**
      * Сервис для отзыва посылки (отмены доставки до получателя).
      *
-     * @group parcels
+     * @group orders
      *
      * @param CancelOrderRequest $request
      *
@@ -62,7 +62,7 @@ trait Order
     /**
      * Сервис для изменения данных посылки: ФИО, номер телефона получателя, e-mail получателя.
      *
-     * @group parcels
+     * @group orders
      *
      * @param ChangeOrderDetailsRequest $request
      *
@@ -90,7 +90,7 @@ trait Order
     /**
      * Сервис для изменения срока хранения посылки
      *
-     * @group parcels
+     * @group orders
      *
      * @param ChangeOrderStorageDateRequest $request
      * @return Response
@@ -117,7 +117,7 @@ trait Order
     /**
      * Сервис для изменения типа выдачи посылки.
      *
-     * @group parcels
+     * @group orders
      *
      * @param ChangeOrderIssueRequest $request
      *
@@ -149,7 +149,7 @@ trait Order
      * изменение адреса КД
      * изменение с КД на ПВЗ.
      *
-     * @group parcels
+     * @group orders
      *
      * @param ChangeOrderDeliveryTypeRequest $request
      *

@@ -20,9 +20,9 @@ class DeliveryCostsRequest
     /**
      * вес посылки (грамм)
      *
-     * @var string $weight
+     * @var integer $weight
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("weight")
      *
      */

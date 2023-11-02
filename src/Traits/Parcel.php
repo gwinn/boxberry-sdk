@@ -7,11 +7,13 @@ use Gwinn\Boxberry\Exceptions\ApiException;
 use Gwinn\Boxberry\Model\CreateOrder\ParcelCreate;
 use Gwinn\Boxberry\Model\CreateOrder\ParcelSend;
 use Gwinn\Boxberry\Model\OrderInfo\ParcelCheck;
+use Gwinn\Boxberry\Model\OrderInfo\ParcelInfo;
 use Gwinn\Boxberry\Model\OrderInfo\ParcelList;
 use Gwinn\Boxberry\Model\OrderInfo\ParcelSendStory;
 use Gwinn\Boxberry\Model\OrderInfo\ParcelStory;
 use Gwinn\Boxberry\Model\ParselDel;
 use Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
+use Gwinn\Boxberry\Model\Request\ParcelInfoRequest;
 use Gwinn\Boxberry\Model\Response\Response;
 
 /**
@@ -41,7 +43,7 @@ trait Parcel
             'form_params' => [
                 'token' => $this->token,
                 'method' => 'ParselCreate',
-                'sdata' => $this->serializer->serialize($request, 'json')
+                'sdata' => $this->serializer->toArray($request)
             ]
          ];
 
@@ -222,6 +224,35 @@ trait Parcel
                 $queryParam
             ),
             sprintf('array<%s>', ParcelCheck::class)
+        ));
+    }
+
+    /**
+     * Позволяет получить ссылку на файл печати этикеток, список штрих-кодов коробок в посылке через запятую (,),
+     * список штрих-кодов выгруженных коробок в посылке через запятую (,).
+     *
+     * @group parcels
+     *
+     * @param ParcelInfoRequest $request
+     *
+     * @return Response
+     * @throws GuzzleException|ApiException
+     */
+    public function parcelInfo(ParcelInfoRequest $request): Response
+    {
+        $options = [
+            'form_params' => array_merge([
+                'token' => $this->token,
+                'method' => ucfirst(__FUNCTION__)
+            ], $this->serializer->toArray($request))
+        ];
+
+        return (new Response(
+            $this->client->post(
+                self::API_URL,
+                $options
+            ),
+            sprintf('array<%s>', ParcelInfo::class)
         ));
     }
 }

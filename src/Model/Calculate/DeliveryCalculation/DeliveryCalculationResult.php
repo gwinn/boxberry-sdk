@@ -1,8 +1,7 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Calculate;
+namespace Gwinn\Boxberry\Model\Calculate\DeliveryCalculation;
 
-use Gwinn\Boxberry\Model\Calculate\DeliveryCalculation\DeliveryCalculationResult;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -16,16 +15,16 @@ use JMS\Serializer\Annotation as JMS;
  * @see      https://help.retailcrm.ru
  *
  */
-class DeliveryCalculation
+class DeliveryCalculationResult
 {
     /**
      * Массив вариантов расчетов для разных типов доставки
      *
-     * @var DeliveryCalculationResult $result
+     * @var array $deliveryCosts
      *
-     * @JMS\Type("Gwinn\Boxberry\Model\Calculate\DeliveryCalculation\DeliveryCalculationResult")
-     * @JMS\SerializedName("result")
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Calculate\DeliveryCalculation\DeliveryCosts>")
+     * @JMS\SerializedName("DeliveryCosts")
      *
      */
-    public $result;
+    public $deliveryCosts = [];
 }

@@ -86,9 +86,9 @@ class ListPoints
     /**
      * Срок доставки в днях (по умолчанию срок доставки от Москвы)
      *
-     * @var string $deliveryPeriod
+     * @var integer $deliveryPeriod
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("DeliveryPeriod")
      *
      */
@@ -277,9 +277,9 @@ class ListPoints
     /**
      * Ограничение веса, кг
      *
-     * @var string $loadLimit
+     * @var integer $loadLimit
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("LoadLimit")
      *
      */

@@ -95,6 +95,17 @@ class ListCities
     public $reception;
 
     /**
+     * Наличие курьерской доставки в населенном пункте (0/1)
+     *
+     * @var integer $courierDelivery
+     *
+     * @JMS\Type("integer")
+     * @JMS\SerializedName("CourierDelivery")
+     *
+     */
+    public $courierDelivery;
+
+    /**
      * Прием международных возвратов (0/1)
      *
      * @var integer $foreignReceptionReturns

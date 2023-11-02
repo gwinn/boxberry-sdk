@@ -18,12 +18,20 @@ use JMS\Serializer\Annotation as JMS;
 class Error
 {
     /**
-     * @var string $err
+     * @var string $err_string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("err")
      */
-    public $err;
+    public $err_string;
+
+    /**
+     * @var boolean $err_bool
+     *
+     * @JMS\Type("boolean")
+     * @JMS\SerializedName("err")
+     */
+    public $err_bool;
 
     /**
      * @var boolean $error

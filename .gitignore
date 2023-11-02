@@ -9,3 +9,7 @@ vendor/
 composer
 phpunit.phar
 var/*
+/.docker/
+/.phpunit.result.cache
+/docker-compose.yml
+test.php

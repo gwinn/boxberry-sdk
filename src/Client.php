@@ -14,8 +14,9 @@ class Client
     use Traits\Parcel;
     use Traits\Service;
     use Traits\Order;
+    use Traits\Warehouse;
 
-    const API_URL = 'https://api.boxberry.de/json.php';
+    const API_URL = 'https://api.boxberry.ru/json.php';
     const CONFIG = [
         'http_errors' => false,
         'headers'  => [

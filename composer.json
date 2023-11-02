@@ -19,14 +19,20 @@
     ],
     "require": {
         "php": ">=7.3.0",
+        "ext-json": "*",
         "guzzlehttp/guzzle": "^7.8",
         "jms/serializer": "^3.28",
         "doctrine/annotations": "^2.0",
-        "symfony/validator": "^6.3"
+        "symfony/validator": "*"
     },
     "autoload": {
         "psr-4": {
-            "Gwinn\\Boxberry\\": "src"
+            "Gwinn\\Boxberry\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gwinn\\Boxberry\\Tests\\": "tests/"
         }
     },
     "require-dev": {

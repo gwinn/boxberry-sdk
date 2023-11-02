@@ -33,12 +33,12 @@ trait Service
      * @group services
      *
      * @param string $code Код ПВЗ
-     * @param integer $photo Если photo равно 1 - будет возвращен массив полноразмерных изображений ПВЗ в base64.
+     * @param bool $photo Если photo равно 1 - будет возвращен массив полноразмерных изображений ПВЗ в base64.
      *
      * @return Response
      * @throws GuzzleException|ApiException
      */
-    public function pointsDescription(string $code, int $photo = 0): Response
+    public function pointsDescription(string $code, bool $photo = false): Response
     {
         $queryParam = array_merge(
             $this->params,
@@ -146,7 +146,7 @@ trait Service
                     'token' => $this->token,
                     'method' => ucfirst(__FUNCTION__),
                 ],
-                $this->serializer->serialize($request, 'json')
+                $this->serializer->toArray($request)
             )
         ];
 
@@ -171,7 +171,7 @@ trait Service
                 'token' => $this->token,
                 'method' => ucfirst(__FUNCTION__)
                 ],
-                $this->serializer->serialize($request, 'json')
+                $this->serializer->toArray($request)
             )
          ];
 

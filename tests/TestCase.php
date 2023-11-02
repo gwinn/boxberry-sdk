@@ -1,15 +1,22 @@
 <?php
 
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
+namespace Gwinn\Boxberry\Tests;
+
+use GuzzleHttp;
 use Gwinn\Boxberry\Client;
-use Gwinn\Boxberry\Exceptions\ApiException;
 use Gwinn\Boxberry\Exceptions\InvalidJsonException;
-use Gwinn\Boxberry\Model\Response\Error;
 use Gwinn\Boxberry\Model\Response\Response;
 use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
+use PHPUnit\Framework\TestCase as Test;
+use Pock\Enum\RequestMethod;
+use Pock\Enum\RequestScheme;
+use Pock\Exception\JsonException;
+use Pock\PockBuilder;
+use ReflectionClass;
 
 /**
  * Class TestCase
@@ -20,82 +27,26 @@ use JMS\Serializer\SerializerBuilder;
  * @link     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
-class TestCase extends \PHPUnit\Framework\TestCase
+class TestCase extends Test
 {
+    public const REQUESTS_FOLDER = __DIR__ . DIRECTORY_SEPARATOR . 'Requests' . DIRECTORY_SEPARATOR ;
+    public $client;
+
     /* @var Serializer $serializer */
     protected $serializer;
+
+    public $request;
 
     protected function setUp(): void
     {
         parent::setUp();
 
         $this->serializer = SerializerBuilder::create()->setPropertyNamingStrategy(
-            new \JMS\Serializer\Naming\SerializedNameAnnotationStrategy(
-                new \JMS\Serializer\Naming\IdenticalPropertyNamingStrategy()
+            new SerializedNameAnnotationStrategy(
+                new IdenticalPropertyNamingStrategy()
             )
         )->build();
-    }
-
-    /**
-     * @param null $mockHandler
-     *
-     * @return Client
-     */
-    public function getApiClient($mockHandler = null): Client
-    {
-        if (empty($mockHandler)) {
-            $mockHandler = new MockHandler([]);
-        }
-
-        $client = new GuzzleHttp\Client(
-            array_merge(
-                Client::CONFIG,
-                ['handler' => HandlerStack::create($mockHandler)]
-            )
-        );
-
-        $apiClient = new Client('5448637f804cb40d491cbcbe6e511942');
-
-        try {
-            $reflection = new ReflectionClass($apiClient);
-            $property = $reflection->getProperty('client');
-            $property->setAccessible(true);
-            $property->setValue($apiClient, $client);
-        } catch (\ReflectionException $exception) {
-            static::fail(
-                sprintf(
-                    'An error occurred while testing: %s in %s on line %s',
-                    $exception->getMessage(),
-                    $exception->getFile(),
-                    $exception->getLine()
-                )
-            );
-        }
-
-        return $apiClient;
-    }
-
-    /**
-     * @param string $raw_request
-     * @param string $className
-     * @return mixed
-     */
-    private function serializeRequest(string $raw_request, string $className ='')
-    {
-        try {
-            $request = $this->serializer->deserialize($raw_request, $className, 'json');
-        } catch (RuntimeException $exception) {
-            throw new InvalidJsonException(
-                sprintf(
-                    'Error json: %s | %s (raw: %s)',
-                    $className,
-                    $exception->getMessage(),
-                    $raw_request
-                )
-            );
-        }
-
-        return $request;
+        $this->client= new Client('d6f33e419c16131e5325cbd84d5d6000');
     }
 
     /**
@@ -112,9 +63,9 @@ class TestCase extends \PHPUnit\Framework\TestCase
 
     /**
      * @param Response $response
-     * @param string                        $elementClassName
-     * @param int                           $countElement
-     * @param string                        $responseType
+     * @param string   $elementClassName
+     * @param int      $countElement
+     * @param string   $responseType
      */
     public static function assertResponseList(
         Response $response,
@@ -135,8 +86,28 @@ class TestCase extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * @throws JsonException
+     */
+    public function getMock($requestedMethod, $response): void
+    {
+        $builder = new PockBuilder();
+        $builder->matchMethod($requestedMethod)
+            ->matchScheme(RequestScheme::HTTPS)
+            ->matchHost(Client::API_URL)
+            ->matchHeaders([
+                'Content-Type' => 'application/json'
+            ])
+            ->reply(200)
+            ->withHeader('Content-Type', 'application/json')
+            ->withJson($response);
+
+        $client = new Client($builder->getClient());
+        $client->setCredentials('username', 'password');
+    }
+
+    /**
      * @param Response $response
-     * @param                               $className
+     * @param $className
      * @param array $equalsFields
      */
     public static function assertResponseGet(Response $response, $className, array $equalsFields = []): void

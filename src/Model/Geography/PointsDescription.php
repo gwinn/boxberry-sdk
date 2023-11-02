@@ -379,9 +379,9 @@ class PointsDescription
     /**
      * Тип примерки: 1 - частичная, 2 - полная
      *
-     * @var boolean $fittingType
+     * @var integer $fittingType
      *
-     * @JMS\Type("boolean")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("fittingType")
      *
      */
