@@ -15,6 +15,7 @@ use Gwinn\Boxberry\Model\Geography\PointsForParcels;
 use Gwinn\Boxberry\Model\Response\Response;
 use Gwinn\Boxberry\Model\Tracking\ListStatuses;
 use Gwinn\Boxberry\Model\Tracking\ListStatusesFull;
+use Psr\Http\Client\ClientExceptionInterface;
 
 /**
  * Class Lists
@@ -36,6 +37,7 @@ trait Lists
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function listCities(string $countryCode = ''): Response
     {
@@ -51,10 +53,7 @@ trait Lists
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', ListCities::class)
         ));
     }
@@ -67,6 +66,7 @@ trait Lists
      * @param string $countryCode
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function listCitiesFull(string $countryCode = ''): Response
     {
@@ -82,10 +82,7 @@ trait Lists
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', ListCitiesFull::class)
         ));
     }
@@ -102,6 +99,7 @@ trait Lists
      * @param bool $isIncludePostamat
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function listPoints(
         string $countryCode = '',
@@ -128,10 +126,7 @@ trait Lists
         );
 
         return new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', ListPoints::class)
         );
     }
@@ -147,6 +142,7 @@ trait Lists
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function listPointsShort(
         string $countryCode = '',
@@ -169,10 +165,7 @@ trait Lists
         );
 
         return new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', ListPointsShort::class)
         );
     }
@@ -186,6 +179,7 @@ trait Lists
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function listServices(string $imId = ''): Response
     {
@@ -201,10 +195,7 @@ trait Lists
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', ListServices::class)
         ));
     }
@@ -218,6 +209,7 @@ trait Lists
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function listStatuses(string $imId = ''): Response
     {
@@ -233,10 +225,7 @@ trait Lists
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', ListStatuses::class)
         ));
     }
@@ -250,6 +239,7 @@ trait Lists
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function listStatusesFull(string $imId = ''): Response
     {
@@ -265,10 +255,7 @@ trait Lists
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             ListStatusesFull::class
         ));
     }
@@ -280,6 +267,7 @@ trait Lists
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function listZips(): Response
     {
@@ -294,10 +282,7 @@ trait Lists
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', ListZips::class)
         ));
     }
@@ -309,6 +294,7 @@ trait Lists
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function courierListCities(): Response
     {
@@ -323,10 +309,7 @@ trait Lists
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', CourierListCities::class)
         ));
     }
@@ -338,6 +321,7 @@ trait Lists
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function pointsForParcels(): Response
     {
@@ -352,10 +336,7 @@ trait Lists
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', PointsForParcels::class)
         ));
     }

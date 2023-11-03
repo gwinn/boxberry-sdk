@@ -12,4 +12,3 @@ var/*
 /.docker/
 /.phpunit.result.cache
 /docker-compose.yml
-test.php

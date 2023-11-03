@@ -24,8 +24,6 @@ class ListCitiesFull extends ListCities
      *
      * @JMS\Type("integer")
      * @JMS\SerializedName("PickupPoint")
-     *
-     * @Annotations\FakeMockField(faker="numberBetween", arguments={0, 1})
      */
     public $pickupPoint;
 
@@ -36,8 +34,6 @@ class ListCitiesFull extends ListCities
      *
      * @JMS\Type("integer")
      * @JMS\SerializedName("CourierDelivery")
-     *
-     * @Annotations\FakeMockField(faker="numberBetween", arguments={0, 1})
      */
     public $courierDelivery;
 }

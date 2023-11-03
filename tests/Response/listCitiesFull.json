@@ -1,0 +1,20 @@
+[
+  {
+    "Code": "00932",
+    "Name": "Майский",
+    "ReceptionLaP": "0",
+    "DeliveryLaP": "1",
+    "Reception": "0",
+    "PickupPoint": "0",
+    "CourierDelivery": "0",
+    "ForeignReceptionReturns": "0",
+    "Terminal": "0",
+    "Kladr": "0700400100000",
+    "Region": "Кабардино-Балкарская",
+    "CountryCode": "643",
+    "UniqName": "Майский (Кабардино-Балкарская Респ Майский р-н)",
+    "District": "Майский",
+    "Prefix": "г",
+    "CourierReception": "0"
+  }
+]

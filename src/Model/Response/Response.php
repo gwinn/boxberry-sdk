@@ -96,9 +96,7 @@ class Response implements ResponseInterface
         unset($exception);
 
         if(empty($className)){
-            return [
-                'status'=>'success'
-            ];
+            return new SuccessResponse();
         }
 
         try {

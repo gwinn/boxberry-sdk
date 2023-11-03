@@ -16,13 +16,79 @@ namespace Gwinn\Boxberry\Model\Warehouse;
 class WarehouseInfo
 {
     /**
-     * Массив складов
+     * Уникальный код склада
      *
-     * @var array $warehouses
+     * @var string $code
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Warehouse\Warehouses\Warehouses>")
-     * @JMS\SerializedName("warehouses")
+     * @JMS\Type("string")
+     * @JMS\SerializedName("code")
      *
      */
-    public $warehouses;
+    public $code;
+
+    /**
+     * Наименование склада
+     *
+     * @var string $name
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("name")
+     *
+     */
+    public $name;
+
+    /**
+     * Почтовый индекс
+     *
+     * @var string $zip
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("zip")
+     *
+     */
+    public $zip;
+
+    /**
+     * Адрес склада
+     *
+     * @var string $address
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("address")
+     *
+     */
+    public $address;
+
+    /**
+     * Контактное лицо
+     *
+     * @var string $contactPerson
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("contactPerson")
+     *
+     */
+    public $contactPerson;
+
+    /**
+     * Контактный телефон
+     *
+     * @var string $contactPhone
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("contactPhone")
+     *
+     */
+    public $contactPhone;
+
+    /**
+     * Код пункта приема Боксберри
+     *
+     * @var string $receptionPointCode
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("receptionPointCode")
+     *
+     */
+    public $receptionPointCode;
 }

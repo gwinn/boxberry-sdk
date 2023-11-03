@@ -1,0 +1,21 @@
+{
+  "error": false,
+  "result": {
+    "DeliveryCosts": [
+      {
+        "PriceService": 166.5,
+        "TotalPrice": 481.5,
+        "PriceBase": 315,
+        "DeliveryTypeId": 1,
+        "DeliveryPeriod": 3
+      },
+      {
+        "PriceService": 366.5,
+        "TotalPrice": 681.5,
+        "PriceBase": 315,
+        "DeliveryTypeId": 2,
+        "DeliveryPeriod": 4
+      }
+    ]
+  }
+}

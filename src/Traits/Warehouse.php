@@ -16,6 +16,8 @@ use Gwinn\Boxberry\Model\Request\DeliveryCalculationRequest;
 use Gwinn\Boxberry\Model\Request\DeliveryCostsRequest;
 use Gwinn\Boxberry\Model\Request\WarehouseRequest;
 use Gwinn\Boxberry\Model\Response\Response;
+use Gwinn\Boxberry\Model\Warehouse\WarehouseInfo;
+use Psr\Http\Client\ClientExceptionInterface;
 
 /**
  * Class Service
@@ -37,6 +39,7 @@ trait Warehouse
      * @return Response
      * @throws ApiException
      * @throws GuzzleException
+     * @throws ClientExceptionInterface
      */
     public function warehouseCreate(WarehouseRequest $request): Response
     {
@@ -54,10 +57,7 @@ trait Warehouse
         );
 
         return new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            )
+            $this->get($queryParam)
         );
     }
 
@@ -70,6 +70,7 @@ trait Warehouse
      * @return Response
      * @throws ApiException
      * @throws GuzzleException
+     * @throws ClientExceptionInterface
      */
     public function warehouseUpdate(WarehouseRequest $request): Response
     {
@@ -87,10 +88,7 @@ trait Warehouse
         );
 
         return new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            )
+            $this->get($queryParam)
         );
     }
 
@@ -103,6 +101,7 @@ trait Warehouse
      * @return Response
      * @throws ApiException
      * @throws GuzzleException
+     * @throws ClientExceptionInterface
      */
     public function warehouseDelete(string $code): Response
     {
@@ -118,10 +117,7 @@ trait Warehouse
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            )
+            $this->get($queryParam)
         ));
     }
 
@@ -134,6 +130,7 @@ trait Warehouse
      * @return Response
      * @throws ApiException
      * @throws GuzzleException
+     * @throws ClientExceptionInterface
      */
     public function warehouseInfo(string $code=''): Response
     {
@@ -151,10 +148,8 @@ trait Warehouse
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            )
+            $this->get($queryParam),
+            sprintf('array<%s>', WarehouseInfo::class)
         ));
     }
 }

@@ -15,6 +15,7 @@ use Gwinn\Boxberry\Model\ParselDel;
 use Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
 use Gwinn\Boxberry\Model\Request\ParcelInfoRequest;
 use Gwinn\Boxberry\Model\Response\Response;
+use Psr\Http\Client\ClientExceptionInterface;
 
 /**
  * Class Parcel
@@ -36,18 +37,19 @@ trait Parcel
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function parcelCreate(ParcelCreateRequest $request): Response
     {
         $options = [
-            'form_params' => [
+            'json' => [
                 'token' => $this->token,
                 'method' => 'ParselCreate',
                 'sdata' => $this->serializer->toArray($request)
             ]
          ];
 
-        return new Response($this->client->post(self::API_URL, $options), ParcelCreate::class);
+        return new Response($this->post($options), ParcelCreate::class);
     }
 
     /**
@@ -61,6 +63,7 @@ trait Parcel
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function parcelSendStory(string $from = '', string $to = ''): Response
     {
@@ -81,10 +84,7 @@ trait Parcel
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', ParcelSendStory::class)
         ));
     }
@@ -99,6 +99,7 @@ trait Parcel
      * @param string $shippingDate
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function parcelSend(string $imIds, string $shippingDate=''): Response
     {
@@ -117,11 +118,8 @@ trait Parcel
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
-            sprintf('array<%s>', ParcelSend::class)
+            $this->get($queryParam),
+            ParcelSend::class
         ));
     }
 
@@ -136,6 +134,7 @@ trait Parcel
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function parcelStory(string $from = '', string $to = ''): Response
     {
@@ -156,10 +155,7 @@ trait Parcel
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', ParcelStory::class)
         ));
     }
@@ -172,6 +168,7 @@ trait Parcel
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function parcelList(): Response
     {
@@ -186,11 +183,8 @@ trait Parcel
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
-            sprintf('array<%s>', ParcelList::class)
+            $this->get($queryParam),
+            ParcelList::class
         ));
     }
 
@@ -204,6 +198,7 @@ trait Parcel
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function parcelCheck(string $imId): Response
     {
@@ -219,11 +214,8 @@ trait Parcel
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
-            sprintf('array<%s>', ParcelCheck::class)
+            $this->get($queryParam),
+            ParcelCheck::class
         ));
     }
 
@@ -237,21 +229,19 @@ trait Parcel
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function parcelInfo(ParcelInfoRequest $request): Response
     {
         $options = [
-            'form_params' => array_merge([
+            'json' => array_merge([
                 'token' => $this->token,
                 'method' => ucfirst(__FUNCTION__)
             ], $this->serializer->toArray($request))
         ];
 
         return (new Response(
-            $this->client->post(
-                self::API_URL,
-                $options
-            ),
+            $this->post($options),
             sprintf('array<%s>', ParcelInfo::class)
         ));
     }

@@ -15,6 +15,7 @@ use Gwinn\Boxberry\Model\Request\CreateIntakeRequest;
 use Gwinn\Boxberry\Model\Request\DeliveryCalculationRequest;
 use Gwinn\Boxberry\Model\Request\DeliveryCostsRequest;
 use Gwinn\Boxberry\Model\Response\Response;
+use Psr\Http\Client\ClientExceptionInterface;
 
 /**
  * Class Service
@@ -37,6 +38,7 @@ trait Service
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function pointsDescription(string $code, bool $photo = false): Response
     {
@@ -57,10 +59,7 @@ trait Service
         );
 
         return new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             PointsDescription::class
         );
     }
@@ -74,6 +73,7 @@ trait Service
      * @param string $countryCode
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function zipCheck(string $zip, string $countryCode = ''): Response
     {
@@ -90,10 +90,7 @@ trait Service
         );
 
         return new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', ZipCheck::class)
         );
     }
@@ -108,6 +105,7 @@ trait Service
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function deliveryCosts(DeliveryCostsRequest $request): Response
     {
@@ -124,7 +122,7 @@ trait Service
             ]
         );
 
-        return new Response($this->client->get(self::API_URL,$queryParam),DeliveryCosts::class);
+        return new Response($this->get($queryParam),DeliveryCosts::class);
     }
 
     /**
@@ -137,11 +135,12 @@ trait Service
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function deliveryCalculation(DeliveryCalculationRequest $request): Response
     {
         $options = [
-            'form_params' => array_merge(
+            'json' => array_merge(
                 [
                     'token' => $this->token,
                     'method' => ucfirst(__FUNCTION__),
@@ -150,7 +149,7 @@ trait Service
             )
         ];
 
-        return new Response($this->client->post(self::API_URL,$options),DeliveryCalculation::class);
+        return new Response($this->post($options),DeliveryCalculation::class);
     }
 
     /**
@@ -162,11 +161,12 @@ trait Service
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function createIntake(CreateIntakeRequest $request): Response
     {
         $options = [
-            'form_params' => array_merge(
+            'json' => array_merge(
                 [
                 'token' => $this->token,
                 'method' => ucfirst(__FUNCTION__)
@@ -175,7 +175,7 @@ trait Service
             )
          ];
 
-        return new Response($this->client->post(self::API_URL, $options), CreateIntake::class);
+        return new Response($this->post($options), CreateIntake::class);
     }
 
     /**
@@ -188,6 +188,7 @@ trait Service
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function ordersBalance(int $onlyPostpaid = 0): Response
     {
@@ -203,10 +204,7 @@ trait Service
         );
 
         return (new Response(
-            $this->client->get(
-                self::API_URL,
-                $queryParam
-            ),
+            $this->get($queryParam),
             sprintf('array<%s>', OrdersBalance::class)
         ));
     }

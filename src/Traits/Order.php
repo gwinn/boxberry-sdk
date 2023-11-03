@@ -19,6 +19,7 @@ use Gwinn\Boxberry\Model\Request\ChangeOrderStorageDateRequest;
 use Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
 use Gwinn\Boxberry\Model\Response\Response;
 use Gwinn\Boxberry\Model\UpdateOrder\UpdateOrder;
+use Psr\Http\Client\ClientExceptionInterface;
 
 /**
  * Class Parcel
@@ -40,6 +41,7 @@ trait Order
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function cancelOrder(CancelOrderRequest $request): Response
     {
@@ -56,7 +58,7 @@ trait Order
             ]
         );
 
-        return new Response($this->client->get(self::API_URL, $queryParam));
+        return new Response($this->get($queryParam));
     }
 
     /**
@@ -68,6 +70,7 @@ trait Order
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function changeOrderDetails(ChangeOrderDetailsRequest $request): Response
     {
@@ -84,7 +87,7 @@ trait Order
             ]
         );
 
-        return new Response($this->client->get(self::API_URL, $queryParam));
+        return new Response($this->get($queryParam));
     }
 
     /**
@@ -95,6 +98,7 @@ trait Order
      * @param ChangeOrderStorageDateRequest $request
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function changeOrderStorageDate(ChangeOrderStorageDateRequest $request): Response
     {
@@ -111,7 +115,7 @@ trait Order
             ]
         );
 
-        return new Response($this->client->get(self::API_URL, $queryParam));
+        return new Response($this->get($queryParam));
     }
 
     /**
@@ -123,6 +127,7 @@ trait Order
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function changeOrderIssue(ChangeOrderIssueRequest $request): Response
     {
@@ -139,7 +144,7 @@ trait Order
             ]
         );
 
-        return new Response($this->client->get(self::API_URL, $queryParam));
+        return new Response($this->get($queryParam));
     }
 
     /**
@@ -155,6 +160,7 @@ trait Order
      *
      * @return Response
      * @throws GuzzleException|ApiException
+     * @throws ClientExceptionInterface
      */
     public function changeOrderDeliveryType(ChangeOrderDeliveryTypeRequest $request): Response
     {
@@ -171,6 +177,6 @@ trait Order
             ]
         );
 
-        return new Response($this->client->get(self::API_URL, $queryParam));
+        return new Response($this->get($queryParam));
     }
 }

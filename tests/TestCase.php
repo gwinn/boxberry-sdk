@@ -30,12 +30,14 @@ use ReflectionClass;
 class TestCase extends Test
 {
     public const REQUESTS_FOLDER = __DIR__ . DIRECTORY_SEPARATOR . 'Requests' . DIRECTORY_SEPARATOR ;
+    public const RESPONSE_FOLDER = __DIR__ . DIRECTORY_SEPARATOR . 'Response' . DIRECTORY_SEPARATOR ;
+    public const ERROR_RESPONSE_FOLDER = __DIR__ . DIRECTORY_SEPARATOR . 'ErrorResponse' . DIRECTORY_SEPARATOR ;
+    public const TEST_API_TOKEN='d6f33e419c16131e5325cbd84d5d6000';
+    public const TEST_API_HOST='api.boxberry.ru';
     public $client;
 
     /* @var Serializer $serializer */
     protected $serializer;
-
-    public $request;
 
     protected function setUp(): void
     {
@@ -46,7 +48,23 @@ class TestCase extends Test
                 new IdenticalPropertyNamingStrategy()
             )
         )->build();
-        $this->client= new Client('d6f33e419c16131e5325cbd84d5d6000');
+    }
+
+    /**
+     * @throws JsonException
+     */
+    public function getMock($mockData): Client
+    {
+        $builder = new PockBuilder();
+        $builder->matchMethod($mockData['requestedMethod'])
+            ->matchScheme(RequestScheme::HTTPS)
+            ->matchHost(self::TEST_API_HOST)
+            ->matchHeaders(Client::HEADERS)
+            ->reply($mockData['responseCode'])
+            ->withHeader('Content-Type', 'application/json')
+            ->withJson($mockData['response']);
+
+        return new Client(self::TEST_API_TOKEN, $builder->getClient());
     }
 
     /**
@@ -70,12 +88,10 @@ class TestCase extends Test
     public static function assertResponseList(
         Response $response,
         string $elementClassName,
-        string $responseType,
-        int $countElement = 1
+        string $responseType
     ): void {
         if ('array' === $responseType) {
             static::assertIsArray($response->getResponse());
-            static::assertCount($countElement, $response->getResponse());
 
             foreach ($response->getResponse() as $element) {
                 static::assertInstanceOf($elementClassName, $element);
@@ -83,26 +99,6 @@ class TestCase extends Test
         } else {
             static::assertInstanceOf($responseType, $response->getResponse());
         }
-    }
-
-    /**
-     * @throws JsonException
-     */
-    public function getMock($requestedMethod, $response): void
-    {
-        $builder = new PockBuilder();
-        $builder->matchMethod($requestedMethod)
-            ->matchScheme(RequestScheme::HTTPS)
-            ->matchHost(Client::API_URL)
-            ->matchHeaders([
-                'Content-Type' => 'application/json'
-            ])
-            ->reply(200)
-            ->withHeader('Content-Type', 'application/json')
-            ->withJson($response);
-
-        $client = new Client($builder->getClient());
-        $client->setCredentials('username', 'password');
     }
 
     /**
