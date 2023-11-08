@@ -75,7 +75,11 @@ class ResponseBuilder
         $this->errorProcessing();
 
         try {
-            $response = $this->serializer->deserialize($this->rawResponse, sprintf('array<%s>', $elementClassName), 'json');
+            $response = $this->serializer->deserialize(
+                $this->rawResponse,
+                sprintf('array<%s>', $elementClassName),
+                'json'
+            );
         } catch (RuntimeException $exception) {
             throw new InvalidJsonException(
                 sprintf(

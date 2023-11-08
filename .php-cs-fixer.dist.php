@@ -9,14 +9,12 @@ $finder = (new PhpCsFixer\Finder())
 return (new PhpCsFixer\Config())
     ->setRules([
         '@PSR12' => true,
-        // exceptions
-        'single_line_throw' => false,
+        'global_namespace_import' => [],
         // php file
         'concat_space' => ['spacing' => 'one'],
 
         // namespace and imports
         'ordered_imports' => true,
-        'global_namespace_import' => [],
 
         // standard functions and operators
         'native_constant_invocation' => false,

@@ -40,7 +40,8 @@ class ListPointsRequest
     /**
      * Возможности оплаты на ПВЗ при выдаче:.
      *
-     * 0 - только отделения с возможностью оплатить посылку при получении наличными денежными средствами (OnlyPrepaidOrders=No).
+     * 0 - только отделения с возможностью оплатить посылку при получении
+     * наличными денежными средствами (OnlyPrepaidOrders=No).
      * 1 - все отделения (OnlyPrepaidOrders=Yes):
      *
      * с возможностью оплаты при получении;
@@ -52,7 +53,7 @@ class ListPointsRequest
      * @JMS\Type("boolean")
      * @JMS\SerializedName("prepaid")
      */
-    public $prepaId = false;
+    public $prepaid = false;
 
     /**
      * Фильтр на получение списка с\без постaматов.

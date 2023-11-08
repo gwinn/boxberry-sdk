@@ -55,21 +55,35 @@ composer require gwinn/boxberry-sdk
 ### Примеры использования
 
 ```php
-$yourHttpClient = new HttpClient();
-$boxberryClient = new \Boxberry\Client(TEST_API_TOKEN, $client);
+$yourHttpClient = new \GuzzleHttp\Client();
+$boxberryClient = new \Boxberry\Client(TEST_API_TOKEN, $yourHttpClient);
 
+$listCitiesRequest = new \Gwinn\Boxberry\Model\Request\Geography\ListCitiesRequest();
+$listCitiesRequest->countryCode = '643';
 try{
-    // создание заказа
-    $order = $boxberryClient->parcelCreate($parcelCreateRequest);
-    
-    // отправка
-    $res = $boxberryClient->parcelSend($parcelSendRequest);
+    // получение городов
+    $response = $boxberryClient->listCities($listCitiesRequest);
 }catch (ApiException $exception){
     echo $exception->getMessage();
     exit(-1);
 }
 ```
+```php
+$yourHttpClient = new \GuzzleHttp\Client();
+$boxberryClient = new \Boxberry\Client(TEST_API_TOKEN, $yourHttpClient);
 
+$parcel = new \Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel();
+$parcel->orderId = '123';
+$parcelInfoRequest = new \Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest();
+$parcelInfoRequest->parcels = [$parcel];
+try{
+    // получение информации о посылке
+    $response = $boxberryClient->parcelInfo($parcelInfoRequest);
+}catch (ApiException $exception){
+    echo $exception->getMessage();
+    exit(-1);
+}
+```
 
 ### Тесты
 Запуск тестов:

@@ -3,7 +3,6 @@
 namespace Gwinn\Boxberry\Model\Response\Calculate;
 
 use Gwinn\Boxberry\Model\Response\Calculate\DeliveryCalculation\DeliveryCalculationResult;
-
 use JMS\Serializer\Annotation as JMS;
 
 /**

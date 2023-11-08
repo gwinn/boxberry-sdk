@@ -212,7 +212,10 @@ trait Lists
 
         /** @var CourierListCitiesResponse $response*/
         $response = (new ResponseBuilder($this->get($queryParam)))
-            ->serializeArrayResponse(CourierListCitiesResponse::class, CourierListCities::class)
+            ->serializeArrayResponse(
+                CourierListCitiesResponse::class,
+                CourierListCities::class
+            )
         ;
         return $response;
     }
@@ -231,7 +234,10 @@ trait Lists
 
         /** @var PointsForParcelsResponse $response*/
         $response = (new ResponseBuilder($this->get($queryParam)))
-            ->serializeArrayResponse(PointsForParcelsResponse::class, PointsForParcels::class)
+            ->serializeArrayResponse(
+                PointsForParcelsResponse::class,
+                PointsForParcels::class
+            )
         ;
         return $response;
     }

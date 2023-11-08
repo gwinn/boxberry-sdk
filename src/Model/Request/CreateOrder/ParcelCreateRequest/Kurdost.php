@@ -75,7 +75,7 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("timesfrom1")
      */
-    public $timesfrom1;
+    public $timesFrom1;
 
     /**
      * Время курьерской доставки ДО (формат чч:мм)
@@ -89,7 +89,7 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("timesto1")
      */
-    public $timesto1;
+    public $timesTo1;
 
     /**
      * Альтернативное время, от
@@ -99,7 +99,7 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("timesfrom2")
      */
-    public $timesfrom2;
+    public $timesFrom2;
 
     /**
      * Альтернативное время, до.
@@ -109,7 +109,7 @@ class Kurdost
      * @JMS\Type("string")
      * @JMS\SerializedName("timesto2")
      */
-    public $timesto2;
+    public $timesTo2;
 
     /**
      * Время доставки текстовый формат(не используется).

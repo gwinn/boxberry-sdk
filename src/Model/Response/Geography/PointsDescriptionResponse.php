@@ -3,7 +3,8 @@
 namespace Gwinn\Boxberry\Model\Response\Geography;
 
 use Gwinn\Boxberry\Model\Response\Geography\PointsDescription\Photos;
-
+use Gwinn\Boxberry\Model\Response\Geography\PointsDescription\Terminal;
+use Gwinn\Boxberry\Model\Response\Geography\PointsDescription\WorkShedule;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -19,8 +20,8 @@ use JMS\Serializer\Annotation as JMS;
  */
 class PointsDescriptionResponse
 {
-    use \Gwinn\Boxberry\Model\Response\Geography\PointsDescription\WorkShedule;
-    use \Gwinn\Boxberry\Model\Response\Geography\PointsDescription\Terminal;
+    use WorkShedule;
+    use Terminal;
 
     /**
      * Наименование пункта выдачи.

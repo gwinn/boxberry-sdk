@@ -31,6 +31,9 @@ class ResponseFixEventSubscriber implements EventSubscriberInterface
         if (isset($data['pickup_point']) && empty($data['pickup_point'])) {
             $data['pickup_point'] = null;
         }
+        if (isset($data['courier_delivery']) && empty($data['courier_delivery'])) {
+            $data['courier_delivery'] = null;
+        }
         $event->setData($data);
     }
 }
