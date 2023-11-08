@@ -2,62 +2,27 @@
 
 namespace Gwinn\Boxberry\Model\Response\AccrualOfServices;
 
+use Gwinn\Boxberry\Model\Response\AccrualOfServices\ListServices\ListServices;
+use Gwinn\Boxberry\Model\Response\ArrayResponse;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ListServices
+ * Class ListServicesResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\AccrualOfServices
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class ListServices
+class ListServicesResponse extends ArrayResponse
 {
     /**
-     * Дата начисления в формате "ГГГГ-ММ-ДДTЧЧ:ММ:СС"
+     * @var ListServices[]
      *
-     * @var string $date
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Date")
-     *
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\AccrualOfServices\ListServices\ListServices>")
      */
-    public $date;
-
-    /**
-     * Название услуги
-     *
-     * @var string $name
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Name")
-     *
-     */
-    public $name;
-
-    /**
-     * Сумма начисленная за оказание услуги, руб
-     *
-     * @var string $sum
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Sum")
-     *
-     */
-    public $sum;
-
-    /**
-     * Способ оплаты. Возможные значения: "Касса", "Банк", "Эквайринг"
-     *
-     * @var integer $paymentMethod
-     *
-     * @JMS\Type("integer")
-     * @JMS\SerializedName("PaymentMethod")
-     *
-     */
-    public $paymentMethod;
+    public $result;
 }

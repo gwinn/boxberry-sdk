@@ -2,26 +2,108 @@
 
 namespace Gwinn\Boxberry\Builders;
 
-use GuzzleHttp\Psr7\Request;
-use http\Exception\InvalidArgumentException;
+use Gwinn\Boxberry\EventSubscribers\ResponseFixEventSubscriber;
+use Gwinn\Boxberry\Exceptions\ApiException;
+use Gwinn\Boxberry\Exceptions\InvalidJsonException;
+use Gwinn\Boxberry\Model\Response\ArrayResponse;
+use Gwinn\Boxberry\Model\Response\Error;
+use JMS\Serializer\EventDispatcher\EventDispatcher;
+use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
+use JMS\Serializer\Serializer;
+use JMS\Serializer\SerializerBuilder;
+use Psr\Http\Message\ResponseInterface;
 
 class ResponseBuilder
 {
-    public function buildPostQuery($url, $headers, $options): Request
+    /**
+     * @var Serializer
+     */
+    protected $serializer;
+
+    /**
+     * @var string
+     */
+    protected $rawResponse;
+
+    public function __construct(ResponseInterface $response)
     {
-        if (!isset($options['json'])) {
-            throw new InvalidArgumentException('no arguments for post request');
-        }
-        $body = \GuzzleHttp\Utils::jsonEncode($options['json']);
-        return new Request('POST', $url, $headers, $body);
+        $this->serializer = SerializerBuilder::create()->setPropertyNamingStrategy(
+            new SerializedNameAnnotationStrategy(
+                new IdenticalPropertyNamingStrategy()
+            )
+        )->configureListeners(
+            function (EventDispatcher $dispatcher) {
+                $dispatcher->addSubscriber(new ResponseFixEventSubscriber());
+            }
+        )->build();
+        $this->rawResponse = $response->getBody()->getContents();
     }
 
-    public function buildGetQuery($url, $headers, $options): Request
+    /**
+     * @throws ApiException
+     *
+     * @return mixed
+     */
+    public function serializeResponse(string $className)
     {
-        if (!isset($options['query'])) {
-            throw new InvalidArgumentException('no arguments for get request');
+        $this->errorProcessing();
+
+        try {
+            $response = $this->serializer->deserialize($this->rawResponse, $className, 'json');
+        } catch (RuntimeException $exception) {
+            throw new InvalidJsonException(
+                sprintf(
+                    'Error json: %s | %s (raw: %s)',
+                    $className,
+                    $exception->getMessage(),
+                    $this->rawResponse
+                ),
+                400
+            );
         }
-        $body = \http_build_query($options['query'], '', '&', \PHP_QUERY_RFC3986);
-        return new Request('GET', $url.'?'.$body, $headers);
+
+        return $response;
+    }
+
+    /**
+     * @throws ApiException
+     */
+    public function serializeArrayResponse(string $className, string $elementClassName): ArrayResponse
+    {
+        $this->errorProcessing();
+
+        try {
+            $response = $this->serializer->deserialize($this->rawResponse, sprintf('array<%s>', $elementClassName), 'json');
+        } catch (RuntimeException $exception) {
+            throw new InvalidJsonException(
+                sprintf(
+                    'Error json: %s | %s (raw: %s)',
+                    $elementClassName,
+                    $exception->getMessage(),
+                    $this->rawResponse
+                ),
+                400
+            );
+        }
+        /** @var ArrayResponse $arrayResponse*/
+        $arrayResponse = new $className($response);
+        return $arrayResponse;
+    }
+
+    /**
+     * @throws ApiException
+     */
+    public function errorProcessing(): void
+    {
+        /** @var Error $errors */
+        $errors = $this->serializer->deserialize($this->rawResponse, Error::class, 'json');
+        if (!empty($errors->message) && ($errors->error || $errors->errBool)) {
+            throw new ApiException($errors->message, 400);
+        }
+        if (!empty($errors->errString)) {
+            throw new ApiException($errors->errString, 400);
+        }
     }
 }

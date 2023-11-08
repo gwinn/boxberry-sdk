@@ -1,30 +1,32 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\Geography;
+namespace Gwinn\Boxberry\Model\Request\OrderInfo;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ListServices
+ * Class ListServices.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request\Tracking
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class OrdersBalanceRequest
 {
     /**
-     * Если равно =1, возвращает список заказов только с постоплатой
+     * Возвращается список заказов только с постоплатой.
+     * Возможные значения:
+     * 0 - возвращается список заказов с постоплатой и предоплатой
+     * 1 - возвращается список заказов только с постоплатой.
      *
-     * @var integer $onlyPostpaid
+     * @var int
      *
      * @JMS\Type("integer")
      * @JMS\SerializedName("OnlyPostpaid")
-     *
      */
     public $onlyPostpaid;
 }

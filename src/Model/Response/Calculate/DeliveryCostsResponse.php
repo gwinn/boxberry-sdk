@@ -5,37 +5,35 @@ namespace Gwinn\Boxberry\Model\Response\Calculate;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class DeliveryCostsRequest
+ * Class DeliveryCostsRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Calculate
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class DeliveryCosts
+class DeliveryCostsResponse
 {
     /**
-     * Итоговая стоимость доставки (равна price_base + price_service)
+     * Итоговая стоимость доставки (равна price_base + price_service).
      *
-     * @var string $price
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("price")
-     *
      */
     public $price;
 
     /**
-     * Стоимость базового тарифа
+     * Стоимость базового тарифа.
      *
-     * @var string $priceBase
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("price_base")
-     *
      */
     public $priceBase;
 
@@ -47,11 +45,10 @@ class DeliveryCosts
      * - примерка,
      * - курьерская доставка, если передан почтовый индекс, по которому оказывается курьерская доставка и т.д.
      *
-     * @var string $priceService
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("price_service")
-     *
      */
     public $priceService;
 
@@ -60,11 +57,10 @@ class DeliveryCosts
      * Если параметр sucrh не указан или равен нулю, то отдает значение с типом string.
      * Если параметр sucrh равен 1, то отдает значение с типом integer.
      *
-     * @var string $deliveryPeriod
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("delivery_period")
-     *
      */
     public $deliveryPeriod;
 }

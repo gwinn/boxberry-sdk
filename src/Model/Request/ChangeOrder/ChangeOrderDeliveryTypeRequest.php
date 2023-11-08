@@ -1,30 +1,30 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request;
+namespace Gwinn\Boxberry\Model\Request\ChangeOrder;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CreateIntakeRequest
+ * Class CreateIntakeRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class ChangeOrderDeliveryTypeRequest
 {
-    use ChangeOrder\ChangeOrder;
+    use ChangeOrder;
 
     /**
      * Тип доставки, возможные значения:
      * 1- доставка до ПВЗ
      * 2 - доставка курьером
      *
-     * @var string $deliveryType
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("deliveryType")
@@ -32,9 +32,9 @@ class ChangeOrderDeliveryTypeRequest
     public $deliveryType;
 
     /**
-     * Код пункта выдачи Boxberry
+     * Код пункта выдачи Boxberry.
      *
-     * @var string $pointId
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("pointId")
@@ -42,9 +42,9 @@ class ChangeOrderDeliveryTypeRequest
     public $pointId;
 
     /**
-     * Город получателя для КД
+     * Город получателя для КД.
      *
-     * @var string $city
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("city")
@@ -52,9 +52,9 @@ class ChangeOrderDeliveryTypeRequest
     public $city;
 
     /**
-     * Адрес получателя для КД
+     * Адрес получателя для КД.
      *
-     * @var string $addressp
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("addressp")
@@ -62,9 +62,9 @@ class ChangeOrderDeliveryTypeRequest
     public $addressp;
 
     /**
-     * Время доставки «с» в формате ЧЧ:ММ
+     * Время доставки «с» в формате ЧЧ:ММ.
      *
-     * @var string $timeFrom
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("timeFrom")
@@ -72,9 +72,9 @@ class ChangeOrderDeliveryTypeRequest
     public $timeFrom;
 
     /**
-     * Время доставки «по» в формате ЧЧ:ММ
+     * Время доставки «по» в формате ЧЧ:ММ.
      *
-     * @var string $timeTo
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("timeTo")
@@ -82,9 +82,9 @@ class ChangeOrderDeliveryTypeRequest
     public $timeTo;
 
     /**
-     * Дата доставки (формат YYYY-MM-DD)
+     * Дата доставки (формат YYYY-MM-DD).
      *
-     * @var string $deliveryDate
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("deliveryDate")
@@ -92,9 +92,9 @@ class ChangeOrderDeliveryTypeRequest
     public $deliveryDate;
 
     /**
-     * Комментарий по доставке
+     * Комментарий по доставке.
      *
-     * @var string $comment
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("comment")

@@ -5,60 +5,56 @@ namespace Gwinn\Boxberry\Model\Response\CreateOrder;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ParcelSend
+ * Class ParcelSendResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\CreateOrder
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class ParcelSend
+class ParcelSendResponse
 {
     /**
-     * номер акта (штрих-код)
+     * номер акта (штрих-код).
      *
-     * @var string $id
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("id")
-     *
      */
     public $id;
 
     /**
-     * ссылка на печатную форму акта
+     * ссылка на печатную форму акта.
      *
-     * @var string $label
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("label")
-     *
      */
     public $label;
 
     /**
      * Ссылка на печатную форму акта ТМЦ (если подключена услуга
-     * «Пост_Упаковка для ИМ брендированная (короб))»
+     * «Пост_Упаковка для ИМ брендированная (короб))».
      *
-     * @var string $urlTmc
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("url_tmc")
-     *
      */
     public $urlTmc;
 
     /**
-     * ссылка на печатную форму этикеток
+     * ссылка на печатную форму этикеток.
      *
-     * @var string $sticker
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("sticker")
-     *
      */
     public $sticker;
 }

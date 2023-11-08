@@ -5,28 +5,27 @@ namespace Gwinn\Boxberry\Model\Response\OrderInfo;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ParcelCheck
+ * Class ParcelCheckResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\OrderInfo
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class ParcelCheck
+class ParcelCheckResponse
 {
     /**
      * Ссылка на печать этикетки
      * (генерируется если не передан штрих-код
-     * интернет-магазина)
+     * интернет-магазина).
      *
-     * @var string $label
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("label")
-     *
      */
     public $label;
 }

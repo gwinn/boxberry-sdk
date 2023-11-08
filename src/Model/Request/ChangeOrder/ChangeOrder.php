@@ -5,37 +5,35 @@ namespace Gwinn\Boxberry\Model\Request\ChangeOrder;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CreateIntakeRequest
+ * Class CreateIntakeRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 trait ChangeOrder
 {
     /**
-     * Трек-номер посылки
+     * Трек-номер посылки.
      *
-     * @var string $track
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("track")
-     *
      */
     public $track;
 
     /**
-     * Номер заказа ИМ
+     * Номер заказа ИМ.
      *
-     * @var string $orderId
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("orderid")
-     *
      */
     public $orderId;
 }

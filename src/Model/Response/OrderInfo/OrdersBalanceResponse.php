@@ -2,73 +2,27 @@
 
 namespace Gwinn\Boxberry\Model\Response\OrderInfo;
 
+use Gwinn\Boxberry\Model\Response\ArrayResponse;
+use Gwinn\Boxberry\Model\Response\OrderInfo\OrdersBalance\OrdersBalance;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class OrdersBalance
+ * Class OrdersBalanceResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\OrderInfo
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class OrdersBalance
+class OrdersBalanceResponse extends ArrayResponse
 {
     /**
-     * Номер заказа, присвоенный интернет-магазином
+     * @var OrdersBalance[]
      *
-     * @var string $id
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("ID")
-     *
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\OrderInfo\OrdersBalance\OrdersBalance>")
      */
-    public $id;
-
-    /**
-     * Статус заказа
-     *
-     * @var string $status
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Status")
-     *
-     */
-    public $status;
-
-    /**
-     * Стоимость товаров
-     *
-     * @var string $price
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Price")
-     *
-     */
-    public $price;
-
-    /**
-     * Стоимость доставки
-     *
-     * @var string $deliverySum
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Delivery_sum")
-     *
-     */
-    public $deliverySum;
-
-    /**
-     * Сумма к оплате
-     *
-     * @var string $paymentSum
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Payment_sum")
-     *
-     */
-    public $paymentSum;
+    public $result;
 }

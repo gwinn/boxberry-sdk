@@ -2,84 +2,27 @@
 
 namespace Gwinn\Boxberry\Model\Response\Geography;
 
+use Gwinn\Boxberry\Model\Response\ArrayResponse;
+use Gwinn\Boxberry\Model\Response\Geography\ListZips\ListZips;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ListZips
+ * Class ListZipsResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Geography
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class ListZips
+class ListZipsResponse extends ArrayResponse
 {
     /**
-     * Почтовый индекс
+     * @var ListZips[]
      *
-     * @var string $zip
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Zip")
-     *
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Geography\ListZips\ListZips>")
      */
-    public $zip;
-
-    /**
-     * Наименование города
-     *
-     * @var string $city
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("City")
-     *
-     */
-    public $city;
-
-    /**
-     * Район
-     *
-     * @var string $region
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Region")
-     *
-     */
-    public $region;
-
-    /**
-     * Регион
-     *
-     * @var string $area
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Area")
-     *
-     */
-    public $area;
-
-    /**
-     * Зона курьерской доставки
-     *
-     * @var integer $zoneExpressDelivery
-     *
-     * @JMS\Type("integer")
-     * @JMS\SerializedName("ZoneExpressDelivery")
-     *
-     */
-    public $zoneExpressDelivery;
-
-    /**
-     * Удаленность почтового индекса, принимает значения от 0 до 9, где 0 - индекс не является удаленным.
-     *
-     * @var integer $remoteness
-     *
-     * @JMS\Type("integer")
-     * @JMS\SerializedName("Remoteness")
-     *
-     */
-    public $remoteness;
+    public $result;
 }

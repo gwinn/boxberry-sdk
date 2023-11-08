@@ -1,32 +1,32 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request;
+namespace Gwinn\Boxberry\Model\Request\ChangeOrder;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CreateIntakeRequest
+ * Class CreateIntakeRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class ChangeOrderIssueRequest
 {
-    use ChangeOrder\ChangeOrder;
+    use ChangeOrder;
 
     /**
      * Новый вид выдачи заказа.
      * Возможные значения:
      * 0 - без вскрытия
      * 1 - со вскрытием
-     * 2 - частичная выдача
+     * 2 - частичная выдача.
      *
-     * @var string $issue
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("issue")

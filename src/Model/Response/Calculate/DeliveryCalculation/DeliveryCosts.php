@@ -1,76 +1,71 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Calculate\DeliveryCalculation;
+namespace Gwinn\Boxberry\Model\Response\Calculate\DeliveryCalculation;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class DeliveryCostsRequest
+ * Class DeliveryCostsRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class DeliveryCosts
 {
     /**
-     * Рассчитывается как TotalPrice – PriceBase
+     * Рассчитывается как TotalPrice – PriceBase.
      *
-     * @var string $priceService
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("PriceService")
-     *
      */
     public $priceService;
 
     /**
      * Стоимость всех начисленных  услуг с учетом скидки, руб.
      *
-     * @var string $totalPrice
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("TotalPrice")
-     *
      */
     public $totalPrice;
 
     /**
      * Тип услуги доставки:
      * 1 склад-склад
-     * 2 склад-дверь
+     * 2 склад-дверь.
      *
-     * @var string $deliveryTypeId
+     * @var string
      *
      * @JMS\Type("integer")
      * @JMS\SerializedName("DeliveryTypeId")
-     *
      */
     public $deliveryTypeId;
 
     /**
-     * Срок доставки в календарных днях
+     * Срок доставки в календарных днях.
      *
-     * @var string $deliveryPeriod
+     * @var string
      *
      * @JMS\Type("integer")
      * @JMS\SerializedName("DeliveryPeriod")
-     *
      */
     public $deliveryPeriod;
 
     /**
-     * Стоимость базовой услуги
+     * Стоимость базовой услуги.
      *
-     * @var string $priceBase
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("PriceBase")
-     *
      */
     public $priceBase;
 }

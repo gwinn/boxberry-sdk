@@ -1,28 +1,28 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request;
+namespace Gwinn\Boxberry\Model\Request\ChangeOrder;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CreateIntakeRequest
+ * Class CreateIntakeRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class ChangeOrderStorageDateRequest
 {
-    use ChangeOrder\ChangeOrder;
+    use ChangeOrder;
 
     /**
-     * Новая дата хранения в формате dd.mm.yyyy
+     * Новая дата хранения в формате dd.mm.yyyy.
      *
-     * @var string $storageDate
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("storageDate")

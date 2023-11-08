@@ -1,28 +1,28 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request;
+namespace Gwinn\Boxberry\Model\Request\ChangeOrder;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CreateIntakeRequest
+ * Class CreateIntakeRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class ChangeOrderDetailsRequest
 {
-    use ChangeOrder\ChangeOrder;
+    use ChangeOrder;
 
     /**
-     * ФИО получателя
+     * ФИО получателя.
      *
-     * @var string $fio
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("fio")
@@ -30,9 +30,9 @@ class ChangeOrderDetailsRequest
     public $fio;
 
     /**
-     * Телефон получателя (10 цифр)
+     * Телефон получателя (10 цифр).
      *
-     * @var string $phone
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("phone")
@@ -40,9 +40,9 @@ class ChangeOrderDetailsRequest
     public $phone;
 
     /**
-     * e-mail получателя
+     * e-mail получателя.
      *
-     * @var string $email
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("email")

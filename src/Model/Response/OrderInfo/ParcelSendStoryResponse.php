@@ -2,51 +2,27 @@
 
 namespace Gwinn\Boxberry\Model\Response\OrderInfo;
 
+use Gwinn\Boxberry\Model\Response\ArrayResponse;
+use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelSendStory\ParcelSendStory;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ParcelSendStory
+ * Class ParcelSendStoryResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class ParcelSendStory
+class ParcelSendStoryResponse extends ArrayResponse
 {
     /**
-     * список трекинг кодов посылок в акте
+     * @var ParcelSendStory[]
      *
-     * @var string $track
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("track")
-     *
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\OrderInfo\ParcelSendStory\ParcelSendStory>")
      */
-    public $track;
-
-    /**
-     * ссылка на скачивание акта, если доступна
-     *
-     * @var string $label
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("label")
-     *
-     */
-    public $label;
-
-    /**
-     * дата создания акта в формате YYYY.MM.DD HH:MM:SS
-     *
-     * @var string $date
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("date")
-     *
-     */
-    public $date;
+    public $result;
 }

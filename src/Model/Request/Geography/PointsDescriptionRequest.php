@@ -5,59 +5,35 @@ namespace Gwinn\Boxberry\Model\Request\Geography;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ListServices
+ * Class ListServices.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request\Tracking
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class PointsDescriptionRequest
 {
     /**
-     * Код страны
+     * Код пункта выдачи в базе boxberry.
      *
-     * @var string $countryCode
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("CountryCode")
-     *
-     */
-    public $countryCode = '';
-
-    /**
-     * Код города
-     *
-     * @var string $cityCode
+     * @var string
      *
      * @JMS\Type("string")
-     * @JMS\SerializedName("CityCode")
-     *
+     * @JMS\SerializedName("code")
      */
-    public $cityCode = '';
+    public $code = '';
 
     /**
-     * Код страны
+     * Получить фото (true/false или 0/1).
      *
-     * @var boolean $prepaId
-     *
-     * @JMS\Type("boolean")
-     * @JMS\SerializedName("prepaid")
-     *
-     */
-    public $prepaId = false;
-
-    /**
-     * Код страны
-     *
-     * @var boolean $isIncludePostamat
+     * @var bool
      *
      * @JMS\Type("boolean")
-     * @JMS\SerializedName("is_include_postamat")
-     *
+     * @JMS\SerializedName("photo")
      */
-    public $isIncludePostamat = false;
+    public $photo = false;
 }

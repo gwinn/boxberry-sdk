@@ -1,85 +1,79 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\OrderInfo\ParcelInfo;
+namespace Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CourierDelivery
+ * Class CourierDelivery.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class Products
 {
     /**
-     * Артикул товара
+     * Артикул товара.
      *
-     * @var string $vendorCode
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("vendor_code")
-     *
      */
     public $vendorCode;
 
     /**
-     * Наименование товара
+     * Наименование товара.
      *
-     * @var string $name
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("name")
-     *
      */
     public $name;
 
     /**
-     * Процент НДС (число от 0 до 20)
+     * Процент НДС (число от 0 до 20).
      *
-     * @var integer $nds
+     * @var int
      *
      * @JMS\Type("integer")
      * @JMS\SerializedName("nds")
-     *
      */
     public $nds;
 
     /**
-     * Цена за единицу товара
+     * Цена за единицу товара.
      *
-     * @var string $price
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("price")
-     *
      */
     public $price;
 
     /**
-     * Количество единиц товара
+     * Количество единиц товара.
      *
-     * @var integer $quantity
+     * @var int
      *
      * @JMS\Type("integer")
      * @JMS\SerializedName("quantity")
-     *
      */
     public $quantity;
 
     /**
-     * Маркировка товара
+     * Маркировка товара.
      *
-     * @var string $markingCrpt
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("marking_crpt")
-     *
      */
     public $markingCrpt;
 }

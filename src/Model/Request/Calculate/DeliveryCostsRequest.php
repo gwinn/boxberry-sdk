@@ -1,129 +1,119 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request;
+namespace Gwinn\Boxberry\Model\Request\Calculate;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class DeliveryCostsRequest
+ * Class DeliveryCostsRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class DeliveryCostsRequest
 {
     /**
-     * вес посылки (грамм)
+     * вес посылки (грамм).
      *
-     * @var integer $weight
+     * @var int
      *
      * @JMS\Type("integer")
      * @JMS\SerializedName("weight")
-     *
      */
     public $weight;
 
     /**
-     * Код пункта приема заказа (если не указан, то используется код п/п из настроек ЛК ИМ)
+     * Код пункта приема заказа (если не указан, то используется код п/п из настроек ЛК ИМ).
      *
-     * @var string $targetStart
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("targetstart")
-     *
      */
     public $targetStart;
 
     /**
-     * Код ПВЗ (для расчета доставки до отделения)
+     * Код ПВЗ (для расчета доставки до отделения).
      *
-     * @var string $target
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("target")
-     *
      */
     public $target;
 
     /**
-     * Объявленная стоимость посылки (страховая стоимость)
+     * Объявленная стоимость посылки (страховая стоимость).
      *
-     * @var string $orderSum
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("ordersum")
-     *
      */
     public $orderSum;
 
     /**
-     * Заявленная стоимость доставки (на расчет не влияет)
+     * Заявленная стоимость доставки (на расчет не влияет).
      *
-     * @var string $deliverySum
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("deliverysum")
-     *
      */
     public $deliverySum;
 
     /**
-     * сумма к оплате с получателя
+     * сумма к оплате с получателя.
      *
-     * @var string $paySum
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("paysum")
-     *
      */
     public $paySum;
 
     /**
-     * высота коробки (см)
+     * высота коробки (см).
      *
-     * @var string $height
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("height")
-     *
      */
     public $height;
 
     /**
-     * ширина коробки (см)
+     * ширина коробки (см).
      *
-     * @var string $width
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("width")
-     *
      */
     public $width;
 
     /**
-     * глубина коробки (см)
+     * глубина коробки (см).
      *
-     * @var string $depth
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("depth")
-     *
      */
     public $depth;
 
     /**
      * Почтовый индекс для курьерской доставки (в случае передачи zip - target игнорируется).
      *
-     * @var string $zip
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("zip")
-     *
      */
     public $zip;
 
@@ -131,28 +121,26 @@ class DeliveryCostsRequest
      * Расчет с учетом наценок, установленных в ЛК ИМ
      * - Настройки средств интеграции
      * - Расчеты
-     * - Включить настройки расчета
+     * - Включить настройки расчета.
      *
      * Возможные значения:
      * 1 - получить расчет с учетом индивидуальных настроек
      * 0 - получить расчет без настроек
      *
-     * @var string $sucrh
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("sucrh")
-     *
      */
     public $sucrh;
 
     /**
-     * название CMS. Параметр предназначен для разработчиков CMS, проводящих интеграцию с Boxberry
+     * название CMS. Параметр предназначен для разработчиков CMS, проводящих интеграцию с Boxberry.
      *
-     * @var string $cms
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("cms")
-     *
      */
     public $cms;
 
@@ -160,22 +148,20 @@ class DeliveryCostsRequest
      * url сайта. Параметр предназначен для разработчиков CMS, проводящих интеграцию с Boxberry.
      * Применяется только в JSON.
      *
-     * @var string $url
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("url")
-     *
      */
     public $url;
 
     /**
-     * версия интеграции/модуля
+     * версия интеграции/модуля.
      *
-     * @var string $version
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("version")
-     *
      */
     public $version;
 }

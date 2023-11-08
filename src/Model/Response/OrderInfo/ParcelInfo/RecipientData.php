@@ -1,52 +1,49 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\OrderInfo\ParcelInfo;
+namespace Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CourierDelivery
+ * Class CourierDelivery.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class RecipientData
 {
     /**
-     * ФИО получателя
+     * ФИО получателя.
      *
-     * @var string $fullName
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("full_name")
-     *
      */
     public $fullName;
 
     /**
-     * Номер телефона получателя
+     * Номер телефона получателя.
      *
-     * @var string $phone
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("phone")
-     *
      */
     public $phone;
 
     /**
-     * E-mail получателя для оповещений
+     * E-mail получателя для оповещений.
      *
-     * @var string $email
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("email")
-     *
      */
     public $email;
 }

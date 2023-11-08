@@ -1,41 +1,39 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\ParcelInfoRequest;
+namespace Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class Parcel
+ * Class Parcel.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request\ParcelInfoRequest
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class Parcel
 {
     /**
-     * Трек-номер посылки
+     * Трек-номер посылки.
      *
-     * @var string $track
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("track")
-     *
      */
     public $track;
 
     /**
-     * Номер заказа ИМ
+     * Номер заказа ИМ.
      *
-     * @var string $order_id
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("order_id")
-     *
      */
-    public $order_id;
+    public $orderId;
 }

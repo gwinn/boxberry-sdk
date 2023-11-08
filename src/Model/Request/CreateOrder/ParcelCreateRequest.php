@@ -1,33 +1,34 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request;
+namespace Gwinn\Boxberry\Model\Request\CreateOrder;
 
-use Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Customer;
-use Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Export;
-use Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Kurdost;
-use Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Shop;
+use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Customer;
+use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Export;
+use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Items;
+use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Kurdost;
+use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Shop;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ParcelCreateRequest
+ * Class ParcelCreateRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
+ *
+ * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
 class ParcelCreateRequest
 {
     /**
-     * Токен партнера интеграции (длина до 24 символов)
+     * Токен партнера интеграции (длина до 24 символов).
      *
-     * @var string $partnerToken
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("partner_token")
-     *
      */
     public $partnerToken;
 
@@ -35,58 +36,53 @@ class ParcelCreateRequest
      * Трек-номер посылки для обновления.
      * Внимание, если параметр updateByTrack будет заполнен, считается что вы хотите обновить ранее созданную посылку.
      *
-     * @var string $updateByTrack
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("updateByTrack")
-     *
      */
     public $updateByTrack;
 
     /**
-     * Номер заказа в интернет-магазине
+     * Номер заказа в интернет-магазине.
      *
-     * @var string $orderId
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("order_id")
-     *
      */
     public $orderId;
 
     /**
-     * Номер паллеты
+     * Номер паллеты.
      *
-     * @var string $palletNumber
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("PalletNumber")
-     *
      */
     public $palletNumber;
 
     /**
      * Штрих-код посылки. Передается в случае собственной маркировки посылок.
      *
-     * @var string $barcode
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("barcode")
-     *
      */
     public $barcode;
 
     /**
-     * Объявленная стоимость посылки
+     * Объявленная стоимость посылки.
      *
      * Для РФ диапазон от 5 до 300 000. (если <5 или не передана то будет автоматически изменена на 5 + notification в ответе)
      * Для ЕАЭС диапазон от 0 до 100 000.
      *
-     * @var string $price
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("price")
-     *
      */
     public $price;
 
@@ -94,37 +90,34 @@ class ParcelCreateRequest
      * Сумма к оплате (сумма, которую необходимо взять с получателя).
      * Для полностью предоплаченного заказа указывать 0.
      *
-     * @var string $paymentSum
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("payment_sum")
-     *
      */
     public $paymentSum;
 
     /**
-     * Стоимость доставки объявленная получателю
+     * Стоимость доставки объявленная получателю.
      *
-     * @var string $deliverySum
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("delivery_sum")
-     *
      */
     public $deliverySum;
 
     /**
-     * Вид доставки:
+     * Вид доставки:.
      *
      * 1 - Доставка до пункта выдачи (ПВЗ, «Экспорт из РФ»)
      * 2 - Курьерская доставка (КД)
      * 3 - доставка Почтой России (ПР)
      *
-     * @var string $vid
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("vid")
-     *
      */
     public $vid;
 
@@ -132,22 +125,20 @@ class ParcelCreateRequest
      * Номер заказа первичного ИМа для отправки в СМС и получения в ПВЗ.
      * Актуален для партнеров-агрегаторов.
      *
-     * @var string $supplierTrack
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("supplier_track")
-     *
      */
     public $supplierTrack;
 
     /**
-     * Блок с информацией о курьерской доставке (только для РФ) и доставке Почтой России
+     * Блок с информацией о курьерской доставке (только для РФ) и доставке Почтой России.
      *
-     * @var Kurdost $kurdost
+     * @var Kurdost
      *
-     * @JMS\Type("Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Kurdost")
+     * @JMS\Type("Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Kurdost")
      * @JMS\SerializedName("kurdost")
-     *
      */
     public $kurdost;
 
@@ -158,33 +149,30 @@ class ParcelCreateRequest
      *
      * В случае доставки в отделение не заполняются.
      *
-     * @var Export $export
+     * @var Export
      *
-     * @JMS\Type("Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Export")
+     * @JMS\Type("Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Export")
      * @JMS\SerializedName("export")
-     *
      */
     public $export;
 
     /**
-     * Блок с информацией о пункте приема и пункте выдачи отправления
+     * Блок с информацией о пункте приема и пункте выдачи отправления.
      *
-     * @var Shop $shop
+     * @var Shop
      *
-     * @JMS\Type("Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Shop")
+     * @JMS\Type("Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Shop")
      * @JMS\SerializedName("shop")
-     *
      */
     public $shop;
 
     /**
-     * Блок с информацией о получателе отправления
+     * Блок с информацией о получателе отправления.
      *
-     * @var Customer $customer
+     * @var Customer
      *
-     * @JMS\Type("Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Customer")
+     * @JMS\Type("Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Customer")
      * @JMS\SerializedName("customer")
-     *
      */
     public $customer;
 
@@ -192,9 +180,9 @@ class ParcelCreateRequest
      * Блок с информацией по товарным позициям, включённым в заказ.
      * Проверяется корректность заполнения обязательных и необязательных полей.
      *
-     * @var array $items
+     * @var Items[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Items>")
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Items>")
      * @JMS\SerializedName("items")
      */
     public $items = [];
@@ -206,7 +194,7 @@ class ParcelCreateRequest
      * Если у заказа несколько мест (несколько этикеток), то данные по примечанию выводятся на каждой этикетке.
      * Количество символов <= 100.
      *
-     * @var string $notice
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("notice")
@@ -218,7 +206,7 @@ class ParcelCreateRequest
      * Каждое место (коробка/пакет) подлежит индивидуальной маркировке.
      * Места не привязаны к вложениям в заказе.
      *
-     * @var array $weights
+     * @var array<mixed, mixed>
      *
      * @JMS\Type("array")
      * @JMS\SerializedName("weights")
@@ -226,38 +214,35 @@ class ParcelCreateRequest
     public $weights;
 
     /**
-     * Тарифная зона (по умолчанию для города отправления - Москва)
+     * Тарифная зона (по умолчанию для города отправления - Москва).
      *
-     * @var string $issue
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("issue")
-     *
      */
     public $issue;
 
     /**
-     * Возможные значения:
+     * Возможные значения:.
      *
      * 0 - нет примерки
      * 1 - подключена примерка
      *
-     * @var string $fitting
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("fitting")
-     *
      */
     public $fitting;
 
     /**
      * Наименование магазина отправителя для sms/e-mail оповещений.
      *
-     * @var string $senderName
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("sender_name")
-     *
      */
     public $senderName;
 
@@ -265,11 +250,10 @@ class ParcelCreateRequest
      * Уникальный код склада.
      * Актуален для партнеров-агрегаторов, которым необходима отправка возвратов на собственный склад.
      *
-     * @var string $agregatorPointCargoCode
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("AgregatorPointCargoCode")
-     *
      */
     public $agregatorPointCargoCode;
 }

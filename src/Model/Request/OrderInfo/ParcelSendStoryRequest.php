@@ -5,25 +5,35 @@ namespace Gwinn\Boxberry\Model\Request\OrderInfo;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ParcelInfoRequest
+ * Class ParcelInfoRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
+ *
+ * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
 class ParcelSendStoryRequest
 {
     /**
-     * Массив посылок
+     * период с в формате YYYYMMDD.
      *
-     * @var array $parcels
+     * @var string
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel>")
-     * @JMS\SerializedName("parcels")
-     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("from")
      */
-    public $parcels;
+    public $from;
+
+    /**
+     * период до в формате YYYYMMDD.
+     *
+     * @var string
+     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("to")
+     */
+    public $to;
 }

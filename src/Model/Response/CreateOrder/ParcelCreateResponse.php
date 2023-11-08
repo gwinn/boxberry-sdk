@@ -5,48 +5,45 @@ namespace Gwinn\Boxberry\Model\Response\CreateOrder;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ParcelCreateRequest
+ * Class ParcelCreateRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\CreateOrder
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class ParcelCreate
+class ParcelCreateResponse
 {
     /**
-     * Трек-номер посылки для отслеживания
+     * Трек-номер посылки для отслеживания.
      *
-     * @var string $track
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("track")
-     *
      */
     public $track;
 
     /**
-     * Сообщение о изменении параметров заказа
+     * Сообщение о изменении параметров заказа.
      *
-     * @var string $notification
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("notification")
-     *
      */
     public $notification;
 
     /**
-     * Ссылка на печать этикетки (генерируется если не передан штрих-код интернет-магазина)
+     * Ссылка на печать этикетки (генерируется если не передан штрих-код интернет-магазина).
      *
-     * @var string $label
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("label")
-     *
      */
     public $label;
 }

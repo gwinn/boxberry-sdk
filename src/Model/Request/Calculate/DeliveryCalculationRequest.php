@@ -1,30 +1,30 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request;
+namespace Gwinn\Boxberry\Model\Request\Calculate;
 
+use Gwinn\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest\BoxesSizes;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CreateIntakeRequest
+ * Class CreateIntakeRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class DeliveryCalculationRequest
 {
     /**
-     * Город отправления
+     * Город отправления.
      *
-     * @var string $senderCityId
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("SenderCityId")
-     *
      */
     public $senderCityId;
 
@@ -32,16 +32,15 @@ class DeliveryCalculationRequest
      * Город получения.
      * Обязательный параметр для расчета доставки в страны ЕАЭС
      *
-     * @var string $recipientCityId
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("RecipientCityId")
-     *
      */
     public $recipientCityId;
 
     /**
-     * Тип доставки, возможные значения:
+     * Тип доставки, возможные значения:.
      *
      * 1 - Доставка до ПВЗ
      *
@@ -49,89 +48,81 @@ class DeliveryCalculationRequest
      *
      * если не заполнено в ответе возвращаются все типы доставки
      *
-     * @var string $deliveryType
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("DeliveryType")
-     *
      */
     public $deliveryType;
 
     /**
-     * Отделение отправления
+     * Отделение отправления.
      *
-     * @var string $targetStart
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("TargetStart")
-     *
      */
     public $targetStart;
 
     /**
-     * Отделение получения
+     * Отделение получения.
      *
-     * @var string $targetStop
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("TargetStop")
-     *
      */
     public $targetStop;
 
     /**
      * Объявленная стоимость заказа, руб.
      *
-     * @var string $orderSum
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("OrderSum")
-     *
      */
     public $orderSum;
 
     /**
      * Стоимость доставки объявленная получателю ИМ, руб.
      *
-     * @var string $deliverySum
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("DeliverySum")
-     *
      */
     public $deliverySum;
 
     /**
-     * Контактное лицо
+     * Контактное лицо.
      *
-     * @var string $paySum
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("PaySum")
-     *
      */
     public $paySum;
 
     /**
      * Индекс получателя (только РФ)
-     * если передан, то в ответ будет вариант только для КД
+     * если передан, то в ответ будет вариант только для КД.
      *
-     * @var string $zip
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("Zip")
-     *
      */
     public $zip;
 
     /**
-     * Массив массо-габаритных характеристик для каждого места в заказе
+     * Массив массо-габаритных характеристик для каждого места в заказе.
      *
-     * @var array $boxSizes
+     * @var BoxesSizes[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Request\DeliveryCalculationRequest\BoxesSizes>")
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest\BoxesSizes>")
      * @JMS\SerializedName("BoxSizes")
-     *
      */
     public $boxSizes;
 
@@ -143,24 +134,22 @@ class DeliveryCalculationRequest
      * 1 - получить расчет с учетом индивидуальных настроек
      * 0 - получить расчет без настроек
      *
-     * @var string $useShopSettings
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("UseShopSettings")
-     *
      */
     public $useShopSettings;
 
     /**
      * название CMS. Параметр предназначен для разработчиков CMS, проводящих интеграцию с Boxberry.
      * Применяется только в JSON.
-     * для учета данного параметра в статистике также должен быть передан параметр url
+     * для учета данного параметра в статистике также должен быть передан параметр url.
      *
-     * @var string $cmsName
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("CmsName")
-     *
      */
     public $cmsName;
 
@@ -169,22 +158,20 @@ class DeliveryCalculationRequest
      * Параметр предназначен для разработчиков CMS, проводящих интеграцию с Boxberry.
      * Применяется только в JSON.
      *
-     * @var string $url
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("Url")
-     *
      */
     public $url;
 
     /**
-     * версия интеграции/модуля
+     * версия интеграции/модуля.
      *
-     * @var string $version
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("Version")
-     *
      */
     public $version;
 }

@@ -1,63 +1,29 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\AccrualOfServices;
+namespace Gwinn\Boxberry\Model\Request\AccrualOfServices;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ListServices
+ * Class ListServices.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\AccrualOfServices
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class ListServices
+class ListServicesRequest
 {
     /**
-     * Дата начисления в формате "ГГГГ-ММ-ДДTЧЧ:ММ:СС"
+     * Код отслеживания заказа.
      *
-     * @var string $date
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Date")
-     *
-     */
-    public $date;
-
-    /**
-     * Название услуги
-     *
-     * @var string $name
+     * @var string
      *
      * @JMS\Type("string")
-     * @JMS\SerializedName("Name")
-     *
+     * @JMS\SerializedName("ImId")
      */
-    public $name;
-
-    /**
-     * Сумма начисленная за оказание услуги, руб
-     *
-     * @var string $sum
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Sum")
-     *
-     */
-    public $sum;
-
-    /**
-     * Способ оплаты. Возможные значения: "Касса", "Банк", "Эквайринг"
-     *
-     * @var integer $paymentMethod
-     *
-     * @JMS\Type("integer")
-     * @JMS\SerializedName("PaymentMethod")
-     *
-     */
-    public $paymentMethod;
+    public $imId;
 }

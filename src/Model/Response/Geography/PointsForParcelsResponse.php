@@ -2,51 +2,27 @@
 
 namespace Gwinn\Boxberry\Model\Response\Geography;
 
+use Gwinn\Boxberry\Model\Response\ArrayResponse;
+use Gwinn\Boxberry\Model\Response\Geography\PointsForParcels\PointsForParcels;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class PointsForParcels
+ * Class PointsForParcelsResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class PointsForParcels
+class PointsForParcelsResponse extends ArrayResponse
 {
     /**
-     * Код пункта приема
+     * @var PointsForParcels[]
      *
-     * @var string $code
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Code")
-     *
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Geography\PointsForParcels\PointsForParcels>")
      */
-    public $code;
-
-    /**
-     * Наименование
-     *
-     * @var string $name
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Name")
-     *
-     */
-    public $name;
-
-    /**
-     * Населенный пункт
-     *
-     * @var string $city
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("City")
-     *
-     */
-    public $city;
+    public $result;
 }

@@ -3,29 +3,23 @@
 namespace Gwinn\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
+use Gwinn\Boxberry\Builders\ResponseBuilder;
 use Gwinn\Boxberry\Exceptions\ApiException;
-use Gwinn\Boxberry\Model;
-use Gwinn\Boxberry\Model\Calculate\DeliveryCalculation;
-use Gwinn\Boxberry\Model\Calculate\DeliveryCosts;
-use Gwinn\Boxberry\Model\CourierShipment\CreateIntake;
-use Gwinn\Boxberry\Model\Geography\PointsDescription;
-use Gwinn\Boxberry\Model\Geography\ZipCheck;
-use Gwinn\Boxberry\Model\OrderInfo\OrdersBalance;
-use Gwinn\Boxberry\Model\Request\CreateIntakeRequest;
-use Gwinn\Boxberry\Model\Request\DeliveryCalculationRequest;
-use Gwinn\Boxberry\Model\Request\DeliveryCostsRequest;
-use Gwinn\Boxberry\Model\Request\WarehouseRequest;
-use Gwinn\Boxberry\Model\Response\Response;
-use Gwinn\Boxberry\Model\Warehouse\WarehouseInfo;
+use Gwinn\Boxberry\Model\Request\Warehouse\WarehouseCreateRequest;
+use Gwinn\Boxberry\Model\Request\Warehouse\WarehouseDeleteRequest;
+use Gwinn\Boxberry\Model\Request\Warehouse\WarehouseInfoRequest;
+use Gwinn\Boxberry\Model\Request\Warehouse\WarehouseUpdateRequest;
+use Gwinn\Boxberry\Model\Response\Warehouse\WarehouseInfo\WarehouseInfo;
+use Gwinn\Boxberry\Model\Response\Warehouse\WarehouseInfoResponse;
 use Psr\Http\Client\ClientExceptionInterface;
 
 /**
- * Class Service
+ * Class Warehouse.
  *
- * @package  Gwinn\Boxberry\Traits
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
+ *
+ * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
 trait Warehouse
@@ -35,30 +29,16 @@ trait Warehouse
      *
      * @group services
      *
-     * @param WarehouseRequest $request
-     * @return Response
      * @throws ApiException
      * @throws GuzzleException
      * @throws ClientExceptionInterface
      */
-    public function warehouseCreate(WarehouseRequest $request): Response
+    public function warehouseCreate(WarehouseCreateRequest $request): void
     {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => array_merge(
-                    [
-                        'token' => $this->token,
-                        'method' => ucfirst(__FUNCTION__)
-                    ],
-                    $this->serializer->toArray($request)
-                )
-            ]
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return new Response(
-            $this->get($queryParam)
-        );
+        $builder = new ResponseBuilder($this->get($queryParam));
+        $builder->errorProcessing();
     }
 
     /**
@@ -66,30 +46,15 @@ trait Warehouse
      *
      * @group services
      *
-     * @param WarehouseRequest $request
-     * @return Response
      * @throws ApiException
-     * @throws GuzzleException
      * @throws ClientExceptionInterface
      */
-    public function warehouseUpdate(WarehouseRequest $request): Response
+    public function warehouseUpdate(WarehouseUpdateRequest $request): void
     {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => array_merge(
-                    [
-                        'token' => $this->token,
-                        'method' => ucfirst(__FUNCTION__)
-                    ],
-                    $this->serializer->toArray($request)
-                )
-            ]
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return new Response(
-            $this->get($queryParam)
-        );
+        $builder = new ResponseBuilder($this->get($queryParam));
+        $builder->errorProcessing();
     }
 
     /**
@@ -97,28 +62,15 @@ trait Warehouse
      *
      * @group services
      *
-     * @param string $code
-     * @return Response
      * @throws ApiException
-     * @throws GuzzleException
      * @throws ClientExceptionInterface
      */
-    public function warehouseDelete(string $code): Response
+    public function warehouseDelete(WarehouseDeleteRequest $request): void
     {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__),
-                    'code' => $code
-                ]
-            ]
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return (new Response(
-            $this->get($queryParam)
-        ));
+        $builder = new ResponseBuilder($this->get($queryParam));
+        $builder->errorProcessing();
     }
 
     /**
@@ -126,30 +78,17 @@ trait Warehouse
      *
      * @group services
      *
-     * @param string $code
-     * @return Response
      * @throws ApiException
-     * @throws GuzzleException
      * @throws ClientExceptionInterface
      */
-    public function warehouseInfo(string $code=''): Response
+    public function warehouseInfo(WarehouseInfoRequest $request): WarehouseInfoResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__),
-                ],
-                array_filter([
-                    'code' => $code ?: false,
-                ])
-            ]
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return (new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', WarehouseInfo::class)
-        ));
+        /** @var WarehouseInfoResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(WarehouseInfoResponse::class, WarehouseInfo::class)
+        ;
+        return $response;
     }
 }

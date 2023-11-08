@@ -1,30 +1,29 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
+namespace Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class Customer
+ * Class Customer.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request\ParcelCreateRequest
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class Customer
 {
     /**
-     * ФИО получателя
+     * ФИО получателя.
      *
-     * @var string $fio
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("fio")
-     *
      */
     public $fio;
 
@@ -34,121 +33,110 @@ class Customer
      * Если Cтрана = Казахстан (CountryCode - 398) или Беларусь (112) или Киргизия (417) или Армения (051),
      * то максимальная длина номера телефона - 12 символов.
      *
-     * @var string $phone
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("phone")
-     *
      */
     public $phone;
 
     /**
-     * Дополнительный номер телефона получателя
+     * Дополнительный номер телефона получателя.
      *
-     * @var string $phone2
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("phone2")
-     *
      */
     public $phone2;
 
     /**
-     * E-mail получателя для оповещений
+     * E-mail получателя для оповещений.
      *
-     * @var string $email
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("email")
-     *
      */
     public $email;
 
     /**
-     * Наименование организации
+     * Наименование организации.
      *
-     * @var string $name
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("name")
-     *
      */
     public $name;
 
     /**
-     * Адрес организации
+     * Адрес организации.
      *
-     * @var string $address
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("address")
-     *
      */
     public $address;
 
     /**
-     * ИНН
+     * ИНН.
      *
-     * @var string $inn
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("inn")
-     *
      */
     public $inn;
 
     /**
      * КПП
      *
-     * @var string $kpp
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("kpp")
-     *
      */
     public $kpp;
 
     /**
      * Расчетный счет
      *
-     * @var string $rs
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("r_s")
-     *
      */
     public $rs;
 
     /**
-     * Наименование банка
+     * Наименование банка.
      *
-     * @var string $bank
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("bank")
-     *
      */
     public $bank;
 
     /**
      * Корр. счет
      *
-     * @var string $kors
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("kor_s")
-     *
      */
     public $kors;
 
     /**
-     * БИК
+     * БИК.
      *
-     * @var string $bik
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("bik")
-     *
      */
     public $bik;
 }

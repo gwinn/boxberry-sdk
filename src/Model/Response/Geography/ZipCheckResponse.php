@@ -2,51 +2,27 @@
 
 namespace Gwinn\Boxberry\Model\Response\Geography;
 
+use Gwinn\Boxberry\Model\Response\ArrayResponse;
+use Gwinn\Boxberry\Model\Response\Geography\ZipCheck\ZipCheck;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ZipCheck
+ * Class ZipCheckResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Geography
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class ZipCheck
+class ZipCheckResponse extends ArrayResponse
 {
     /**
-     * Возможность курьерской доставки по заданному индексу (true/false)
+     * @var ZipCheck[]
      *
-     * @var boolean $expressDelivery
-     *
-     * @JMS\Type("boolean")
-     * @JMS\SerializedName("ExpressDelivery")
-     *
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Geography\ZipCheck\ZipCheck>")
      */
-    public $expressDelivery;
-
-    /**
-     * Зона курьерской доставки
-     *
-     * @var integer $zoneExpressDelivery
-     *
-     * @JMS\Type("integer")
-     * @JMS\SerializedName("ZoneExpressDelivery")
-     *
-     */
-    public $zoneExpressDelivery;
-
-    /**
-     * Удаленность почтового индекса, принимает значения от 0 до 9, где 0 - индекс не является удаленным.
-     *
-     * @var integer $remoteness
-     *
-     * @JMS\Type("integer")
-     * @JMS\SerializedName("Remoteness")
-     *
-     */
-    public $remoteness;
+    public $result;
 }

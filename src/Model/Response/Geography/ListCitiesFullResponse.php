@@ -2,38 +2,27 @@
 
 namespace Gwinn\Boxberry\Model\Response\Geography;
 
+use Gwinn\Boxberry\Model\Response\ArrayResponse;
+use Gwinn\Boxberry\Model\Response\Geography\ListCitiesFull\ListCitiesFull;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ListCitiesFull
+ * Class ListCitiesFullResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Geography
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class ListCitiesFull extends ListCities
+class ListCitiesFullResponse extends ArrayResponse
 {
     /**
-     * Наличие пунктов выдачи заказов в городе (0/1)
+     * @var ListCitiesFull[]
      *
-     * @var integer $pickupPoint
-     *
-     * @JMS\Type("integer")
-     * @JMS\SerializedName("PickupPoint")
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Geography\ListCitiesFull\ListCitiesFull>")
      */
-    public $pickupPoint;
-
-    /**
-     * Наличие курьерской доставки в городе
-     *
-     * @var integer $courierDelivery
-     *
-     * @JMS\Type("integer")
-     * @JMS\SerializedName("CourierDelivery")
-     */
-    public $courierDelivery;
+    public $result;
 }

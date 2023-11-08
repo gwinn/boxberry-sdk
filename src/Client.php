@@ -1,8 +1,7 @@
 <?php
+
 namespace Gwinn\Boxberry;
 
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Utils;
 use Gwinn\Boxberry\Builders\RequestBuilder;
 use InvalidArgumentException;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
@@ -21,23 +20,30 @@ class Client
     use Traits\Order;
     use Traits\Warehouse;
 
+    /**
+     * @var string
+     */
     public const API_URL = 'https://api.boxberry.ru/json.php';
-    public const HEADERS = [
-            'Content-type' => 'application/json',
-            'Accept' => 'application/json',
-            'Cache-Control' =>'no-cache'
-        ];
 
     /**
-     * @var array $params
+     * @var array<string, string>
+     */
+    public const HEADERS = [
+        'Content-type' => 'application/json',
+        'Accept' => 'application/json',
+        'Cache-Control' => 'no-cache',
+    ];
+
+    /**
+     * @var array<string, int>
      */
     protected $params = [
         'connect_timeout' => 10,
-        'timeout' => 30
+        'timeout' => 30,
     ];
-    
+
     /**
-     * @var ClientInterface $client
+     * @var ClientInterface
      */
     protected $client;
     /**
@@ -54,10 +60,9 @@ class Client
      *
      * @param string $token api key value
      */
-
     public function __construct(string $token, ClientInterface $client)
     {
-        if(empty($token)){
+        if (empty($token)) {
             throw new InvalidArgumentException('token is required');
         }
         $this->token = $token;
@@ -74,22 +79,49 @@ class Client
     }
 
     /**
+     * @param array<string, array<string, array<mixed>|string>> $options
+     *
      * @throws ClientExceptionInterface
      */
-    public function post(array $options = []): ResponseInterface
+    public function post($options): ResponseInterface
     {
-        $builder= new RequestBuilder();
+        $builder = new RequestBuilder();
         $request = $builder->buildPostQuery(self::API_URL, self::HEADERS, $options);
+
         return $this->client->sendRequest($request);
     }
 
     /**
+     * @param array<string, array<string, string>|int> $options
+     *
      * @throws ClientExceptionInterface
      */
-    public function get(array $options = []): ResponseInterface
+    public function get($options): ResponseInterface
     {
-        $builder= new RequestBuilder();
+        $builder = new RequestBuilder();
         $request = $builder->buildGetQuery(self::API_URL, self::HEADERS, $options);
+
         return $this->client->sendRequest($request);
+    }
+
+    /**
+     * @param mixed $request
+     *
+     * @return array<string, array<string, string>|int>
+     */
+    public function getQueryParams(string $function, $request = []): array
+    {
+        return array_merge(
+            $this->params,
+            array_filter([
+                'query' => array_merge(
+                    [
+                        'token' => $this->token,
+                        'method' => $function,
+                    ],
+                    $this->serializer->toArray($request)
+                ),
+            ])
+        );
     }
 }

@@ -5,44 +5,44 @@ namespace Gwinn\Boxberry\Model\Response;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class Error
+ * Class Error.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Response
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class Error
 {
     /**
-     * @var string $err_string
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("err")
      */
-    public $err_string;
+    public $errString;
 
     /**
-     * @var boolean $err_bool
+     * @var bool
      *
      * @JMS\Type("boolean")
      * @JMS\SerializedName("err")
      */
-    public $err_bool;
+    public $errBool = false;
 
     /**
-     * @var boolean $error
+     * @var bool
      *
      * @JMS\Type("boolean")
      * @JMS\SerializedName("error")
      */
-    public $error;
+    public $error = false;
 
     /**
-     * @var string $message
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("message")

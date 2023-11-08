@@ -1,30 +1,29 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Calculate\DeliveryCalculation;
+namespace Gwinn\Boxberry\Model\Response\Calculate\DeliveryCalculation;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class DeliveryCostsRequest
+ * Class DeliveryCostsRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class DeliveryCalculationResult
 {
     /**
-     * Массив вариантов расчетов для разных типов доставки
+     * Массив вариантов расчетов для разных типов доставки.
      *
-     * @var array $deliveryCosts
+     * @var DeliveryCosts[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Calculate\DeliveryCalculation\DeliveryCosts>")
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Calculate\DeliveryCalculation\DeliveryCosts>")
      * @JMS\SerializedName("DeliveryCosts")
-     *
      */
     public $deliveryCosts = [];
 }

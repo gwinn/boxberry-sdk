@@ -1,33 +1,30 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request;
+namespace Gwinn\Boxberry\Model\Request\OrderInfo;
 
-use Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Customer;
-use Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Export;
-use Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Kurdost;
-use Gwinn\Boxberry\Model\Request\ParcelCreateRequest\Shop;
+use Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ParcelInfoRequest
+ * Class ParcelInfoRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
+ *
+ * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
 class ParcelInfoRequest
 {
     /**
-     * Массив посылок
+     * Массив посылок.
      *
-     * @var array $parcels
+     * @var Parcel[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Request\ParcelInfoRequest\Parcel>")
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel>")
      * @JMS\SerializedName("parcels")
-     *
      */
     public $parcels;
 }

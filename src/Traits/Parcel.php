@@ -3,27 +3,33 @@
 namespace Gwinn\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
+use Gwinn\Boxberry\Builders\ResponseBuilder;
 use Gwinn\Boxberry\Exceptions\ApiException;
-use Gwinn\Boxberry\Model\CreateOrder\ParcelCreate;
-use Gwinn\Boxberry\Model\CreateOrder\ParcelSend;
-use Gwinn\Boxberry\Model\OrderInfo\ParcelCheck;
-use Gwinn\Boxberry\Model\OrderInfo\ParcelInfo;
-use Gwinn\Boxberry\Model\OrderInfo\ParcelList;
-use Gwinn\Boxberry\Model\OrderInfo\ParcelSendStory;
-use Gwinn\Boxberry\Model\OrderInfo\ParcelStory;
-use Gwinn\Boxberry\Model\ParselDel;
-use Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
-use Gwinn\Boxberry\Model\Request\ParcelInfoRequest;
-use Gwinn\Boxberry\Model\Response\Response;
+use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest;
+use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelSendRequest;
+use Gwinn\Boxberry\Model\Request\OrderInfo\ParcelCheckRequest;
+use Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest;
+use Gwinn\Boxberry\Model\Request\OrderInfo\ParcelSendStoryRequest;
+use Gwinn\Boxberry\Model\Request\OrderInfo\ParcelStoryRequest;
+use Gwinn\Boxberry\Model\Response\CreateOrder\ParcelCreateResponse;
+use Gwinn\Boxberry\Model\Response\CreateOrder\ParcelSendResponse;
+use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelCheckResponse;
+use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo\ParcelInfo;
+use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfoResponse;
+use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelListResponse;
+use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelSendStory\ParcelSendStory;
+use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelSendStoryResponse;
+use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelStory\ParcelStory;
+use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelStoryResponse;
 use Psr\Http\Client\ClientExceptionInterface;
 
 /**
- * Class Parcel
+ * Class Parcel.
  *
- * @package  Gwinn\Boxberry\Traits
  * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
+ * @license https://retailcrm.ru Proprietary
+ *
+ * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
 trait Parcel
@@ -33,23 +39,24 @@ trait Parcel
      *
      * @group parcels
      *
-     * @param ParcelCreateRequest $request
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException|GuzzleException
      * @throws ClientExceptionInterface
      */
-    public function parcelCreate(ParcelCreateRequest $request): Response
+    public function parcelCreate(ParcelCreateRequest $request): ParcelCreateResponse
     {
         $options = [
             'json' => [
                 'token' => $this->token,
                 'method' => 'ParselCreate',
-                'sdata' => $this->serializer->toArray($request)
-            ]
-         ];
+                'sdata' => $this->serializer->toArray($request),
+            ],
+        ];
 
-        return new Response($this->post($options), ParcelCreate::class);
+        /** @var ParcelCreateResponse $response*/
+        $response = (new ResponseBuilder($this->post($options)))
+            ->serializeResponse(ParcelCreateResponse::class)
+        ;
+        return $response;
     }
 
     /**
@@ -58,35 +65,18 @@ trait Parcel
      *
      * @group parcels
      *
-     * @param string $from период с в формате YYYYMMDD
-     * @param string $to Код    период до в формате YYYYMMDD
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function parcelSendStory(string $from = '', string $to = ''): Response
+    public function parcelSendStory(ParcelSendStoryRequest $request): ParcelSendStoryResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            array_filter([
-                'query' => array_merge(
-                    [
-                        'token' => $this->token,
-                        'method' => 'ParselSendStory'
-                    ],
-                    array_filter([
-                        'from' => $from ?: false,
-                        'to' => $to ?: false
-                    ])
-                )
-            ])
-        );
+        $queryParam = $this->getQueryParams('ParselSendStory', $request);
 
-        return (new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', ParcelSendStory::class)
-        ));
+        /** @var ParcelSendStoryResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(ParcelSendStoryResponse::class, ParcelSendStory::class)
+        ;
+        return $response;
     }
 
     /**
@@ -95,32 +85,18 @@ trait Parcel
      *
      * @group parcels
      *
-     * @param string $imIds Код отслеживания отправления
-     * @param string $shippingDate
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function parcelSend(string $imIds, string $shippingDate=''): Response
+    public function parcelSend(ParcelSendRequest $request): ParcelSendResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => [
-                    'token' => $this->token,
-                    'method' => 'ParselSend',
-                    'ImIds' => $imIds,
-                ],
-                array_filter([
-                    'shippingDate'=>$shippingDate ?: false,
-                ])
-            ]
-        );
+        $queryParam = $this->getQueryParams('ParselSend', $request);
 
-        return (new Response(
-            $this->get($queryParam),
-            ParcelSend::class
-        ));
+        /** @var ParcelSendResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeResponse(ParcelSendResponse::class)
+        ;
+        return $response;
     }
 
     /**
@@ -129,35 +105,18 @@ trait Parcel
      *
      * @group parcels
      *
-     * @param string $from период с в формате YYYYMMDD
-     * @param string $to период до в формате YYYYMMDD
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function parcelStory(string $from = '', string $to = ''): Response
+    public function parcelStory(ParcelStoryRequest $request): ParcelStoryResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            array_filter([
-                'query' => array_merge(
-                    [
-                        'token' => $this->token,
-                        'method' => 'ParselStory'
-                    ],
-                    array_filter([
-                        'from' => $from ?: false,
-                        'to' => $to ?: false
-                    ])
-                )
-            ])
-        );
+        $queryParam = $this->getQueryParams('ParselStory', $request);
 
-        return (new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', ParcelStory::class)
-        ));
+        /** @var ParcelStoryResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(ParcelStoryResponse::class, ParcelStory::class)
+        ;
+        return $response;
     }
 
     /**
@@ -166,26 +125,18 @@ trait Parcel
      *
      * @group parcels
      *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException|GuzzleException
      * @throws ClientExceptionInterface
      */
-    public function parcelList(): Response
+    public function parcelList(): ParcelListResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => [
-                    'token' => $this->token,
-                    'method' => 'ParselList',
-                ]
-            ]
-        );
+        $queryParam = $this->getQueryParams('ParselList');
 
-        return (new Response(
-            $this->get($queryParam),
-            ParcelList::class
-        ));
+        /** @var ParcelListResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeResponse(ParcelListResponse::class)
+        ;
+        return $response;
     }
 
     /**
@@ -194,29 +145,18 @@ trait Parcel
      *
      * @group parcels
      *
-     * @param string $imId Код отслеживания отправления
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function parcelCheck(string $imId): Response
+    public function parcelCheck(ParcelCheckRequest $request): ParcelCheckResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => [
-                    'token' => $this->token,
-                    'method' => 'ParselCheck',
-                    'ImId' => $imId
-                ]
-            ]
-        );
+        $queryParam = $this->getQueryParams('ParselCheck', $request);
 
-        return (new Response(
-            $this->get($queryParam),
-            ParcelCheck::class
-        ));
+        /** @var ParcelCheckResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeResponse(ParcelCheckResponse::class)
+        ;
+        return $response;
     }
 
     /**
@@ -225,24 +165,21 @@ trait Parcel
      *
      * @group parcels
      *
-     * @param ParcelInfoRequest $request
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException|GuzzleException
      * @throws ClientExceptionInterface
      */
-    public function parcelInfo(ParcelInfoRequest $request): Response
+    public function parcelInfo(ParcelInfoRequest $request): ParcelInfoResponse
     {
         $options = [
             'json' => array_merge([
                 'token' => $this->token,
-                'method' => ucfirst(__FUNCTION__)
-            ], $this->serializer->toArray($request))
+                'method' => ucfirst(__FUNCTION__),
+            ], $this->serializer->toArray($request)),
         ];
-
-        return (new Response(
-            $this->post($options),
-            sprintf('array<%s>', ParcelInfo::class)
-        ));
+        /** @var ParcelInfoResponse $response*/
+        $response = (new ResponseBuilder($this->post($options)))
+            ->serializeArrayResponse(ParcelInfoResponse::class, ParcelInfo::class)
+        ;
+        return $response;
     }
 }

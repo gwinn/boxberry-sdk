@@ -1,338 +1,309 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Geography\PointsDescription;
+namespace Gwinn\Boxberry\Model\Response\Geography\PointsDescription;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class WorkShedule
+ * Class WorkShedule.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 trait WorkShedule
 {
     /**
-     * Расписание работы строкой
+     * Расписание работы строкой.
      *
-     * @var string $workShedule
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkShedule")
-     *
      */
     public $workShedule;
 
     /**
-     * Понедельник, начало рабочего дня
+     * Понедельник, начало рабочего дня.
      *
-     * @var string $workMoBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkMoBegin")
-     *
      */
     public $workMoBegin;
 
     /**
-     * Понедельник, конец рабочего дня
+     * Понедельник, конец рабочего дня.
      *
-     * @var string $workMoEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkMoEnd")
-     *
      */
     public $workMoEnd;
 
     /**
-     * Вторник, начало рабочего дня
+     * Вторник, начало рабочего дня.
      *
-     * @var string $workTuBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkTuBegin")
-     *
      */
     public $workTuBegin;
 
     /**
-     * Вторник, конец рабочего дня
+     * Вторник, конец рабочего дня.
      *
-     * @var string $workTuEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkTuEnd")
-     *
      */
     public $workTuEnd;
 
     /**
-     * Среда, начало рабочего дня
+     * Среда, начало рабочего дня.
      *
-     * @var string $workWeBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkWeBegin")
-     *
      */
     public $workWeBegin;
 
     /**
-     * Среда, конец рабочего дня
+     * Среда, конец рабочего дня.
      *
-     * @var string $workWeEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkWeEnd")
-     *
      */
     public $workWeEnd;
 
     /**
-     * Четверг, начало рабочего дня
+     * Четверг, начало рабочего дня.
      *
-     * @var string $workThBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkThBegin")
-     *
      */
     public $workThBegin;
 
     /**
-     * Четверг, конец рабочего дня
+     * Четверг, конец рабочего дня.
      *
-     * @var string $workThEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkThEnd")
-     *
      */
     public $workThEnd;
 
     /**
-     * Пятница, начало рабочего дня
+     * Пятница, начало рабочего дня.
      *
-     * @var string $workFrBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkFrBegin")
-     *
      */
     public $workFrBegin;
 
     /**
-     * Пятница, конец рабочего дня
+     * Пятница, конец рабочего дня.
      *
-     * @var string $workFrEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkFrEnd")
-     *
      */
     public $workFrEnd;
 
     /**
-     * Суббота, начало рабочего дня
+     * Суббота, начало рабочего дня.
      *
-     * @var string $workSaBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkSaBegin")
-     *
      */
     public $workSaBegin;
 
     /**
-     * Суббота, конец рабочего дня
+     * Суббота, конец рабочего дня.
      *
-     * @var string $workSaEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkSaEnd")
-     *
      */
     public $workSaEnd;
 
     /**
-     * Воскресенье, начало рабочего дня
+     * Воскресенье, начало рабочего дня.
      *
-     * @var string $workSuBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkSuBegin")
-     *
      */
     public $workSuBegin;
 
     /**
-     * Воскресенье, конец рабочего дня
+     * Воскресенье, конец рабочего дня.
      *
-     * @var string $workSuEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("WorkSuEnd")
-     *
      */
     public $workSuEnd;
 
     /**
-     * Понедельник, обед, начало
+     * Понедельник, обед, начало.
      *
-     * @var string $lunchMoBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchMoBegin")
-     *
      */
     public $lunchMoBegin;
 
     /**
-     * Понедельник, обед, конец
+     * Понедельник, обед, конец.
      *
-     * @var string $lunchMoEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchMoEnd")
-     *
      */
     public $lunchMoEnd;
 
     /**
-     * Вторник, обед, начало
+     * Вторник, обед, начало.
      *
-     * @var string $lunchTuBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchTuBegin")
-     *
      */
     public $lunchTuBegin;
 
     /**
-     * Вторник, обед, конец
+     * Вторник, обед, конец.
      *
-     * @var string $lunchTuEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchTuEnd")
-     *
      */
     public $lunchTuEnd;
 
     /**
-     * Среда, обед, начало
+     * Среда, обед, начало.
      *
-     * @var string $lunchWeBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchWeBegin")
-     *
      */
     public $lunchWeBegin;
 
     /**
-     * Среда, обед, конец
+     * Среда, обед, конец.
      *
-     * @var string $lunchWeEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchWeEnd")
-     *
      */
     public $lunchWeEnd;
 
     /**
-     * Четверг, обед, начало
+     * Четверг, обед, начало.
      *
-     * @var string $lunchThBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchThBegin")
-     *
      */
     public $lunchThBegin;
 
     /**
-     * Четверг, обед, конец
+     * Четверг, обед, конец.
      *
-     * @var string $lunchThEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchThEnd")
-     *
      */
     public $lunchThEnd;
 
     /**
-     * Пятница, обед, начало
+     * Пятница, обед, начало.
      *
-     * @var string $lunchFrBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchFrBegin")
-     *
      */
     public $lunchFrBegin;
 
     /**
-     * Пятница, обед, конец
+     * Пятница, обед, конец.
      *
-     * @var string $lunchFrEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchFrEnd")
-     *
      */
     public $lunchFrEnd;
 
     /**
-     * Суббота, обед, начало
+     * Суббота, обед, начало.
      *
-     * @var string $lunchSaBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchSaBegin")
-     *
      */
     public $lunchSaBegin;
 
     /**
-     * Суббота, обед, конец
+     * Суббота, обед, конец.
      *
-     * @var string $lunchSaEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchSaEnd")
-     *
      */
     public $lunchSaEnd;
 
     /**
-     * Воскресенье, обед, начало
+     * Воскресенье, обед, начало.
      *
-     * @var string $lunchSuBegin
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchSuBegin")
-     *
      */
     public $lunchSuBegin;
 
     /**
-     * Воскресенье, обед, конец
+     * Воскресенье, обед, конец.
      *
-     * @var string $lunchSuEnd
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("LunchSuEnd")
-     *
      */
     public $lunchSuEnd;
 }

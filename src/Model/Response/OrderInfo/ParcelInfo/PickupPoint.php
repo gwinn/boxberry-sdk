@@ -1,41 +1,39 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\OrderInfo\ParcelInfo;
+namespace Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CourierDelivery
+ * Class CourierDelivery.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class PickupPoint
 {
     /**
-     * Код пункта выдачи
+     * Код пункта выдачи.
      *
-     * @var string $pickupPointCode
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("pickup_point_code")
-     *
      */
     public $pickupPointCode;
 
     /**
-     * Адрес пункта выдачи
+     * Адрес пункта выдачи.
      *
-     * @var string $pickupPointAdress
+     * @var string
      *
      * @JMS\Type("string")
-     * @JMS\SerializedName("pickup_point_adress")
-     *
+     * @JMS\SerializedName("pickup_point_address")
      */
-    public $pickupPointAdress;
+    public $pickupPointAddress;
 }

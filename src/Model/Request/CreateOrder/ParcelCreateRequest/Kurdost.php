@@ -1,30 +1,29 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
+namespace Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class Kurdost
+ * Class Kurdost.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request\ParcelCreateRequest
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class Kurdost
 {
     /**
-     * Почтовый индекс адреса получателя
+     * Почтовый индекс адреса получателя.
      *
-     * @var string $index
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("index")
-     *
      */
     public $index;
 
@@ -38,22 +37,20 @@ class Kurdost
      * Свердловская, Кушва, Баранчинский
      * Свердловская обл, г Кушва, поселок Баранчинский
      *
-     * @var string $city
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("citi")
-     *
      */
     public $city;
 
     /**
-     * Адрес получателя
+     * Адрес получателя.
      *
-     * @var string $addressp
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("addressp")
-     *
      */
     public $addressp;
 
@@ -62,84 +59,79 @@ class Kurdost
      * Значение по умолчанию - текущая дата + 1 день.
      * По другим направлениям игнорируется.
      *
-     * @var string $deliveryDate
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("delivery_date")
-     *
      */
     public $deliveryDate;
 
     /**
      * Время курьерской доставки ОТ (формат чч:мм).
-     * Значение по умолчанию 10:00
+     * Значение по умолчанию 10:00.
      *
-     * @var string $timesfrom1
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("timesfrom1")
-     *
      */
     public $timesfrom1;
 
     /**
      * Время курьерской доставки ДО (формат чч:мм)
-     * Значение по умолчанию 18:00
+     * Значение по умолчанию 18:00.
      *
      * Интервал доставки "ОТ-ДО" должен быть не менее 3 часов.
      * Если интервал меньше 3 часов, он корректируется без уведомления.
      *
-     * @var string $timesto1
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("timesto1")
-     *
      */
     public $timesto1;
 
     /**
      * Альтернативное время, от
      *
-     * @var string $timesfrom2
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("timesfrom2")
-     *
      */
     public $timesfrom2;
 
     /**
-     * Альтернативное время, до
+     * Альтернативное время, до.
      *
-     * @var string $timesto2
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("timesto2")
-     *
      */
     public $timesto2;
 
     /**
-     * Время доставки текстовый формат(не используется)
+     * Время доставки текстовый формат(не используется).
      *
-     * @var string $timep
+     * @var string
+     *
      * @deprecated
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("timep")
-     *
      */
     public $timep;
 
     /**
-     * Комментарий по доставке(не используется)
+     * Комментарий по доставке(не используется).
      *
-     * @var string $comentk
+     * @var string
+     *
      * @deprecated
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("comentk")
-     *
      */
     public $comentk;
 
@@ -152,11 +144,10 @@ class Kurdost
      *
      * Если не передано, значение по умолчанию 0.
      *
-     * @var string $type
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("type")
-     *
      */
     public $type;
 
@@ -164,11 +155,10 @@ class Kurdost
      * Хрупкая посылка, возможные значения 0 и 1.
      * Если не передано, значение по умолчанию 0.
      *
-     * @var string $fragile
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("fragile")
-     *
      */
     public $fragile;
 
@@ -176,11 +166,10 @@ class Kurdost
      * Строгий тип, возможные значения 0 и 1.
      * Если не передано, значение по умолчанию 0.
      *
-     * @var string $strong
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("strong")
-     *
      */
     public $strong;
 
@@ -188,11 +177,10 @@ class Kurdost
      * Оптимизация тарифа, возможные значения 0 и 1. Если не передано, значение по умолчанию 1.
      * Параметры strong и optimize являются взаимоисключающими и не могут одновременно принимать значение 1.
      *
-     * @var string $optimize
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("optimize")
-     *
      */
     public $optimize;
 
@@ -203,24 +191,22 @@ class Kurdost
      * 2 - упаковка Boxberry, сумма сторон </= 106 см
      * 3 - упаковка Boxberry, сумма сторон > 106 см
      *
-     * @var integer $packingType
+     * @var int
      *
      * @JMS\Type("integer")
      * @JMS\SerializedName("packing_type")
-     *
      */
     public $packingType;
 
     /**
      * Строгая упаковка, возможные значения:
      * true - изменение упаковки в процессе транспортировки запрещено
-     * false - изменение упаковки разрешено
+     * false - изменение упаковки разрешено.
      *
-     * @var integer $packingStrict
+     * @var int
      *
      * @JMS\Type("integer")
      * @JMS\SerializedName("packing_strict")
-     *
      */
     public $packingStrict;
 }

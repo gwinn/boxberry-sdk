@@ -3,27 +3,43 @@
 namespace Gwinn\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
+use Gwinn\Boxberry\Builders\ResponseBuilder;
 use Gwinn\Boxberry\Exceptions\ApiException;
-use Gwinn\Boxberry\Model\AccrualOfServices\ListServices;
-use Gwinn\Boxberry\Model\Geography\CourierListCities;
-use Gwinn\Boxberry\Model\Geography\ListCities;
-use Gwinn\Boxberry\Model\Geography\ListCitiesFull;
-use Gwinn\Boxberry\Model\Geography\ListPoints;
-use Gwinn\Boxberry\Model\Geography\ListPointsShort;
-use Gwinn\Boxberry\Model\Geography\ListZips;
-use Gwinn\Boxberry\Model\Geography\PointsForParcels;
-use Gwinn\Boxberry\Model\Response\Response;
-use Gwinn\Boxberry\Model\Tracking\ListStatuses;
-use Gwinn\Boxberry\Model\Tracking\ListStatusesFull;
+use Gwinn\Boxberry\Model\Request\AccrualOfServices\ListServicesRequest;
+use Gwinn\Boxberry\Model\Request\Geography\ListCitiesFullRequest;
+use Gwinn\Boxberry\Model\Request\Geography\ListCitiesRequest;
+use Gwinn\Boxberry\Model\Request\Geography\ListPointsRequest;
+use Gwinn\Boxberry\Model\Request\Geography\ListPointsShortRequest;
+use Gwinn\Boxberry\Model\Request\Tracking\ListStatusesFullRequest;
+use Gwinn\Boxberry\Model\Request\Tracking\ListStatusesRequest;
+use Gwinn\Boxberry\Model\Response\AccrualOfServices\ListServices\ListServices;
+use Gwinn\Boxberry\Model\Response\AccrualOfServices\ListServicesResponse;
+use Gwinn\Boxberry\Model\Response\Geography\CourierListCities\CourierListCities;
+use Gwinn\Boxberry\Model\Response\Geography\CourierListCitiesResponse;
+use Gwinn\Boxberry\Model\Response\Geography\ListCities\ListCities;
+use Gwinn\Boxberry\Model\Response\Geography\ListCitiesFull\ListCitiesFull;
+use Gwinn\Boxberry\Model\Response\Geography\ListCitiesFullResponse;
+use Gwinn\Boxberry\Model\Response\Geography\ListCitiesResponse;
+use Gwinn\Boxberry\Model\Response\Geography\ListPoints\ListPoints;
+use Gwinn\Boxberry\Model\Response\Geography\ListPointsResponse;
+use Gwinn\Boxberry\Model\Response\Geography\ListPointsShort\ListPointsShort;
+use Gwinn\Boxberry\Model\Response\Geography\ListPointsShortResponse;
+use Gwinn\Boxberry\Model\Response\Geography\ListZips\ListZips;
+use Gwinn\Boxberry\Model\Response\Geography\ListZipsResponse;
+use Gwinn\Boxberry\Model\Response\Geography\PointsForParcels\PointsForParcels;
+use Gwinn\Boxberry\Model\Response\Geography\PointsForParcelsResponse;
+use Gwinn\Boxberry\Model\Response\Tracking\ListStatuses\ListStatuses;
+use Gwinn\Boxberry\Model\Response\Tracking\ListStatusesFullResponse;
+use Gwinn\Boxberry\Model\Response\Tracking\ListStatusesResponse;
 use Psr\Http\Client\ClientExceptionInterface;
 
 /**
- * Class Lists
+ * Class Lists.
  *
- * @package  Gwinn\Boxberry\Traits
  * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
+ * @license https://retailcrm.ru Proprietary
+ *
+ * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
 trait Lists
@@ -33,29 +49,18 @@ trait Lists
      *
      * @group lists
      *
-     * @param string $countryCode Код страны
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
      * @throws ClientExceptionInterface
+     * @throws ApiException
      */
-    public function listCities(string $countryCode = ''): Response
+    public function listCities(ListCitiesRequest $request): ListCitiesResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            array_filter([
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__),
-                    'CountryCode' => $countryCode ?: false
-                ]
-            ])
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return (new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', ListCities::class)
-        ));
+        /** @var ListCitiesResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(ListCitiesResponse::class, ListCities::class)
+        ;
+        return $response;
     }
 
     /**
@@ -63,72 +68,38 @@ trait Lists
      *
      * @group lists
      *
-     * @param string $countryCode
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function listCitiesFull(string $countryCode = ''): Response
+    public function listCitiesFull(ListCitiesFullRequest $request): ListCitiesFullResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            array_filter([
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__),
-                    'CountryCode' => $countryCode ?: false
-                ]
-            ])
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return (new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', ListCitiesFull::class)
-        ));
+        /** @var ListCitiesFullResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(ListCitiesFullResponse::class, ListCitiesFull::class)
+        ;
+        return $response;
     }
 
     /**
      * Позволяет получить информацию о всех точках выдачи заказов.
-     * Если вам необходимо увидеть точки, работающие с любым типом посылок, передайте параметр "prepaid" равный 1
+     * Если вам необходимо увидеть точки, работающие с любым типом посылок, передайте параметр "prepaid" равный 1.
      *
      * @group lists
      *
-     * @param string $countryCode
-     * @param string $citycode
-     * @param boolean $prepaid
-     * @param bool $isIncludePostamat
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function listPoints(
-        string $countryCode = '',
-        string $citycode = '',
-        bool $prepaid = false,
-        bool $isIncludePostamat = false
-    ): Response {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => array_merge(
-                    [
-                        'token' => $this->token,
-                        'method' => ucfirst(__FUNCTION__),
-                        'prepaid' => (int) ($prepaid ?: false),
-                        'is_include_postamat' => (int) ($isIncludePostamat ?: false),
-                    ],
-                    array_filter([
-                        'CountryCode' => $countryCode ?: false,
-                        'CityCode' => $citycode ?: false,
-                    ])
-                )
-            ]
-        );
+    public function listPoints(ListPointsRequest $request): ListPointsResponse
+    {
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', ListPoints::class)
-        );
+        /** @var ListPointsResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(ListPointsResponse::class, ListPoints::class)
+        ;
+        return $response;
     }
 
     /**
@@ -137,37 +108,18 @@ trait Lists
      *
      * @group lists
      *
-     * @param string $countryCode
-     * @param string $citycode Параметр города
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function listPointsShort(
-        string $countryCode = '',
-        string $citycode = ''
-    ): Response {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => array_merge(
-                    [
-                        'token' => $this->token,
-                        'method' => ucfirst(__FUNCTION__)
-                    ],
-                    array_filter([
-                        'CountryCode' => $countryCode ?: false,
-                        'CityCode' => $citycode ?: false
-                    ])
-                )
-            ]
-        );
+    public function listPointsShort(ListPointsShortRequest $request): ListPointsShortResponse
+    {
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', ListPointsShort::class)
-        );
+        /** @var ListPointsShortResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(ListPointsShortResponse::class, ListPointsShort::class)
+        ;
+        return $response;
     }
 
     /**
@@ -175,29 +127,18 @@ trait Lists
      *
      * @group lists
      *
-     * @param string $imId Код отслеживания заказа
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function listServices(string $imId = ''): Response
+    public function listServices(ListServicesRequest $request): ListServicesResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            array_filter([
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__),
-                    'ImId' => $imId ?: false
-                ]
-            ])
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return (new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', ListServices::class)
-        ));
+        /** @var ListServicesResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(ListServicesResponse::class, ListServices::class)
+        ;
+        return $response;
     }
 
     /**
@@ -205,29 +146,18 @@ trait Lists
      *
      * @group lists
      *
-     * @param string $imId Код отслеживания заказа
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function listStatuses(string $imId = ''): Response
+    public function listStatuses(ListStatusesRequest $request): ListStatusesResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            array_filter([
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__),
-                    'ImId' => $imId ?: false
-                ]
-            ])
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return (new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', ListStatuses::class)
-        ));
+        /** @var ListStatusesResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(ListStatusesResponse::class, ListStatuses::class)
+        ;
+        return $response;
     }
 
     /**
@@ -235,29 +165,18 @@ trait Lists
      *
      * @group lists
      *
-     * @param string $imId Код отслеживания заказа
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function listStatusesFull(string $imId = ''): Response
+    public function listStatusesFull(ListStatusesFullRequest $request): ListStatusesFullResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            array_filter([
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__),
-                    'ImId' => $imId ?: false
-                ]
-            ])
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return (new Response(
-            $this->get($queryParam),
-            ListStatusesFull::class
-        ));
+        /** @var ListStatusesFullResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeResponse(ListStatusesFullResponse::class)
+        ;
+        return $response;
     }
 
     /**
@@ -265,53 +184,37 @@ trait Lists
      *
      * @group lists
      *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException|GuzzleException
      * @throws ClientExceptionInterface
      */
-    public function listZips(): Response
+    public function listZips(): ListZipsResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            array_filter([
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__)
-                ]
-            ])
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__));
 
-        return (new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', ListZips::class)
-        ));
+        /** @var ListZipsResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(ListZipsResponse::class, ListZips::class)
+        ;
+        return $response;
     }
 
     /**
-     * Позволяет получить список городов в которых осуществляется курьерская доставка
+     * Позволяет получить список городов в которых осуществляется курьерская доставка.
      *
      * @group lists
      *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function courierListCities(): Response
+    public function courierListCities(): CourierListCitiesResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            array_filter([
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__)
-                ]
-            ])
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__));
 
-        return (new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', CourierListCities::class)
-        ));
+        /** @var CourierListCitiesResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(CourierListCitiesResponse::class, CourierListCities::class)
+        ;
+        return $response;
     }
 
     /**
@@ -319,25 +222,17 @@ trait Lists
      *
      * @group lists
      *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function pointsForParcels(): Response
+    public function pointsForParcels(): PointsForParcelsResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            array_filter([
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__)
-                ]
-            ])
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__));
 
-        return (new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', PointsForParcels::class)
-        ));
+        /** @var PointsForParcelsResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(PointsForParcelsResponse::class, PointsForParcels::class)
+        ;
+        return $response;
     }
 }

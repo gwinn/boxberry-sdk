@@ -1,74 +1,69 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\OrderInfo\ParcelInfo;
+namespace Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CourierDelivery
+ * Class CourierDelivery.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class BoxesData
 {
     /**
-     * Вес места (гр)
+     * Вес места (гр).
      *
-     * @var string $weight
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("weight")
-     *
      */
     public $weight;
 
     /**
-     * Баркод первого места
+     * Баркод первого места.
      *
-     * @var string $barcode
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("barcode")
-     *
      */
     public $barcode;
 
     /**
-     * Габариты места (см)
+     * Габариты места (см).
      *
-     * @var string $x
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("x")
-     *
      */
     public $x;
 
     /**
-     * Габариты места (см)
+     * Габариты места (см).
      *
-     * @var string $y
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("y")
-     *
      */
     public $y;
 
     /**
-     * Габариты места (см)
+     * Габариты места (см).
      *
-     * @var string $z
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("z")
-     *
      */
     public $z;
 }

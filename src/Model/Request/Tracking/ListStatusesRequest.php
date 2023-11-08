@@ -5,26 +5,25 @@ namespace Gwinn\Boxberry\Model\Request\Tracking;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ListServices
+ * Class ListServices.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\AccrualOfServices
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class ListStatusesRequest
 {
     /**
-     * Код отслеживания заказа
+     * Код отслеживания заказа.
      *
-     * @var string $imId
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("ImId")
-     *
      */
     public $imId;
 }

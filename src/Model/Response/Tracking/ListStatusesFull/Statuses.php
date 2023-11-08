@@ -5,48 +5,45 @@ namespace Gwinn\Boxberry\Model\Response\Tracking\ListStatusesFull;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ListStatusesResponse
+ * Class ListStatusesResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Tracking
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class ListStatuses
+class Statuses
 {
     /**
-     * Дата присвоения статуса в формате ДД/ММ/ГГ Ч:М:C PM/AM
+     * Дата присвоения статуса в формате ДД/ММ/ГГ Ч:М:C PM/AM.
      *
-     * @var string $date
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("Date")
-     *
      */
     public $date;
 
     /**
-     * Наименование статуса
+     * Наименование статуса.
      *
-     * @var string $name
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("Name")
-     *
      */
     public $name;
 
     /**
-     * Сумма начисленная за оказание услуги, руб
+     * Сумма начисленная за оказание услуги, руб.
      *
-     * @var string $comment
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("Comment")
-     *
      */
     public $comment;
 }

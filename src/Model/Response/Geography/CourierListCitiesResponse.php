@@ -2,62 +2,27 @@
 
 namespace Gwinn\Boxberry\Model\Response\Geography;
 
+use Gwinn\Boxberry\Model\Response\ArrayResponse;
+use Gwinn\Boxberry\Model\Response\Geography\CourierListCities\CourierListCities;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CourierListCities
+ * Class CourierListCitiesResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class CourierListCities
+class CourierListCitiesResponse extends ArrayResponse
 {
     /**
-     * Населенный пункт
+     * @var CourierListCities[]
      *
-     * @var string $city
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("City")
-     *
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Geography\CourierListCities\CourierListCities>")
      */
-    public $city;
-
-    /**
-     * Район
-     *
-     * @var string $region
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Region")
-     *
-     */
-    public $region;
-
-    /**
-     * Область
-     *
-     * @var string $area
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("Area")
-     *
-     */
-    public $area;
-
-    /**
-     * Срок доставки
-     *
-     * @var integer $deliveryPeriod
-     *
-     * @JMS\Type("integer")
-     * @JMS\SerializedName("DeliveryPeriod")
-     *
-     */
-    public $deliveryPeriod;
+    public $result;
 }

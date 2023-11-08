@@ -1,195 +1,179 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request;
+namespace Gwinn\Boxberry\Model\Request\CourierShipment;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CreateIntakeRequest
+ * Class CreateIntakeRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class CreateIntakeRequest
 {
     /**
      * Почтовый индекс
      *
-     * @var string $zip
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("zip")
-     *
      */
     public $zip;
 
     /**
-     * Город
+     * Город.
      *
-     * @var string $city
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("city")
-     *
      */
     public $city;
 
     /**
-     * Улица
+     * Улица.
      *
-     * @var string $street
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("street")
-     *
      */
     public $street;
 
     /**
      * Дом
      *
-     * @var string $house
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("house")
-     *
      */
     public $house;
 
     /**
      * Корпус
      *
-     * @var string $building
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("building")
-     *
      */
     public $building;
 
     /**
-     * Строение
+     * Строение.
      *
-     * @var string $housing
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("housing")
-     *
      */
     public $housing;
 
     /**
      * квартира/офис
      *
-     * @var string $flat
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("flat")
-     *
      */
     public $flat;
 
     /**
-     * Контактное лицо
+     * Контактное лицо.
      *
-     * @var string $contactPerson
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("contact_person")
-     *
      */
     public $contactPerson;
 
     /**
-     * Контактный телефон
+     * Контактный телефон.
      *
-     * @var string $contactPhone
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("contact_phone")
-     *
      */
     public $contactPhone;
 
     /**
-     * Дата забора
+     * Дата забора.
      *
-     * @var string $takingDate
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("taking_date")
-     *
      */
     public $takingDate;
 
     /**
-     * Время забора "с"
+     * Время забора "с".
      *
-     * @var string $takingTimeFrom
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("taking_time_from")
-     *
      */
     public $takingTimeFrom;
 
     /**
-     * Время забора "до"
+     * Время забора "до".
      *
-     * @var string $takingTimeTo
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("taking_time_to")
-     *
      */
     public $takingTimeTo;
 
     /**
      * Кол-во мест
      *
-     * @var string $seatsCount
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("seats_count")
-     *
      */
     public $seatsCount;
 
     /**
-     * Объем (м3)
+     * Объем (м3).
      *
-     * @var string $volume
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("volume")
-     *
      */
     public $volume;
 
     /**
-     * Вес (кг)
+     * Вес (кг).
      *
-     * @var string $weight
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("weight")
-     *
      */
     public $weight;
 
     /**
-     * Комментарий
+     * Комментарий.
      *
-     * @var string $comment
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("comment")
-     *
      */
     public $comment;
 }

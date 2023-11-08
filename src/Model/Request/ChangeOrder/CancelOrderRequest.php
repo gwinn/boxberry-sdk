@@ -1,23 +1,23 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request;
+namespace Gwinn\Boxberry\Model\Request\ChangeOrder;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CreateIntakeRequest
+ * Class CreateIntakeRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class CancelOrderRequest
 {
-    use ChangeOrder\ChangeOrder;
+    use ChangeOrder;
 
     /**
      * Вариант отмены заказа:
@@ -31,7 +31,7 @@ class CancelOrderRequest
      *
      * Если посылка была успешно отозвана то статус у заказа будет "Готовится к возврату"
      *
-     * @var string $cancelType
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("cancelType")

@@ -1,97 +1,89 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Geography\PointsDescription;
+namespace Gwinn\Boxberry\Model\Response\Geography\PointsDescription;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class Terminal
+ * Class Terminal.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Geography\PointsDescription
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 trait Terminal
 {
-
     /**
-     * Код в базе boxberry
+     * Код в базе boxberry.
      *
-     * @var string $terminalCode
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalCode")
-     *
      */
     public $terminalCode;
 
     /**
-     * Наименование
+     * Наименование.
      *
-     * @var string $terminalName
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalName")
-     *
      */
     public $terminalName;
 
     /**
-     * Наименование юр. лица
+     * Наименование юр. лица.
      *
-     * @var string $terminalOrganization
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalOrganization")
-     *
      */
     public $terminalOrganization;
 
     /**
-     * Код города в Boxberry
+     * Код города в Boxberry.
      *
-     * @var string $terminalCityCode
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalCityCode")
-     *
      */
     public $terminalCityCode;
 
     /**
-     * Наименование города
+     * Наименование города.
      *
-     * @var string $terminalCityName
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalCityName")
-     *
      */
     public $terminalCityName;
 
     /**
      * Полный адрес
      *
-     * @var string $terminalAddress
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalAddress")
-     *
      */
     public $terminalAddress;
 
     /**
-     * Телефон
+     * Телефон.
      *
-     * @var string $terminalPhone
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("TerminalPhone")
-     *
      */
     public $terminalPhone;
 }

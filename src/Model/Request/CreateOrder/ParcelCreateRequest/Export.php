@@ -1,109 +1,101 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
+namespace Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class Export
+ * Class Export.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request\ParcelCreateRequest
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class Export
 {
     /**
-     * Почтовый индекс адреса получателя
+     * Почтовый индекс адреса получателя.
      *
-     * @var string $index
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("index")
-     *
      */
     public $index;
 
     /**
-     * Код страны
+     * Код страны.
      *
-     * @var string $countryCode
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("countryCode")
-     *
      */
     public $countryCode;
 
     /**
-     * Код города
+     * Код города.
      *
-     * @var string $cityCode
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("cityCode")
-     *
      */
     public $cityCode;
 
     /**
-     * Наименование области/штата
+     * Наименование области/штата.
      *
-     * @var string $area
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("area")
-     *
      */
     public $area;
 
     /**
-     * Наименование улицы
+     * Наименование улицы.
      *
-     * @var string $street
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("street")
-     *
      */
     public $street;
 
     /**
-     * Номер дома
+     * Номер дома.
      *
-     * @var string $house
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("house")
-     *
      */
     public $house;
 
     /**
-     * Номер квартиры
+     * Номер квартиры.
      *
-     * @var string $flat
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("flat")
-     *
      */
     public $flat;
 
     /**
-     * Идентификатор службы перевозчика, 36 символов (GUID)
+     * Идентификатор службы перевозчика, 36 символов (GUID).
      *
      * На данный момент, рекомендуем передавать значение по умолчанию: fd85a8b6-4688-404f-9993-30b9e55d2950
      *
-     * @var string $transporterGuid
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("transporterGuid")
-     *
      */
     public $transporterGuid;
 }

@@ -9,9 +9,31 @@ $finder = (new PhpCsFixer\Finder())
 return (new PhpCsFixer\Config())
     ->setRules([
         '@PSR12' => true,
+        // exceptions
+        'single_line_throw' => false,
+        // php file
+        'concat_space' => ['spacing' => 'one'],
+
+        // namespace and imports
+        'ordered_imports' => true,
         'global_namespace_import' => [],
-        'phpdoc_align' => ['align' => 'left'],
-        'no_extra_blank_lines' => [],
+
+        // standard functions and operators
+        'native_constant_invocation' => false,
+        'native_function_invocation' => false,
+        'modernize_types_casting' => true,
+        'is_null' => true,
+        // arrays
+        'array_syntax' => [
+            'syntax' => 'short',
+        ],
+        // phpdoc
+        'phpdoc_annotation_without_dot' => false,
+        'phpdoc_summary' => false,
+        // logical operators
+        'logical_operators' => true,
+        // phpunit
+        'php_unit_test_case_static_method_calls' => ['call_type' => 'this'],
     ])
     ->setFinder($finder)
 ;

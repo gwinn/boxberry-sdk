@@ -2,93 +2,26 @@
 
 namespace Gwinn\Boxberry\Model\Response\Warehouse;
 
+use Gwinn\Boxberry\Model\Response\ArrayResponse;
+use Gwinn\Boxberry\Model\Response\Warehouse\WarehouseInfo\WarehouseInfo;
+
 /**
- * Class WarehouseInfo
+ * Class WarehouseInfoResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Warehouse
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class WarehouseInfo
+class WarehouseInfoResponse extends ArrayResponse
 {
     /**
-     * Уникальный код склада
+     * @var WarehouseInfo[]
      *
-     * @var string $code
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("code")
-     *
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Warehouse\WarehouseInfo\WarehouseInfo>")
      */
-    public $code;
-
-    /**
-     * Наименование склада
-     *
-     * @var string $name
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("name")
-     *
-     */
-    public $name;
-
-    /**
-     * Почтовый индекс
-     *
-     * @var string $zip
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("zip")
-     *
-     */
-    public $zip;
-
-    /**
-     * Адрес склада
-     *
-     * @var string $address
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("address")
-     *
-     */
-    public $address;
-
-    /**
-     * Контактное лицо
-     *
-     * @var string $contactPerson
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("contactPerson")
-     *
-     */
-    public $contactPerson;
-
-    /**
-     * Контактный телефон
-     *
-     * @var string $contactPhone
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("contactPhone")
-     *
-     */
-    public $contactPhone;
-
-    /**
-     * Код пункта приема Боксберри
-     *
-     * @var string $receptionPointCode
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("receptionPointCode")
-     *
-     */
-    public $receptionPointCode;
+    public $result;
 }

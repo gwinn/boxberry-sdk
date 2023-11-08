@@ -5,37 +5,35 @@ namespace Gwinn\Boxberry\Model\Request\Geography;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ListServices
+ * Class ListServices.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request\Tracking
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class ZipCheckRequest
 {
     /**
-     * Код ПВЗ
+     * Почтовый индекс
      *
-     * @var string $code
+     * @var string
      *
      * @JMS\Type("string")
-     * @JMS\SerializedName("code")
-     *
+     * @JMS\SerializedName("Zip")
      */
-    public $code = '';
+    public $zip;
 
     /**
-     * Код города
+     * Код страны.
      *
-     * @var boolean $photo
+     * @var string
      *
-     * @JMS\Type("boolean")
-     * @JMS\SerializedName("photo")
-     *
+     * @JMS\Type("string")
+     * @JMS\SerializedName("CountryCode")
      */
-    public $photo = false;
+    public $countryCode = '';
 }

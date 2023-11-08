@@ -3,27 +3,31 @@
 namespace Gwinn\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
+use Gwinn\Boxberry\Builders\ResponseBuilder;
 use Gwinn\Boxberry\Exceptions\ApiException;
-use Gwinn\Boxberry\Model;
-use Gwinn\Boxberry\Model\Calculate\DeliveryCalculation;
-use Gwinn\Boxberry\Model\Calculate\DeliveryCosts;
-use Gwinn\Boxberry\Model\CourierShipment\CreateIntake;
-use Gwinn\Boxberry\Model\Geography\PointsDescription;
-use Gwinn\Boxberry\Model\Geography\ZipCheck;
-use Gwinn\Boxberry\Model\OrderInfo\OrdersBalance;
-use Gwinn\Boxberry\Model\Request\CreateIntakeRequest;
-use Gwinn\Boxberry\Model\Request\DeliveryCalculationRequest;
-use Gwinn\Boxberry\Model\Request\DeliveryCostsRequest;
-use Gwinn\Boxberry\Model\Response\Response;
+use Gwinn\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest;
+use Gwinn\Boxberry\Model\Request\Calculate\DeliveryCostsRequest;
+use Gwinn\Boxberry\Model\Request\CourierShipment\CreateIntakeRequest;
+use Gwinn\Boxberry\Model\Request\Geography\PointsDescriptionRequest;
+use Gwinn\Boxberry\Model\Request\Geography\ZipCheckRequest;
+use Gwinn\Boxberry\Model\Request\OrderInfo\OrdersBalanceRequest;
+use Gwinn\Boxberry\Model\Response\Calculate\DeliveryCalculationResponse;
+use Gwinn\Boxberry\Model\Response\Calculate\DeliveryCostsResponse;
+use Gwinn\Boxberry\Model\Response\CourierShipment\CreateIntakeResponse;
+use Gwinn\Boxberry\Model\Response\Geography\PointsDescriptionResponse;
+use Gwinn\Boxberry\Model\Response\Geography\ZipCheck\ZipCheck;
+use Gwinn\Boxberry\Model\Response\Geography\ZipCheckResponse;
+use Gwinn\Boxberry\Model\Response\OrderInfo\OrdersBalance\OrdersBalance;
+use Gwinn\Boxberry\Model\Response\OrderInfo\OrdersBalanceResponse;
 use Psr\Http\Client\ClientExceptionInterface;
 
 /**
- * Class Service
+ * Class Service.
  *
- * @package  Gwinn\Boxberry\Traits
  * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
+ * @license https://retailcrm.ru Proprietary
+ *
+ * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
 trait Service
@@ -33,35 +37,18 @@ trait Service
      *
      * @group services
      *
-     * @param string $code Код ПВЗ
-     * @param bool $photo Если photo равно 1 - будет возвращен массив полноразмерных изображений ПВЗ в base64.
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function pointsDescription(string $code, bool $photo = false): Response
+    public function pointsDescription(PointsDescriptionRequest $request): PointsDescriptionResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            array_filter([
-                'query' => array_merge(
-                    [
-                        'token' => $this->token,
-                        'method' => ucfirst(__FUNCTION__),
-                        'code' => $code
-                    ],
-                    array_filter([
-                        'photo' => $photo ?: false
-                    ])
-                )
-            ])
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return new Response(
-            $this->get($queryParam),
-            PointsDescription::class
-        );
+        /** @var PointsDescriptionResponse $response */
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeResponse(PointsDescriptionResponse::class)
+        ;
+        return $response;
     }
 
     /**
@@ -69,30 +56,18 @@ trait Service
      *
      * @group services
      *
-     * @param string $zip
-     * @param string $countryCode
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function zipCheck(string $zip, string $countryCode = ''): Response
+    public function zipCheck(ZipCheckRequest $request): ZipCheckResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__),
-                    'zip' => $zip,
-                    'CountryCode' => $countryCode ?: false
-                ]
-            ]
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', ZipCheck::class)
-        );
+        /** @var ZipCheckResponse $response */
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(ZipCheckResponse::class, ZipCheck::class)
+        ;
+        return $response;
     }
 
     /**
@@ -101,28 +76,18 @@ trait Service
      *
      * @group services
      *
-     * @param DeliveryCostsRequest $request
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException|GuzzleException
      * @throws ClientExceptionInterface
      */
-    public function deliveryCosts(DeliveryCostsRequest $request): Response
+    public function deliveryCosts(DeliveryCostsRequest $request): DeliveryCostsResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => array_merge(
-                    [
-                        'token' => $this->token,
-                        'method' => ucfirst(__FUNCTION__)
-                    ],
-                    $this->serializer->toArray($request)
-                )
-            ]
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return new Response($this->get($queryParam),DeliveryCosts::class);
+        /** @var DeliveryCostsResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeResponse(DeliveryCostsResponse::class)
+        ;
+        return $response;
     }
 
     /**
@@ -131,13 +96,10 @@ trait Service
      *
      * @group services
      *
-     * @param DeliveryCalculationRequest $request
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException|GuzzleException
      * @throws ClientExceptionInterface
      */
-    public function deliveryCalculation(DeliveryCalculationRequest $request): Response
+    public function deliveryCalculation(DeliveryCalculationRequest $request): DeliveryCalculationResponse
     {
         $options = [
             'json' => array_merge(
@@ -146,36 +108,41 @@ trait Service
                     'method' => ucfirst(__FUNCTION__),
                 ],
                 $this->serializer->toArray($request)
-            )
+            ),
         ];
 
-        return new Response($this->post($options),DeliveryCalculation::class);
+        /** @var DeliveryCalculationResponse $response*/
+        $response = (new ResponseBuilder($this->post($options)))
+            ->serializeResponse(DeliveryCalculationResponse::class)
+        ;
+        return $response;
     }
 
     /**
-     * Создание заявки на забор посылок
+     * Создание заявки на забор посылок.
      *
      * @group services
      *
-     * @param CreateIntakeRequest $request
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException|GuzzleException
      * @throws ClientExceptionInterface
      */
-    public function createIntake(CreateIntakeRequest $request): Response
+    public function createIntake(CreateIntakeRequest $request): CreateIntakeResponse
     {
         $options = [
             'json' => array_merge(
                 [
-                'token' => $this->token,
-                'method' => ucfirst(__FUNCTION__)
+                    'token' => $this->token,
+                    'method' => ucfirst(__FUNCTION__),
                 ],
                 $this->serializer->toArray($request)
-            )
-         ];
+            ),
+        ];
 
-        return new Response($this->post($options), CreateIntake::class);
+        /** @var CreateIntakeResponse $response*/
+        $response = (new ResponseBuilder($this->post($options)))
+            ->serializeResponse(CreateIntakeResponse::class)
+        ;
+        return $response;
     }
 
     /**
@@ -184,28 +151,17 @@ trait Service
      *
      * @group services
      *
-     * @param int $onlyPostpaid Если равно =1, возвращает список заказов только с постоплатой
-     *
-     * @return Response
-     * @throws GuzzleException|ApiException
+     * @throws ApiException
      * @throws ClientExceptionInterface
      */
-    public function ordersBalance(int $onlyPostpaid = 0): Response
+    public function ordersBalance(OrdersBalanceRequest $request): OrdersBalanceResponse
     {
-        $queryParam = array_merge(
-            $this->params,
-            [
-                'query' => [
-                    'token' => $this->token,
-                    'method' => ucfirst(__FUNCTION__),
-                    'OnlyPostpaid' => $onlyPostpaid
-                ]
-            ]
-        );
+        $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        return (new Response(
-            $this->get($queryParam),
-            sprintf('array<%s>', OrdersBalance::class)
-        ));
+        /** @var OrdersBalanceResponse $response*/
+        $response = (new ResponseBuilder($this->get($queryParam)))
+            ->serializeArrayResponse(OrdersBalanceResponse::class, OrdersBalance::class)
+        ;
+        return $response;
     }
 }

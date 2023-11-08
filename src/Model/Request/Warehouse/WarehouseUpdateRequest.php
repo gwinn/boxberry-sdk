@@ -5,91 +5,85 @@ namespace Gwinn\Boxberry\Model\Request\Warehouse;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ParcelCreateRequest
+ * Class ParcelCreateRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
+ *
+ * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
-class WarehouseCreateRequest
+class WarehouseUpdateRequest
 {
     /**
-     * Уникальный код склада
+     * Уникальный код склада.
      *
-     * @var string $code
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("code")
-     *
      */
     public $code;
 
     /**
-     * Наименование склада
+     * Наименование склада.
      *
-     * @var string $name
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("name")
-     *
      */
     public $name;
 
     /**
      * Почтовый индекс
      *
-     * @var string $zip
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("zip")
-     *
      */
     public $zip;
 
     /**
-     * Адрес склада
+     * Адрес склада.
      *
-     * @var string $address
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("address")
-     *
      */
     public $address;
 
     /**
-     * Контактное лицо
+     * Контактное лицо.
      *
-     * @var string $contactPerson
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("contactPerson")
-     *
      */
     public $contactPerson;
 
     /**
-     * Контактный телефон
+     * Контактный телефон.
      *
-     * @var string $contactPhone
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("contactPhone")
-     *
      */
     public $contactPhone;
 
     /**
-     * Код пункта приема Боксберри (отделение сдачи заказов)
+     * Код пункта приема Боксберри (отделение сдачи заказов).
      *
-     * @var string $receptionPointCode
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("receptionPointCode")
-     *
      */
     public $receptionPointCode;
 }

@@ -1,92 +1,86 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\ParcelCreateRequest;
+namespace Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class Items
+ * Class Items.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request\ParcelCreateRequest
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
 class Items
 {
     /**
-     * Артикул товара
+     * Артикул товара.
      *
-     * @var string $id
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("id")
-     *
      */
     public $id;
 
     /**
-     * Наименование товара
+     * Наименование товара.
      *
-     * @var string $name
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("name")
-     *
      */
     public $name;
 
     /**
-     * Единица измерения
+     * Единица измерения.
      *
-     * @var string $unitName
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("UnitName")
-     *
      */
     public $unitName;
 
     /**
      * Процент НДС (число от 0 до 20)
      * Без НДС	-1
-     * НДС не указан	поле НЕ передано
+     * НДС не указан	поле НЕ передано.
      *
-     * @var string $nds
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("nds")
-     *
      */
     public $nds;
 
     /**
-     * Цена за единицу товара
+     * Цена за единицу товара.
      *
-     * @var string $price
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("price")
-     *
      */
     public $price;
 
     /**
-     * Количество единиц товара
+     * Количество единиц товара.
      *
-     * @var string $quantity
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("quantity")
-     *
      */
     public $quantity;
 
     /**
-     * Маркировка товара ЦРПТ
+     * Маркировка товара ЦРПТ.
      *
      * Код маркировки состоит из 28 или 127 символов и включает данные:
      *
@@ -94,11 +88,10 @@ class Items
      * ИЛИ
      * 01 GTIN (14 символов) 21 ISN (13 символов) 91 Ключ проверки (4 символа) 92 Код проверки (88 символов)
      *
-     * @var string $markingCrpt
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("marking_crpt")
-     *
      */
     public $markingCrpt;
 
@@ -109,41 +102,38 @@ class Items
      *
      * Не будет записано если не переданы: supplier_inn + supplier_phone
      *
-     * @var string $supplierName
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("supplier_name")
-     *
      */
     public $supplierName;
 
     /**
-     * ИНН Поставщика
+     * ИНН Поставщика.
      *
      * Должен состоять только из цифр длиной 10 или 12 символов.
      *
      * Не будет записано если не переданы: supplier_name + supplier_phone
      *
-     * @var string $supplierInn
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("supplier_inn")
-     *
      */
     public $supplierInn;
 
     /**
-     * ИНН Поставщика
+     * ИНН Поставщика.
      *
      * Должен состоять только из цифр длиной 10 или 12 символов.
      *
      * Не будет записано если не переданы: supplier_name + supplier_phone
      *
-     * @var string $supplierPhone
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("supplier_phone")
-     *
      */
     public $supplierPhone;
 }

@@ -1,40 +1,39 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\OrderInfo;
+namespace Gwinn\Boxberry\Model\Request\CreateOrder;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ParcelInfoRequest
+ * Class ParcelInfoRequest.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\Request
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
+ *
+ * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
 class ParcelSendRequest
 {
     /**
-     * Код отслеживания отправления
+     * Код отслеживания отправления.
      *
-     * @var string $imIds
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("ImIds")
-     *
      */
     public $imIds;
 
     /**
-     * период до в формате YYYYMMDD
+     * Плановая дата отгрузки (ГГГГ-ММ-ДД).
      *
-     * @var string $shippingDate
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("shippingDate")
-     *
      */
     public $shippingDate = '';
 }

@@ -5,26 +5,25 @@ namespace Gwinn\Boxberry\Model\Response\OrderInfo;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class ParcelList
+ * Class ParcelListResponse.
  *
  * @category Models
- * @package  Gwinn\Boxberry\Model\OrderInfo
+ *
  * @author   RetailDriver LLC <integration@retailcrm.ru>
  * @license  https://retailcrm.ru Proprietary
- * @link     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
  *
+ * @see     http://retailcrm.ru
+ * @see      https://help.retailcrm.ru
  */
-class ParcelList
+class ParcelListResponse
 {
     /**
      * список всех трекинг кодов посылок которые есть в кабинете но не были сформированы в акт
      *
-     * @var string $imIds
+     * @var string
      *
      * @JMS\Type("string")
      * @JMS\SerializedName("ImIds")
-     *
      */
     public $imIds;
 }
