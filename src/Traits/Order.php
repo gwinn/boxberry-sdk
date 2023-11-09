@@ -20,7 +20,6 @@ use Psr\Http\Client\ClientExceptionInterface;
  *
  * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
- *
  */
 trait Order
 {

@@ -52,10 +52,11 @@ trait Parcel
             ],
         ];
 
-        /** @var ParcelCreateResponse $response*/
+        /** @var ParcelCreateResponse $response */
         $response = (new ResponseBuilder($this->post($options)))
             ->serializeResponse(ParcelCreateResponse::class)
         ;
+
         return $response;
     }
 
@@ -72,10 +73,11 @@ trait Parcel
     {
         $queryParam = $this->getQueryParams('ParselSendStory', $request);
 
-        /** @var ParcelSendStoryResponse $response*/
+        /** @var ParcelSendStoryResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(ParcelSendStoryResponse::class, ParcelSendStory::class)
         ;
+
         return $response;
     }
 
@@ -92,10 +94,11 @@ trait Parcel
     {
         $queryParam = $this->getQueryParams('ParselSend', $request);
 
-        /** @var ParcelSendResponse $response*/
+        /** @var ParcelSendResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeResponse(ParcelSendResponse::class)
         ;
+
         return $response;
     }
 
@@ -112,10 +115,11 @@ trait Parcel
     {
         $queryParam = $this->getQueryParams('ParselStory', $request);
 
-        /** @var ParcelStoryResponse $response*/
+        /** @var ParcelStoryResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(ParcelStoryResponse::class, ParcelStory::class)
         ;
+
         return $response;
     }
 
@@ -132,10 +136,11 @@ trait Parcel
     {
         $queryParam = $this->getQueryParams('ParselList');
 
-        /** @var ParcelListResponse $response*/
+        /** @var ParcelListResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeResponse(ParcelListResponse::class)
         ;
+
         return $response;
     }
 
@@ -152,10 +157,11 @@ trait Parcel
     {
         $queryParam = $this->getQueryParams('ParselCheck', $request);
 
-        /** @var ParcelCheckResponse $response*/
+        /** @var ParcelCheckResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeResponse(ParcelCheckResponse::class)
         ;
+
         return $response;
     }
 
@@ -176,10 +182,11 @@ trait Parcel
                 'method' => ucfirst(__FUNCTION__),
             ], $this->serializer->toArray($request)),
         ];
-        /** @var ParcelInfoResponse $response*/
+        /** @var ParcelInfoResponse $response */
         $response = (new ResponseBuilder($this->post($options)))
             ->serializeArrayResponse(ParcelInfoResponse::class, ParcelInfo::class)
         ;
+
         return $response;
     }
 }

@@ -28,9 +28,6 @@ class ResponseBuilder
      */
     protected $rawResponse;
 
-    /**
-     * @param ResponseInterface $response
-     */
     public function __construct(ResponseInterface $response)
     {
         $this->serializer = SerializerBuilder::create()->setPropertyNamingStrategy(
@@ -38,7 +35,7 @@ class ResponseBuilder
                 new IdenticalPropertyNamingStrategy()
             )
         )->configureListeners(
-            function (EventDispatcher $dispatcher) {
+            function (EventDispatcher $dispatcher): void {
                 $dispatcher->addSubscriber(new ResponseFixEventSubscriber());
             }
         )->build();
@@ -46,8 +43,6 @@ class ResponseBuilder
     }
 
     /**
-     * @param string $className
-     * @return Response
      * @throws ApiException
      */
     public function serializeResponse(string $className): Response
@@ -55,6 +50,7 @@ class ResponseBuilder
         $this->errorProcessing();
 
         try {
+            /** @var Response $response */
             $response = $this->serializer->deserialize($this->rawResponse, $className, 'json');
         } catch (RuntimeException $exception) {
             throw new InvalidJsonException(
@@ -68,14 +64,10 @@ class ResponseBuilder
             );
         }
 
-        /** @var Response $response*/
         return $response;
     }
 
     /**
-     * @param string $className
-     * @param string $elementClassName
-     * @return ArrayResponse
      * @throws ApiException
      */
     public function serializeArrayResponse(string $className, string $elementClassName): ArrayResponse
@@ -99,8 +91,9 @@ class ResponseBuilder
                 400
             );
         }
-        /** @var ArrayResponse $arrayResponse*/
+        /** @var ArrayResponse $arrayResponse */
         $arrayResponse = new $className($response);
+
         return $arrayResponse;
     }
 

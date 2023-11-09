@@ -2,6 +2,7 @@
 
 namespace Gwinn\Boxberry\Model\Request\OrderInfo;
 
+use Gwinn\Boxberry\Model\Request\RequestInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -15,7 +16,7 @@ use JMS\Serializer\Annotation as JMS;
  * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
-class ParcelSendStoryRequest
+class ParcelSendStoryRequest implements RequestInterface
 {
     /**
      * период с в формате YYYYMMDD.

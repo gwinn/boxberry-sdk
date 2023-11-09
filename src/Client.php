@@ -3,6 +3,7 @@
 namespace Gwinn\Boxberry;
 
 use Gwinn\Boxberry\Builders\RequestBuilder;
+use Gwinn\Boxberry\Model\Request\RequestInterface;
 use Gwinn\Boxberry\Traits\Lists;
 use Gwinn\Boxberry\Traits\Order;
 use Gwinn\Boxberry\Traits\Parcel;
@@ -20,9 +21,9 @@ use Psr\Http\Message\ResponseInterface;
 class Client
 {
     use Lists;
+    use Order;
     use Parcel;
     use Service;
-    use Order;
     use Warehouse;
 
     /**
@@ -64,7 +65,6 @@ class Client
      * Client constructor.
      *
      * @param string $token api key value
-     * @param ClientInterface $client
      */
     public function __construct(string $token, ClientInterface $client)
     {
@@ -89,7 +89,7 @@ class Client
      *
      * @throws ClientExceptionInterface
      */
-    public function post($options): ResponseInterface
+    public function post(array $options): ResponseInterface
     {
         $builder = new RequestBuilder();
         $request = $builder->buildPostQuery(self::API_URL, self::HEADERS, $options);
@@ -102,7 +102,7 @@ class Client
      *
      * @throws ClientExceptionInterface
      */
-    public function get($options): ResponseInterface
+    public function get(array $options): ResponseInterface
     {
         $builder = new RequestBuilder();
         $request = $builder->buildGetQuery(self::API_URL, self::HEADERS, $options);
@@ -111,11 +111,9 @@ class Client
     }
 
     /**
-     * @param mixed $request
-     *
      * @return array<string, array<string, string>|int>
      */
-    public function getQueryParams(string $function, $request = []): array
+    public function getQueryParams(string $function, RequestInterface $request = null): array
     {
         return array_merge(
             $this->params,
@@ -125,7 +123,7 @@ class Client
                         'token' => $this->token,
                         'method' => $function,
                     ],
-                    $this->serializer->toArray($request)
+                    null !== $request ? $this->serializer->toArray($request) : []
                 ),
             ])
         );

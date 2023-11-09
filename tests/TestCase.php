@@ -74,9 +74,6 @@ class TestCase extends Test
     }
 
     /**
-     * @param array $mockData
-     *
-     * @return Client
      * @throws JsonException
      */
     public function getMock(array $mockData): Client
@@ -94,11 +91,6 @@ class TestCase extends Test
         return new Client(self::TEST_API_TOKEN, $builder->getClient());
     }
 
-    /**
-     * @param ResponseInterface $response
-     * @param string $elementClassName
-     * @param string $responseType
-     */
     public static function assertResponseList(
         ResponseInterface $response,
         string $elementClassName,

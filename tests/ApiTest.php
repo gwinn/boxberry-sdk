@@ -76,23 +76,19 @@ class ApiTest extends TestCase
     /**
      * @dataProvider dataProvider
      *
-     * @param string $method
-     * @param array $mockData
-     * @param array $responseData
-     * @param array|null $requestData
-     *
      * @throws JsonException
      */
     public function test(string $method, array $mockData, array $responseData, array $requestData = null): void
     {
         $this->client = $this->getMock($mockData);
-        $request = null !== $requestData ? $this->serializer->deserialize(
-            file_get_contents(
-                self::REQUESTS_FOLDER . $requestData['filename']
-            ),
-            $requestData['className'],
-            'json'
-        ) : '';
+        $request = null !== $requestData ?
+            $this->serializer->deserialize(
+                file_get_contents(
+                    self::REQUESTS_FOLDER . $requestData['filename']
+                ),
+                $requestData['className'],
+                'json'
+            ) : null;
         $response = $this->client->{$method}($request);
         if (!empty($response)) {
             static::assertResponseList($response, $responseData['responseElementClass'], $responseData['responseType']);

@@ -21,8 +21,8 @@ use JMS\Serializer\Annotation as JMS;
  */
 class PointsDescriptionResponse implements ResponseInterface
 {
-    use WorkShedule;
     use Terminal;
+    use WorkShedule;
 
     /**
      * Наименование пункта выдачи.

@@ -85,10 +85,11 @@ trait Warehouse
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        /** @var WarehouseInfoResponse $response*/
+        /** @var WarehouseInfoResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(WarehouseInfoResponse::class, WarehouseInfo::class)
         ;
+
         return $response;
     }
 }

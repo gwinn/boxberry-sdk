@@ -2,6 +2,7 @@
 
 namespace Gwinn\Boxberry\Model\Request\ChangeOrder;
 
+use Gwinn\Boxberry\Model\Request\RequestInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -15,7 +16,7 @@ use JMS\Serializer\Annotation as JMS;
  * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
-class CancelOrderRequest
+class CancelOrderRequest implements RequestInterface
 {
     use ChangeOrder;
 

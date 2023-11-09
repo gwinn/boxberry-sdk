@@ -7,6 +7,7 @@ use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Export;
 use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Items;
 use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Kurdost;
 use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Shop;
+use Gwinn\Boxberry\Model\Request\RequestInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -20,7 +21,7 @@ use JMS\Serializer\Annotation as JMS;
  * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
-class ParcelCreateRequest
+class ParcelCreateRequest implements RequestInterface
 {
     /**
      * Токен партнера интеграции (длина до 24 символов).

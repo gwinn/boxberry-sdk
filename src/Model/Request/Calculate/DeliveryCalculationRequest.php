@@ -3,6 +3,7 @@
 namespace Gwinn\Boxberry\Model\Request\Calculate;
 
 use Gwinn\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest\BoxesSizes;
+use Gwinn\Boxberry\Model\Request\RequestInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -16,7 +17,7 @@ use JMS\Serializer\Annotation as JMS;
  * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
-class DeliveryCalculationRequest
+class DeliveryCalculationRequest implements RequestInterface
 {
     /**
      * Город отправления.

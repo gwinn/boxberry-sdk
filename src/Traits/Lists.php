@@ -56,10 +56,11 @@ trait Lists
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        /** @var ListCitiesResponse $response*/
+        /** @var ListCitiesResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(ListCitiesResponse::class, ListCities::class)
         ;
+
         return $response;
     }
 
@@ -75,10 +76,11 @@ trait Lists
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        /** @var ListCitiesFullResponse $response*/
+        /** @var ListCitiesFullResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(ListCitiesFullResponse::class, ListCitiesFull::class)
         ;
+
         return $response;
     }
 
@@ -95,10 +97,11 @@ trait Lists
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        /** @var ListPointsResponse $response*/
+        /** @var ListPointsResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(ListPointsResponse::class, ListPoints::class)
         ;
+
         return $response;
     }
 
@@ -115,10 +118,11 @@ trait Lists
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        /** @var ListPointsShortResponse $response*/
+        /** @var ListPointsShortResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(ListPointsShortResponse::class, ListPointsShort::class)
         ;
+
         return $response;
     }
 
@@ -134,10 +138,11 @@ trait Lists
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        /** @var ListServicesResponse $response*/
+        /** @var ListServicesResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(ListServicesResponse::class, ListServices::class)
         ;
+
         return $response;
     }
 
@@ -153,10 +158,11 @@ trait Lists
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        /** @var ListStatusesResponse $response*/
+        /** @var ListStatusesResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(ListStatusesResponse::class, ListStatuses::class)
         ;
+
         return $response;
     }
 
@@ -172,10 +178,11 @@ trait Lists
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        /** @var ListStatusesFullResponse $response*/
+        /** @var ListStatusesFullResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeResponse(ListStatusesFullResponse::class)
         ;
+
         return $response;
     }
 
@@ -191,10 +198,11 @@ trait Lists
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__));
 
-        /** @var ListZipsResponse $response*/
+        /** @var ListZipsResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(ListZipsResponse::class, ListZips::class)
         ;
+
         return $response;
     }
 
@@ -210,13 +218,14 @@ trait Lists
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__));
 
-        /** @var CourierListCitiesResponse $response*/
+        /** @var CourierListCitiesResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(
                 CourierListCitiesResponse::class,
                 CourierListCities::class
             )
         ;
+
         return $response;
     }
 
@@ -232,13 +241,14 @@ trait Lists
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__));
 
-        /** @var PointsForParcelsResponse $response*/
+        /** @var PointsForParcelsResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(
                 PointsForParcelsResponse::class,
                 PointsForParcels::class
             )
         ;
+
         return $response;
     }
 }

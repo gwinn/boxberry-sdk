@@ -25,10 +25,6 @@ class ApiErrorTest extends TestCase
     /**
      * @dataProvider dataProvider
      *
-     * @param string $method
-     * @param array $mockData
-     * @param array $requestData
-     *
      * @throws ApiException
      * @throws GuzzleException
      * @throws JsonException

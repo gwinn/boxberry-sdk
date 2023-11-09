@@ -48,6 +48,7 @@ trait Service
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeResponse(PointsDescriptionResponse::class)
         ;
+
         return $response;
     }
 
@@ -67,6 +68,7 @@ trait Service
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(ZipCheckResponse::class, ZipCheck::class)
         ;
+
         return $response;
     }
 
@@ -83,10 +85,11 @@ trait Service
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        /** @var DeliveryCostsResponse $response*/
+        /** @var DeliveryCostsResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeResponse(DeliveryCostsResponse::class)
         ;
+
         return $response;
     }
 
@@ -111,10 +114,11 @@ trait Service
             ),
         ];
 
-        /** @var DeliveryCalculationResponse $response*/
+        /** @var DeliveryCalculationResponse $response */
         $response = (new ResponseBuilder($this->post($options)))
             ->serializeResponse(DeliveryCalculationResponse::class)
         ;
+
         return $response;
     }
 
@@ -138,10 +142,11 @@ trait Service
             ),
         ];
 
-        /** @var CreateIntakeResponse $response*/
+        /** @var CreateIntakeResponse $response */
         $response = (new ResponseBuilder($this->post($options)))
             ->serializeResponse(CreateIntakeResponse::class)
         ;
+
         return $response;
     }
 
@@ -158,10 +163,11 @@ trait Service
     {
         $queryParam = $this->getQueryParams(ucfirst(__FUNCTION__), $request);
 
-        /** @var OrdersBalanceResponse $response*/
+        /** @var OrdersBalanceResponse $response */
         $response = (new ResponseBuilder($this->get($queryParam)))
             ->serializeArrayResponse(OrdersBalanceResponse::class, OrdersBalance::class)
         ;
+
         return $response;
     }
 }

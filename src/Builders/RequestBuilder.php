@@ -8,12 +8,10 @@ use http\Exception\InvalidArgumentException;
 class RequestBuilder
 {
     /**
-     * @param string $url
-     * @param array<string, string> $headers
+     * @param array<string, string>                             $headers
      * @param array<string, array<string, array<mixed>|string>> $options
-     * @return Request
      */
-    public function buildPostQuery(string $url, $headers, $options): Request
+    public function buildPostQuery(string $url, array $headers, array $options): Request
     {
         if (!isset($options['json'])) {
             throw new InvalidArgumentException('no arguments for post request');
@@ -24,12 +22,10 @@ class RequestBuilder
     }
 
     /**
-     * @param string $url
-     * @param array<string, string> $headers
+     * @param array<string, string>                    $headers
      * @param array<string, array<string, string>|int> $options
-     * @return Request
      */
-    public function buildGetQuery(string $url, $headers, $options): Request
+    public function buildGetQuery(string $url, array $headers, array $options): Request
     {
         if (!isset($options['query'])) {
             throw new InvalidArgumentException('no arguments for get request');
