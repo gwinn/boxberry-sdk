@@ -8,8 +8,10 @@ use http\Exception\InvalidArgumentException;
 class RequestBuilder
 {
     /**
+     * @param string $url
      * @param array<string, string> $headers
      * @param array<string, array<string, array<mixed>|string>> $options
+     * @return Request
      */
     public function buildPostQuery(string $url, $headers, $options): Request
     {
@@ -22,8 +24,10 @@ class RequestBuilder
     }
 
     /**
+     * @param string $url
      * @param array<string, string> $headers
      * @param array<string, array<string, string>|int> $options
+     * @return Request
      */
     public function buildGetQuery(string $url, $headers, $options): Request
     {

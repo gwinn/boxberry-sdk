@@ -2,8 +2,8 @@
 
 namespace Gwinn\Boxberry\Tests;
 
-use GuzzleHttp;
 use Gwinn\Boxberry\Client;
+use Gwinn\Boxberry\Model\Response\ResponseInterface;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\Serializer;
@@ -27,14 +27,39 @@ use Pock\PockBuilder;
  */
 class TestCase extends Test
 {
+    /**
+     * @var string
+     */
     public const REQUESTS_FOLDER = __DIR__ . DIRECTORY_SEPARATOR . 'Requests' . DIRECTORY_SEPARATOR;
+
+    /**
+     * @var string
+     */
     public const RESPONSE_FOLDER = __DIR__ . DIRECTORY_SEPARATOR . 'Response' . DIRECTORY_SEPARATOR;
+
+    /**
+     * @var string
+     */
     public const ERROR_RESPONSE_FOLDER = __DIR__ . DIRECTORY_SEPARATOR . 'ErrorResponse' . DIRECTORY_SEPARATOR;
+
+    /**
+     * @var string
+     */
     public const TEST_API_TOKEN = 'd6f33e419c16131e5325cbd84d5d6000';
+
+    /**
+     * @var string
+     */
     public const TEST_API_HOST = 'api.boxberry.ru';
+
+    /**
+     * @var Client
+     */
     public $client;
 
-    // @var Serializer $serializer
+    /**
+     * @var Serializer
+     */
     protected $serializer;
 
     protected function setUp(): void
@@ -49,11 +74,12 @@ class TestCase extends Test
     }
 
     /**
-     * @param mixed $mockData
+     * @param array $mockData
      *
+     * @return Client
      * @throws JsonException
      */
-    public function getMock($mockData): Client
+    public function getMock(array $mockData): Client
     {
         $builder = new PockBuilder();
         $builder->matchMethod($mockData['requestedMethod'])
@@ -69,20 +95,12 @@ class TestCase extends Test
     }
 
     /**
-     * @throws JsonException
-     */
-    public function getClient(): Client
-    {
-        $client = new GuzzleHttp\Client();
-
-        return new Client(self::TEST_API_TOKEN, $client);
-    }
-
-    /**
-     * @param mixed $response
+     * @param ResponseInterface $response
+     * @param string $elementClassName
+     * @param string $responseType
      */
     public static function assertResponseList(
-        $response,
+        ResponseInterface $response,
         string $elementClassName,
         string $responseType
     ): void {

@@ -3,6 +3,11 @@
 namespace Gwinn\Boxberry;
 
 use Gwinn\Boxberry\Builders\RequestBuilder;
+use Gwinn\Boxberry\Traits\Lists;
+use Gwinn\Boxberry\Traits\Order;
+use Gwinn\Boxberry\Traits\Parcel;
+use Gwinn\Boxberry\Traits\Service;
+use Gwinn\Boxberry\Traits\Warehouse;
 use InvalidArgumentException;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
@@ -14,11 +19,11 @@ use Psr\Http\Message\ResponseInterface;
 
 class Client
 {
-    use Traits\Lists;
-    use Traits\Parcel;
-    use Traits\Service;
-    use Traits\Order;
-    use Traits\Warehouse;
+    use Lists;
+    use Parcel;
+    use Service;
+    use Order;
+    use Warehouse;
 
     /**
      * @var string
@@ -59,6 +64,7 @@ class Client
      * Client constructor.
      *
      * @param string $token api key value
+     * @param ClientInterface $client
      */
     public function __construct(string $token, ClientInterface $client)
     {

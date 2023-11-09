@@ -2,8 +2,6 @@
 
 namespace Gwinn\Boxberry\Tests;
 
-use GuzzleHttp\Exception\GuzzleException;
-use Gwinn\Boxberry\Exceptions\ApiException;
 use Gwinn\Boxberry\Model\Request\AccrualOfServices\ListServicesRequest;
 use Gwinn\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest;
 use Gwinn\Boxberry\Model\Request\Calculate\DeliveryCostsRequest;
@@ -78,19 +76,17 @@ class ApiTest extends TestCase
     /**
      * @dataProvider dataProvider
      *
-     * @param mixed $method
-     * @param mixed $mockData
-     * @param mixed $responseData
-     * @param mixed $requestData
+     * @param string $method
+     * @param array $mockData
+     * @param array $responseData
+     * @param array|null $requestData
      *
-     * @throws ApiException
-     * @throws GuzzleException
      * @throws JsonException
      */
-    public function test($method, $mockData, $responseData, $requestData): void
+    public function test(string $method, array $mockData, array $responseData, array $requestData = null): void
     {
         $this->client = $this->getMock($mockData);
-        $request = is_array($requestData) ? $this->serializer->deserialize(
+        $request = null !== $requestData ? $this->serializer->deserialize(
             file_get_contents(
                 self::REQUESTS_FOLDER . $requestData['filename']
             ),
@@ -191,7 +187,6 @@ class ApiTest extends TestCase
                     'responseElementClass' => ParcelListResponse::class,
                     'responseType' => ParcelListResponse::class,
                 ],
-                'requestData' => '',
             ],
             'parcelCheck' => [
                 'method' => 'parcelCheck',
@@ -368,7 +363,6 @@ class ApiTest extends TestCase
                     'responseElementClass' => ListZips::class,
                     'responseType' => ListZipsResponse::class,
                 ],
-                'requestData' => '',
             ],
             'courierListCities' => [
                 'method' => 'courierListCities',
@@ -383,7 +377,6 @@ class ApiTest extends TestCase
                     'responseElementClass' => CourierListCities::class,
                     'responseType' => CourierListCitiesResponse::class,
                 ],
-                'requestData' => '',
             ],
             'pointsForParcels' => [
                 'method' => 'pointsForParcels',
@@ -398,7 +391,6 @@ class ApiTest extends TestCase
                     'responseElementClass' => PointsForParcels::class,
                     'responseType' => PointsForParcelsResponse::class,
                 ],
-                'requestData' => '',
             ],
             'pointsDescription' => [
                 'method' => 'pointsDescription',

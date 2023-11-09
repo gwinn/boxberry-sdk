@@ -5,6 +5,7 @@ namespace Gwinn\Boxberry\Model\Response\Geography;
 use Gwinn\Boxberry\Model\Response\Geography\PointsDescription\Photos;
 use Gwinn\Boxberry\Model\Response\Geography\PointsDescription\Terminal;
 use Gwinn\Boxberry\Model\Response\Geography\PointsDescription\WorkShedule;
+use Gwinn\Boxberry\Model\Response\ResponseInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -18,7 +19,7 @@ use JMS\Serializer\Annotation as JMS;
  * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
-class PointsDescriptionResponse
+class PointsDescriptionResponse implements ResponseInterface
 {
     use WorkShedule;
     use Terminal;

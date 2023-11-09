@@ -2,7 +2,7 @@
 
 namespace Gwinn\Boxberry\Model\Response;
 
-abstract class ArrayResponse
+abstract class ArrayResponse implements ResponseInterface
 {
     /** @var mixed */
     public $result;

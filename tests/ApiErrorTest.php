@@ -25,15 +25,15 @@ class ApiErrorTest extends TestCase
     /**
      * @dataProvider dataProvider
      *
-     * @param mixed $method
-     * @param mixed $mockData
-     * @param mixed $requestData
+     * @param string $method
+     * @param array $mockData
+     * @param array $requestData
      *
      * @throws ApiException
      * @throws GuzzleException
      * @throws JsonException
      */
-    public function test($method, $mockData, $requestData): void
+    public function test(string $method, array $mockData, array $requestData): void
     {
         $this->expectException(ApiException::class);
         $this->client = $this->getMock($mockData);

@@ -2,6 +2,7 @@
 
 namespace Gwinn\Boxberry\Model\Response\Tracking;
 
+use Gwinn\Boxberry\Model\Response\ResponseInterface;
 use Gwinn\Boxberry\Model\Response\Tracking\ListStatusesFull\Products;
 use Gwinn\Boxberry\Model\Response\Tracking\ListStatusesFull\Statuses;
 use JMS\Serializer\Annotation as JMS;
@@ -17,7 +18,7 @@ use JMS\Serializer\Annotation as JMS;
  * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
-class ListStatusesFullResponse
+class ListStatusesFullResponse implements ResponseInterface
 {
     /**
      * Массив статусов.

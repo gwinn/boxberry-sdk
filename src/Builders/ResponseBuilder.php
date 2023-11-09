@@ -7,6 +7,7 @@ use Gwinn\Boxberry\Exceptions\ApiException;
 use Gwinn\Boxberry\Exceptions\InvalidJsonException;
 use Gwinn\Boxberry\Model\Response\ArrayResponse;
 use Gwinn\Boxberry\Model\Response\Error;
+use Gwinn\Boxberry\Model\Response\ResponseInterface as Response;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\Exception\RuntimeException;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
@@ -27,6 +28,9 @@ class ResponseBuilder
      */
     protected $rawResponse;
 
+    /**
+     * @param ResponseInterface $response
+     */
     public function __construct(ResponseInterface $response)
     {
         $this->serializer = SerializerBuilder::create()->setPropertyNamingStrategy(
@@ -42,11 +46,11 @@ class ResponseBuilder
     }
 
     /**
+     * @param string $className
+     * @return Response
      * @throws ApiException
-     *
-     * @return mixed
      */
-    public function serializeResponse(string $className)
+    public function serializeResponse(string $className): Response
     {
         $this->errorProcessing();
 
@@ -64,10 +68,14 @@ class ResponseBuilder
             );
         }
 
+        /** @var Response $response*/
         return $response;
     }
 
     /**
+     * @param string $className
+     * @param string $elementClassName
+     * @return ArrayResponse
      * @throws ApiException
      */
     public function serializeArrayResponse(string $className, string $elementClassName): ArrayResponse

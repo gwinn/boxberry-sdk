@@ -2,6 +2,7 @@
 
 namespace Gwinn\Boxberry\Model\Response\Calculate;
 
+use Gwinn\Boxberry\Model\Response\ResponseInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -15,7 +16,7 @@ use JMS\Serializer\Annotation as JMS;
  * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
-class DeliveryCostsResponse
+class DeliveryCostsResponse implements ResponseInterface
 {
     /**
      * Итоговая стоимость доставки (равна price_base + price_service).

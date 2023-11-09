@@ -2,6 +2,7 @@
 
 namespace Gwinn\Boxberry\Model\Response\CreateOrder;
 
+use Gwinn\Boxberry\Model\Response\ResponseInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -15,7 +16,7 @@ use JMS\Serializer\Annotation as JMS;
  * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
-class ParcelCreateResponse
+class ParcelCreateResponse implements ResponseInterface
 {
     /**
      * Трек-номер посылки для отслеживания.

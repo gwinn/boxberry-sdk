@@ -3,6 +3,7 @@
 namespace Gwinn\Boxberry\Model\Response\Calculate;
 
 use Gwinn\Boxberry\Model\Response\Calculate\DeliveryCalculation\DeliveryCalculationResult;
+use Gwinn\Boxberry\Model\Response\ResponseInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -16,7 +17,7 @@ use JMS\Serializer\Annotation as JMS;
  * @see     http://retailcrm.ru
  * @see      https://help.retailcrm.ru
  */
-class DeliveryCalculationResponse
+class DeliveryCalculationResponse implements ResponseInterface
 {
     /**
      * Массив вариантов расчетов для разных типов доставки.
