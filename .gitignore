@@ -15,3 +15,5 @@ var/*
 /phpmd-report.json
 /cs_fixer-report.json
 /docker-compose.yml
+/.phpunit.cache/
+/coverage.xml

@@ -15,16 +15,17 @@
          stopOnIncomplete="false"
          stopOnSkipped="false"
          stopOnRisky="false">
+
   <testsuites>
     <testsuite name="Project Test Suite">
-      <directory>tests</directory>
+      <directory>./tests</directory>
+      <exclude>./vendor</exclude>
     </testsuite>
   </testsuites>
 
-  <coverage cacheDirectory=".phpunit.cache/code-coverage"
-              processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">src</directory>
-        </include>
-    </coverage>
+  <coverage cacheDirectory=".phpunit.cache/code-coverage" processUncoveredFiles="true">
+    <include>
+      <directory suffix=".php">src</directory>
+    </include>
+  </coverage>
 </phpunit>
