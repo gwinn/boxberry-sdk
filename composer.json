@@ -1,5 +1,5 @@
 {
-    "name": "gwinn/boxberry-sdk",
+    "name": "retailcrm/boxberry-sdk",
     "type": "library",
     "description": "Boxberry API implementation",
     "keywords": ["API","JSON","REST"],
@@ -15,6 +15,11 @@
             "name": "Vladimir Kolchin",
             "email": "kolchin.moon@gmail.com",
             "role": "Developer"
+        },
+        {
+            "name": "Angelina Pekhova",
+            "email": "reneitpa@gmail.com",
+            "role": "Developer"
         }
     ],
     "require": {
@@ -27,12 +32,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Gwinn\\Boxberry\\": "src/"
+            "RetailCrm\\Boxberry\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Gwinn\\Boxberry\\Tests\\": "tests/"
+            "RetailCrm\\Boxberry\\Tests\\": "tests/"
         }
     },
     "require-dev": {

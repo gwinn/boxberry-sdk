@@ -1,7 +1,7 @@
 # boxberry-sdk
 SDK для Боксберри
 
-Возможности SDK:
+Методы:
 
 - ListCities. Список городов доставки
 - ListCitiesFull. Список городов доставки (полный)
@@ -38,7 +38,7 @@ SDK для Боксберри
 
 ***
 ### Требования
-Требования — минимальны. Нужен PHP 7.3 или выше.
+PHP 7.3 или выше.
 ***
 ### Установка
 Установка осуществляется с помощью менеджера пакетов Composer
@@ -61,7 +61,7 @@ try{
     $response = $boxberryClient->listCities($listCitiesRequest);
 }catch (ApiException $exception){
     echo $exception->getMessage();
-    exit(-1);
+    exit(255);
 }
 ```
 ```php
@@ -77,7 +77,7 @@ try{
     $response = $boxberryClient->parcelInfo($parcelInfoRequest);
 }catch (ApiException $exception){
     echo $exception->getMessage();
-    exit(-1);
+    exit(255);
 }
 ```
 
