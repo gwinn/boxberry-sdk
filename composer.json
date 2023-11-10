@@ -45,11 +45,23 @@
         "friendsofphp/php-cs-fixer": "^2.18"
     },
     "scripts": {
+        "phpunit-ci": "@php -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude=\"~vendor~\" ./vendor/bin/phpunit --teamcity -c phpunit.xml.dist",
+        "phpunit": "./vendor/bin/phpunit -c phpunit.xml.dist --coverage-text",
         "test": "./vendor/bin/phpunit  --colors=always",
         "phpcs": "./vendor/bin/phpcs --standard=PSR12 src/ tests/ > phpcs-report.json",
         "cs_fixer": "./vendor/bin/php-cs-fixer fix --dry-run --config=.php-cs-fixer.dist.php --format=txt --using-cache=no -vvv --allow-risky=yes> cs_fixer-report.json",
         "cs_fixer-fix": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --format=txt --using-cache=no -vvv --allow-risky=yes > cs_fixer-report.json",
         "phpstan": "./vendor/bin/phpstan analyse src --level max -vvv > phpstan-report.json",
-        "phpmd": "./vendor/bin/phpmd src text ./phpmd.xml > phpmd-report.json"
+        "phpmd": "./vendor/bin/phpmd src text ./phpmd.xml > phpmd-report.json",
+        "lint": [
+            "@phpcs",
+            "@phpmd",
+            "@phpstan",
+            "@cs_fixer"
+        ],
+        "verify": [
+            "@lint",
+            "@phpunit"
+        ]
     }
 }
