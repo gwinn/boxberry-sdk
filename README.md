@@ -2,8 +2,8 @@
 
 [![Build Status](https://github.com/gwinn/boxberry-sdk/workflows/CI/badge.svg)](https://github.com/gwinn/boxberry-sdk/actions)
 [![Coverage](https://img.shields.io/codecov/c/gh/gwinn/boxberry-sdk/master.svg?logo=github&logoColor=white)](https://codecov.io/gh/gwinn/boxberry-sdk)
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/retailcrm/boxberry-sdk.svg?logo=php&logoColor=white)](https://packagist.org/packages/retailcrm/boxberry-sdk)
-[![Latest stable](https://img.shields.io/packagist/v/retailcrm/boxberry-sdk.svg)](https://packagist.org/packages/retailcrm/boxberry-sdk)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/gwinn/boxberry-sdk.svg?logo=php&logoColor=white)](https://packagist.org/packages/gwinn/boxberry-sdk)
+[![Latest stable](https://img.shields.io/packagist/v/gwinn/boxberry-sdk.svg)](https://packagist.org/packages/gwinn/boxberry-sdk)
 
 SDK службы доставки Boxberry
 
