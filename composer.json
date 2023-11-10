@@ -50,7 +50,7 @@
     },
     "scripts": {
         "phpunit": "./vendor/bin/phpunit -c phpunit.xml.dist",
-        "phpunit-ci": "@php -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude=\"~vendor~\" ./vendor/bin/phpunit --teamcity -c phpunit.xml.dist",
+        "phpunit-ci": "@php -dpcov.enabled=1 -dpcov.directory=. -dpcov.exclude=\"~vendor~\" ./vendor/bin/phpunit --teamcity -c phpunit.xml.dist --coverage-clover=coverage.xml",
         "phpcs": "./vendor/bin/phpcs --standard=PSR12 src/ tests/ > phpcs-report.json",
         "cs_fixer": "./vendor/bin/php-cs-fixer fix --dry-run --config=.php-cs-fixer.dist.php --format=txt --using-cache=no -vvv --allow-risky=yes> cs_fixer-report.json",
         "cs_fixer-fix": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --format=txt --using-cache=no -vvv --allow-risky=yes > cs_fixer-report.json",
