@@ -1,8 +1,8 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\CourierShipment;
+namespace RetailCrm\Boxberry\Model\Request\CourierShipment;
 
-use Gwinn\Boxberry\Model\Request\RequestInterface;
+use RetailCrm\Boxberry\Model\Request\RequestInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\Calculate\DeliveryCalculation;
+namespace RetailCrm\Boxberry\Model\Response\Calculate\DeliveryCalculation;
 
 use JMS\Serializer\Annotation as JMS;
 
@@ -22,7 +22,7 @@ class DeliveryCalculationResult
      *
      * @var DeliveryCosts[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Calculate\DeliveryCalculation\DeliveryCosts>")
+     * @JMS\Type("array<RetailCrm\Boxberry\Model\Response\Calculate\DeliveryCalculation\DeliveryCosts>")
      * @JMS\SerializedName("DeliveryCosts")
      */
     public $deliveryCosts = [];

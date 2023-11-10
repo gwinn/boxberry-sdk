@@ -1,11 +1,11 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\Geography;
+namespace RetailCrm\Boxberry\Model\Response\Geography;
 
-use Gwinn\Boxberry\Model\Response\Geography\PointsDescription\Photos;
-use Gwinn\Boxberry\Model\Response\Geography\PointsDescription\Terminal;
-use Gwinn\Boxberry\Model\Response\Geography\PointsDescription\WorkShedule;
-use Gwinn\Boxberry\Model\Response\ResponseInterface;
+use RetailCrm\Boxberry\Model\Response\Geography\PointsDescription\Photos;
+use RetailCrm\Boxberry\Model\Response\Geography\PointsDescription\Terminal;
+use RetailCrm\Boxberry\Model\Response\Geography\PointsDescription\WorkShedule;
+use RetailCrm\Boxberry\Model\Response\ResponseInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -363,7 +363,7 @@ class PointsDescriptionResponse implements ResponseInterface
      *
      * @var Photos[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Geography\PointsDescriptionResponse\Photos>")
+     * @JMS\Type("array<RetailCrm\Boxberry\Model\Geography\PointsDescriptionResponse\Photos>")
      * @JMS\SerializedName("photos")
      */
     public $photos = [];

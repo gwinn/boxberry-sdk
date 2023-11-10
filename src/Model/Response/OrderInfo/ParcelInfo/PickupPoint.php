@@ -1,6 +1,6 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo;
+namespace RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelInfo;
 
 use JMS\Serializer\Annotation as JMS;
 

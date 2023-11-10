@@ -1,9 +1,9 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\Geography;
+namespace RetailCrm\Boxberry\Model\Response\Geography;
 
-use Gwinn\Boxberry\Model\Response\ArrayResponse;
-use Gwinn\Boxberry\Model\Response\Geography\ListZips\ListZips;
+use RetailCrm\Boxberry\Model\Response\ArrayResponse;
+use RetailCrm\Boxberry\Model\Response\Geography\ListZips\ListZips;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -22,7 +22,7 @@ class ListZipsResponse extends ArrayResponse
     /**
      * @var ListZips[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Geography\ListZips\ListZips>")
+     * @JMS\Type("array<RetailCrm\Boxberry\Model\Response\Geography\ListZips\ListZips>")
      */
     public $result;
 }

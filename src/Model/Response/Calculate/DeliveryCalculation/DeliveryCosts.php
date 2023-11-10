@@ -1,6 +1,6 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\Calculate\DeliveryCalculation;
+namespace RetailCrm\Boxberry\Model\Response\Calculate\DeliveryCalculation;
 
 use JMS\Serializer\Annotation as JMS;
 

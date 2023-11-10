@@ -1,15 +1,15 @@
 <?php
 
-namespace Gwinn\Boxberry\Traits;
+namespace RetailCrm\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Gwinn\Boxberry\Builders\ResponseBuilder;
-use Gwinn\Boxberry\Exceptions\ApiException;
-use Gwinn\Boxberry\Model\Request\ChangeOrder\CancelOrderRequest;
-use Gwinn\Boxberry\Model\Request\ChangeOrder\ChangeOrderDeliveryTypeRequest;
-use Gwinn\Boxberry\Model\Request\ChangeOrder\ChangeOrderDetailsRequest;
-use Gwinn\Boxberry\Model\Request\ChangeOrder\ChangeOrderIssueRequest;
-use Gwinn\Boxberry\Model\Request\ChangeOrder\ChangeOrderStorageDateRequest;
+use RetailCrm\Boxberry\Builders\ResponseBuilder;
+use RetailCrm\Boxberry\Exceptions\ApiException;
+use RetailCrm\Boxberry\Model\Request\ChangeOrder\CancelOrderRequest;
+use RetailCrm\Boxberry\Model\Request\ChangeOrder\ChangeOrderDeliveryTypeRequest;
+use RetailCrm\Boxberry\Model\Request\ChangeOrder\ChangeOrderDetailsRequest;
+use RetailCrm\Boxberry\Model\Request\ChangeOrder\ChangeOrderIssueRequest;
+use RetailCrm\Boxberry\Model\Request\ChangeOrder\ChangeOrderStorageDateRequest;
 use Psr\Http\Client\ClientExceptionInterface;
 
 /**

@@ -1,16 +1,16 @@
 <?php
 
-namespace Gwinn\Boxberry\Traits;
+namespace RetailCrm\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Gwinn\Boxberry\Builders\ResponseBuilder;
-use Gwinn\Boxberry\Exceptions\ApiException;
-use Gwinn\Boxberry\Model\Request\Warehouse\WarehouseCreateRequest;
-use Gwinn\Boxberry\Model\Request\Warehouse\WarehouseDeleteRequest;
-use Gwinn\Boxberry\Model\Request\Warehouse\WarehouseInfoRequest;
-use Gwinn\Boxberry\Model\Request\Warehouse\WarehouseUpdateRequest;
-use Gwinn\Boxberry\Model\Response\Warehouse\WarehouseInfo\WarehouseInfo;
-use Gwinn\Boxberry\Model\Response\Warehouse\WarehouseInfoResponse;
+use RetailCrm\Boxberry\Builders\ResponseBuilder;
+use RetailCrm\Boxberry\Exceptions\ApiException;
+use RetailCrm\Boxberry\Model\Request\Warehouse\WarehouseCreateRequest;
+use RetailCrm\Boxberry\Model\Request\Warehouse\WarehouseDeleteRequest;
+use RetailCrm\Boxberry\Model\Request\Warehouse\WarehouseInfoRequest;
+use RetailCrm\Boxberry\Model\Request\Warehouse\WarehouseUpdateRequest;
+use RetailCrm\Boxberry\Model\Response\Warehouse\WarehouseInfo\WarehouseInfo;
+use RetailCrm\Boxberry\Model\Response\Warehouse\WarehouseInfoResponse;
 use Psr\Http\Client\ClientExceptionInterface;
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\ChangeOrder;
+namespace RetailCrm\Boxberry\Model\Request\ChangeOrder;
 
 use JMS\Serializer\Annotation as JMS;
 

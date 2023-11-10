@@ -1,10 +1,10 @@
 <?php
 
-namespace Gwinn\Boxberry\Tests;
+namespace RetailCrm\Boxberry\Tests;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Gwinn\Boxberry\Exceptions\ApiException;
-use Gwinn\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest;
+use RetailCrm\Boxberry\Exceptions\ApiException;
+use RetailCrm\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest;
 use Pock\Enum\RequestMethod;
 use Pock\Exception\JsonException;
 

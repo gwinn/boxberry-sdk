@@ -1,13 +1,13 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\CreateOrder;
+namespace RetailCrm\Boxberry\Model\Request\CreateOrder;
 
-use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Customer;
-use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Export;
-use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Items;
-use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Kurdost;
-use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Shop;
-use Gwinn\Boxberry\Model\Request\RequestInterface;
+use RetailCrm\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Customer;
+use RetailCrm\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Export;
+use RetailCrm\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Items;
+use RetailCrm\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Kurdost;
+use RetailCrm\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Shop;
+use RetailCrm\Boxberry\Model\Request\RequestInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -139,7 +139,7 @@ class ParcelCreateRequest implements RequestInterface
      *
      * @var Kurdost
      *
-     * @JMS\Type("Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Kurdost")
+     * @JMS\Type("RetailCrm\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Kurdost")
      * @JMS\SerializedName("kurdost")
      */
     public $kurdost;
@@ -153,7 +153,7 @@ class ParcelCreateRequest implements RequestInterface
      *
      * @var Export
      *
-     * @JMS\Type("Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Export")
+     * @JMS\Type("RetailCrm\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Export")
      * @JMS\SerializedName("export")
      */
     public $export;
@@ -163,7 +163,7 @@ class ParcelCreateRequest implements RequestInterface
      *
      * @var Shop
      *
-     * @JMS\Type("Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Shop")
+     * @JMS\Type("RetailCrm\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Shop")
      * @JMS\SerializedName("shop")
      */
     public $shop;
@@ -173,7 +173,7 @@ class ParcelCreateRequest implements RequestInterface
      *
      * @var Customer
      *
-     * @JMS\Type("Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Customer")
+     * @JMS\Type("RetailCrm\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Customer")
      * @JMS\SerializedName("customer")
      */
     public $customer;
@@ -184,7 +184,7 @@ class ParcelCreateRequest implements RequestInterface
      *
      * @var Items[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Items>")
+     * @JMS\Type("array<RetailCrm\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest\Items>")
      * @JMS\SerializedName("items")
      */
     public $items = [];

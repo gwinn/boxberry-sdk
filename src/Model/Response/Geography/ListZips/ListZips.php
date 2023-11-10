@@ -1,6 +1,6 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\Geography\ListZips;
+namespace RetailCrm\Boxberry\Model\Response\Geography\ListZips;
 
 use JMS\Serializer\Annotation as JMS;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\AccrualOfServices;
+namespace RetailCrm\Boxberry\Model\Response\AccrualOfServices;
 
-use Gwinn\Boxberry\Model\Response\AccrualOfServices\ListServices\ListServices;
-use Gwinn\Boxberry\Model\Response\ArrayResponse;
+use RetailCrm\Boxberry\Model\Response\AccrualOfServices\ListServices\ListServices;
+use RetailCrm\Boxberry\Model\Response\ArrayResponse;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -22,7 +22,7 @@ class ListServicesResponse extends ArrayResponse
     /**
      * @var ListServices[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\AccrualOfServices\ListServices\ListServices>")
+     * @JMS\Type("array<RetailCrm\Boxberry\Model\Response\AccrualOfServices\ListServices\ListServices>")
      */
     public $result;
 }

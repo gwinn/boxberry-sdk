@@ -1,6 +1,6 @@
 <?php
 
-namespace Gwinn\Boxberry\Exceptions;
+namespace RetailCrm\Boxberry\Exceptions;
 
 class InvalidJsonException extends \DomainException
 {

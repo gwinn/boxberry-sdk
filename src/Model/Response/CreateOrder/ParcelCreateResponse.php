@@ -1,8 +1,8 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\CreateOrder;
+namespace RetailCrm\Boxberry\Model\Response\CreateOrder;
 
-use Gwinn\Boxberry\Model\Response\ResponseInterface;
+use RetailCrm\Boxberry\Model\Response\ResponseInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response;
+namespace RetailCrm\Boxberry\Model\Response;
 
 interface ResponseInterface
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\Calculate;
+namespace RetailCrm\Boxberry\Model\Response\Calculate;
 
-use Gwinn\Boxberry\Model\Response\Calculate\DeliveryCalculation\DeliveryCalculationResult;
-use Gwinn\Boxberry\Model\Response\ResponseInterface;
+use RetailCrm\Boxberry\Model\Response\Calculate\DeliveryCalculation\DeliveryCalculationResult;
+use RetailCrm\Boxberry\Model\Response\ResponseInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -24,7 +24,7 @@ class DeliveryCalculationResponse implements ResponseInterface
      *
      * @var DeliveryCalculationResult
      *
-     * @JMS\Type("Gwinn\Boxberry\Model\Response\Calculate\DeliveryCalculation\DeliveryCalculationResult")
+     * @JMS\Type("RetailCrm\Boxberry\Model\Response\Calculate\DeliveryCalculation\DeliveryCalculationResult")
      * @JMS\SerializedName("result")
      */
     public $result;

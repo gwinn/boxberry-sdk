@@ -1,9 +1,9 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\OrderInfo;
+namespace RetailCrm\Boxberry\Model\Response\OrderInfo;
 
-use Gwinn\Boxberry\Model\Response\ArrayResponse;
-use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo\ParcelInfo;
+use RetailCrm\Boxberry\Model\Response\ArrayResponse;
+use RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelInfo\ParcelInfo;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -22,7 +22,7 @@ class ParcelInfoResponse extends ArrayResponse
     /**
      * @var ParcelInfo[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo\ParcelInfo>")
+     * @JMS\Type("array<RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelInfo\ParcelInfo>")
      */
     public $result;
 }

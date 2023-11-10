@@ -1,10 +1,10 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\Tracking;
+namespace RetailCrm\Boxberry\Model\Response\Tracking;
 
-use Gwinn\Boxberry\Model\Response\ResponseInterface;
-use Gwinn\Boxberry\Model\Response\Tracking\ListStatusesFull\Products;
-use Gwinn\Boxberry\Model\Response\Tracking\ListStatusesFull\Statuses;
+use RetailCrm\Boxberry\Model\Response\ResponseInterface;
+use RetailCrm\Boxberry\Model\Response\Tracking\ListStatusesFull\Products;
+use RetailCrm\Boxberry\Model\Response\Tracking\ListStatusesFull\Statuses;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -25,7 +25,7 @@ class ListStatusesFullResponse implements ResponseInterface
      *
      * @var Statuses[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Tracking\ListStatusesFull\Statuses>")
+     * @JMS\Type("array<RetailCrm\Boxberry\Model\Response\Tracking\ListStatusesFull\Statuses>")
      * @JMS\SerializedName("statuses")
      */
     public $statuses = [];
@@ -86,7 +86,7 @@ class ListStatusesFullResponse implements ResponseInterface
      *
      * @var Products[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Tracking\ListStatusesFullResponse\Products>")
+     * @JMS\Type("array<RetailCrm\Boxberry\Model\Response\Tracking\ListStatusesFullResponse\Products>")
      * @JMS\SerializedName("products")
      */
     public $products = [];

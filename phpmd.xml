@@ -12,9 +12,6 @@
         <exclude name="CouplingBetweenObjects" />
         <exclude name="NumberOfChildren" />
     </rule>
-    <rule ref="rulesets/cleancode.xml">
-        <exclude name="StaticAccess" />
-    </rule>
     <rule ref="rulesets/codesize.xml">
         <exclude name="TooManyPublicMethods" />
         <exclude name="TooManyFields" />

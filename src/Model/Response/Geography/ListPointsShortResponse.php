@@ -1,9 +1,9 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\Geography;
+namespace RetailCrm\Boxberry\Model\Response\Geography;
 
-use Gwinn\Boxberry\Model\Response\ArrayResponse;
-use Gwinn\Boxberry\Model\Response\Geography\ListPointsShort\ListPointsShort;
+use RetailCrm\Boxberry\Model\Response\ArrayResponse;
+use RetailCrm\Boxberry\Model\Response\Geography\ListPointsShort\ListPointsShort;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -22,7 +22,7 @@ class ListPointsShortResponse extends ArrayResponse
     /**
      * @var ListPointsShort[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Geography\ListPointsShort\ListPointsShort>")
+     * @JMS\Type("array<RetailCrm\Boxberry\Model\Response\Geography\ListPointsShort\ListPointsShort>")
      */
     public $result;
 }

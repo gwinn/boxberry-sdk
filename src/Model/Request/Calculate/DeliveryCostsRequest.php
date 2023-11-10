@@ -1,8 +1,8 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\Calculate;
+namespace RetailCrm\Boxberry\Model\Request\Calculate;
 
-use Gwinn\Boxberry\Model\Request\RequestInterface;
+use RetailCrm\Boxberry\Model\Request\RequestInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**

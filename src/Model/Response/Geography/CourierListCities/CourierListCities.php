@@ -1,6 +1,6 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\Geography\CourierListCities;
+namespace RetailCrm\Boxberry\Model\Response\Geography\CourierListCities;
 
 use JMS\Serializer\Annotation as JMS;
 

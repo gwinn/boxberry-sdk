@@ -1,8 +1,8 @@
 <?php
 
-namespace Gwinn\Boxberry\EventSubscribers;
+namespace RetailCrm\Boxberry\EventSubscribers;
 
-use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo\ParcelInfo;
+use RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelInfo\ParcelInfo;
 use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\Warehouse\WarehouseInfo;
+namespace RetailCrm\Boxberry\Model\Response\Warehouse\WarehouseInfo;
 
 /**
  * Class WarehouseInfoResponse.

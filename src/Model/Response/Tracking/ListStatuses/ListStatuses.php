@@ -1,6 +1,6 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\Tracking\ListStatuses;
+namespace RetailCrm\Boxberry\Model\Response\Tracking\ListStatuses;
 
 use JMS\Serializer\Annotation as JMS;
 

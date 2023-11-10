@@ -1,8 +1,8 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\AccrualOfServices;
+namespace RetailCrm\Boxberry\Model\Request\AccrualOfServices;
 
-use Gwinn\Boxberry\Model\Request\RequestInterface;
+use RetailCrm\Boxberry\Model\Request\RequestInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**

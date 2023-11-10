@@ -1,6 +1,6 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Response\Geography\PointsForParcels;
+namespace RetailCrm\Boxberry\Model\Response\Geography\PointsForParcels;
 
 use JMS\Serializer\Annotation as JMS;
 

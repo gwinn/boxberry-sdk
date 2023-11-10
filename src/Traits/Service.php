@@ -1,24 +1,24 @@
 <?php
 
-namespace Gwinn\Boxberry\Traits;
+namespace RetailCrm\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Gwinn\Boxberry\Builders\ResponseBuilder;
-use Gwinn\Boxberry\Exceptions\ApiException;
-use Gwinn\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest;
-use Gwinn\Boxberry\Model\Request\Calculate\DeliveryCostsRequest;
-use Gwinn\Boxberry\Model\Request\CourierShipment\CreateIntakeRequest;
-use Gwinn\Boxberry\Model\Request\Geography\PointsDescriptionRequest;
-use Gwinn\Boxberry\Model\Request\Geography\ZipCheckRequest;
-use Gwinn\Boxberry\Model\Request\OrderInfo\OrdersBalanceRequest;
-use Gwinn\Boxberry\Model\Response\Calculate\DeliveryCalculationResponse;
-use Gwinn\Boxberry\Model\Response\Calculate\DeliveryCostsResponse;
-use Gwinn\Boxberry\Model\Response\CourierShipment\CreateIntakeResponse;
-use Gwinn\Boxberry\Model\Response\Geography\PointsDescriptionResponse;
-use Gwinn\Boxberry\Model\Response\Geography\ZipCheck\ZipCheck;
-use Gwinn\Boxberry\Model\Response\Geography\ZipCheckResponse;
-use Gwinn\Boxberry\Model\Response\OrderInfo\OrdersBalance\OrdersBalance;
-use Gwinn\Boxberry\Model\Response\OrderInfo\OrdersBalanceResponse;
+use RetailCrm\Boxberry\Builders\ResponseBuilder;
+use RetailCrm\Boxberry\Exceptions\ApiException;
+use RetailCrm\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest;
+use RetailCrm\Boxberry\Model\Request\Calculate\DeliveryCostsRequest;
+use RetailCrm\Boxberry\Model\Request\CourierShipment\CreateIntakeRequest;
+use RetailCrm\Boxberry\Model\Request\Geography\PointsDescriptionRequest;
+use RetailCrm\Boxberry\Model\Request\Geography\ZipCheckRequest;
+use RetailCrm\Boxberry\Model\Request\OrderInfo\OrdersBalanceRequest;
+use RetailCrm\Boxberry\Model\Response\Calculate\DeliveryCalculationResponse;
+use RetailCrm\Boxberry\Model\Response\Calculate\DeliveryCostsResponse;
+use RetailCrm\Boxberry\Model\Response\CourierShipment\CreateIntakeResponse;
+use RetailCrm\Boxberry\Model\Response\Geography\PointsDescriptionResponse;
+use RetailCrm\Boxberry\Model\Response\Geography\ZipCheck\ZipCheck;
+use RetailCrm\Boxberry\Model\Response\Geography\ZipCheckResponse;
+use RetailCrm\Boxberry\Model\Response\OrderInfo\OrdersBalance\OrdersBalance;
+use RetailCrm\Boxberry\Model\Response\OrderInfo\OrdersBalanceResponse;
 use Psr\Http\Client\ClientExceptionInterface;
 
 /**

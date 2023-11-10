@@ -1,9 +1,9 @@
 <?php
 
-namespace Gwinn\Boxberry\Tests;
+namespace RetailCrm\Boxberry\Tests;
 
-use Gwinn\Boxberry\Client;
-use Gwinn\Boxberry\Model\Response\ResponseInterface;
+use RetailCrm\Boxberry\Client;
+use RetailCrm\Boxberry\Model\Response\ResponseInterface;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\Serializer;

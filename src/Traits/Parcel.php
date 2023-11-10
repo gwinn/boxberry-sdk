@@ -1,26 +1,26 @@
 <?php
 
-namespace Gwinn\Boxberry\Traits;
+namespace RetailCrm\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Gwinn\Boxberry\Builders\ResponseBuilder;
-use Gwinn\Boxberry\Exceptions\ApiException;
-use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest;
-use Gwinn\Boxberry\Model\Request\CreateOrder\ParcelSendRequest;
-use Gwinn\Boxberry\Model\Request\OrderInfo\ParcelCheckRequest;
-use Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest;
-use Gwinn\Boxberry\Model\Request\OrderInfo\ParcelSendStoryRequest;
-use Gwinn\Boxberry\Model\Request\OrderInfo\ParcelStoryRequest;
-use Gwinn\Boxberry\Model\Response\CreateOrder\ParcelCreateResponse;
-use Gwinn\Boxberry\Model\Response\CreateOrder\ParcelSendResponse;
-use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelCheckResponse;
-use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo\ParcelInfo;
-use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfoResponse;
-use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelListResponse;
-use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelSendStory\ParcelSendStory;
-use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelSendStoryResponse;
-use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelStory\ParcelStory;
-use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelStoryResponse;
+use RetailCrm\Boxberry\Builders\ResponseBuilder;
+use RetailCrm\Boxberry\Exceptions\ApiException;
+use RetailCrm\Boxberry\Model\Request\CreateOrder\ParcelCreateRequest;
+use RetailCrm\Boxberry\Model\Request\CreateOrder\ParcelSendRequest;
+use RetailCrm\Boxberry\Model\Request\OrderInfo\ParcelCheckRequest;
+use RetailCrm\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest;
+use RetailCrm\Boxberry\Model\Request\OrderInfo\ParcelSendStoryRequest;
+use RetailCrm\Boxberry\Model\Request\OrderInfo\ParcelStoryRequest;
+use RetailCrm\Boxberry\Model\Response\CreateOrder\ParcelCreateResponse;
+use RetailCrm\Boxberry\Model\Response\CreateOrder\ParcelSendResponse;
+use RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelCheckResponse;
+use RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelInfo\ParcelInfo;
+use RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelInfoResponse;
+use RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelListResponse;
+use RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelSendStory\ParcelSendStory;
+use RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelSendStoryResponse;
+use RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelStory\ParcelStory;
+use RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelStoryResponse;
 use Psr\Http\Client\ClientExceptionInterface;
 
 /**

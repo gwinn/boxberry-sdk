@@ -1,5 +1,5 @@
 # boxberry-sdk
-SDK для Боксберри
+SDK службы доставки Boxberry
 
 Методы:
 
@@ -44,7 +44,7 @@ PHP 7.3 или выше.
 Установка осуществляется с помощью менеджера пакетов Composer
 
 ```bash
-composer require gwinn/boxberry-sdk
+composer require retailcrm/boxberry-sdk
 ```
 
 ***
@@ -54,7 +54,7 @@ composer require gwinn/boxberry-sdk
 $yourHttpClient = new \GuzzleHttp\Client();
 $boxberryClient = new \Boxberry\Client(TEST_API_TOKEN, $yourHttpClient);
 
-$listCitiesRequest = new \Gwinn\Boxberry\Model\Request\Geography\ListCitiesRequest();
+$listCitiesRequest = new \RetailCrm\Boxberry\Model\Request\Geography\ListCitiesRequest();
 $listCitiesRequest->countryCode = '643';
 try{
     // получение городов
@@ -68,9 +68,9 @@ try{
 $yourHttpClient = new \GuzzleHttp\Client();
 $boxberryClient = new \Boxberry\Client(TEST_API_TOKEN, $yourHttpClient);
 
-$parcel = new \Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel();
+$parcel = new \RetailCrm\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel();
 $parcel->orderId = '123';
-$parcelInfoRequest = new \Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest();
+$parcelInfoRequest = new \RetailCrm\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest();
 $parcelInfoRequest->parcels = [$parcel];
 try{
     // получение информации о посылке
@@ -79,10 +79,4 @@ try{
     echo $exception->getMessage();
     exit(255);
 }
-```
-
-### Тесты
-Запуск тестов:
-``` bash
-$ composer test
 ```

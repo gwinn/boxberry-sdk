@@ -1,9 +1,9 @@
 <?php
 
-namespace Gwinn\Boxberry\Model\Request\Calculate;
+namespace RetailCrm\Boxberry\Model\Request\Calculate;
 
-use Gwinn\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest\BoxesSizes;
-use Gwinn\Boxberry\Model\Request\RequestInterface;
+use RetailCrm\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest\BoxesSizes;
+use RetailCrm\Boxberry\Model\Request\RequestInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -122,7 +122,7 @@ class DeliveryCalculationRequest implements RequestInterface
      *
      * @var BoxesSizes[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest\BoxesSizes>")
+     * @JMS\Type("array<RetailCrm\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest\BoxesSizes>")
      * @JMS\SerializedName("BoxSizes")
      */
     public $boxSizes;

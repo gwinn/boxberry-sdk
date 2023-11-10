@@ -1,36 +1,36 @@
 <?php
 
-namespace Gwinn\Boxberry\Traits;
+namespace RetailCrm\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Gwinn\Boxberry\Builders\ResponseBuilder;
-use Gwinn\Boxberry\Exceptions\ApiException;
-use Gwinn\Boxberry\Model\Request\AccrualOfServices\ListServicesRequest;
-use Gwinn\Boxberry\Model\Request\Geography\ListCitiesFullRequest;
-use Gwinn\Boxberry\Model\Request\Geography\ListCitiesRequest;
-use Gwinn\Boxberry\Model\Request\Geography\ListPointsRequest;
-use Gwinn\Boxberry\Model\Request\Geography\ListPointsShortRequest;
-use Gwinn\Boxberry\Model\Request\Tracking\ListStatusesFullRequest;
-use Gwinn\Boxberry\Model\Request\Tracking\ListStatusesRequest;
-use Gwinn\Boxberry\Model\Response\AccrualOfServices\ListServices\ListServices;
-use Gwinn\Boxberry\Model\Response\AccrualOfServices\ListServicesResponse;
-use Gwinn\Boxberry\Model\Response\Geography\CourierListCities\CourierListCities;
-use Gwinn\Boxberry\Model\Response\Geography\CourierListCitiesResponse;
-use Gwinn\Boxberry\Model\Response\Geography\ListCities\ListCities;
-use Gwinn\Boxberry\Model\Response\Geography\ListCitiesFull\ListCitiesFull;
-use Gwinn\Boxberry\Model\Response\Geography\ListCitiesFullResponse;
-use Gwinn\Boxberry\Model\Response\Geography\ListCitiesResponse;
-use Gwinn\Boxberry\Model\Response\Geography\ListPoints\ListPoints;
-use Gwinn\Boxberry\Model\Response\Geography\ListPointsResponse;
-use Gwinn\Boxberry\Model\Response\Geography\ListPointsShort\ListPointsShort;
-use Gwinn\Boxberry\Model\Response\Geography\ListPointsShortResponse;
-use Gwinn\Boxberry\Model\Response\Geography\ListZips\ListZips;
-use Gwinn\Boxberry\Model\Response\Geography\ListZipsResponse;
-use Gwinn\Boxberry\Model\Response\Geography\PointsForParcels\PointsForParcels;
-use Gwinn\Boxberry\Model\Response\Geography\PointsForParcelsResponse;
-use Gwinn\Boxberry\Model\Response\Tracking\ListStatuses\ListStatuses;
-use Gwinn\Boxberry\Model\Response\Tracking\ListStatusesFullResponse;
-use Gwinn\Boxberry\Model\Response\Tracking\ListStatusesResponse;
+use RetailCrm\Boxberry\Builders\ResponseBuilder;
+use RetailCrm\Boxberry\Exceptions\ApiException;
+use RetailCrm\Boxberry\Model\Request\AccrualOfServices\ListServicesRequest;
+use RetailCrm\Boxberry\Model\Request\Geography\ListCitiesFullRequest;
+use RetailCrm\Boxberry\Model\Request\Geography\ListCitiesRequest;
+use RetailCrm\Boxberry\Model\Request\Geography\ListPointsRequest;
+use RetailCrm\Boxberry\Model\Request\Geography\ListPointsShortRequest;
+use RetailCrm\Boxberry\Model\Request\Tracking\ListStatusesFullRequest;
+use RetailCrm\Boxberry\Model\Request\Tracking\ListStatusesRequest;
+use RetailCrm\Boxberry\Model\Response\AccrualOfServices\ListServices\ListServices;
+use RetailCrm\Boxberry\Model\Response\AccrualOfServices\ListServicesResponse;
+use RetailCrm\Boxberry\Model\Response\Geography\CourierListCities\CourierListCities;
+use RetailCrm\Boxberry\Model\Response\Geography\CourierListCitiesResponse;
+use RetailCrm\Boxberry\Model\Response\Geography\ListCities\ListCities;
+use RetailCrm\Boxberry\Model\Response\Geography\ListCitiesFull\ListCitiesFull;
+use RetailCrm\Boxberry\Model\Response\Geography\ListCitiesFullResponse;
+use RetailCrm\Boxberry\Model\Response\Geography\ListCitiesResponse;
+use RetailCrm\Boxberry\Model\Response\Geography\ListPoints\ListPoints;
+use RetailCrm\Boxberry\Model\Response\Geography\ListPointsResponse;
+use RetailCrm\Boxberry\Model\Response\Geography\ListPointsShort\ListPointsShort;
+use RetailCrm\Boxberry\Model\Response\Geography\ListPointsShortResponse;
+use RetailCrm\Boxberry\Model\Response\Geography\ListZips\ListZips;
+use RetailCrm\Boxberry\Model\Response\Geography\ListZipsResponse;
+use RetailCrm\Boxberry\Model\Response\Geography\PointsForParcels\PointsForParcels;
+use RetailCrm\Boxberry\Model\Response\Geography\PointsForParcelsResponse;
+use RetailCrm\Boxberry\Model\Response\Tracking\ListStatuses\ListStatuses;
+use RetailCrm\Boxberry\Model\Response\Tracking\ListStatusesFullResponse;
+use RetailCrm\Boxberry\Model\Response\Tracking\ListStatusesResponse;
 use Psr\Http\Client\ClientExceptionInterface;
 
 /**
