@@ -1,21 +1,17 @@
 <?php
 
-namespace RetailCrm\Boxberry\Tests;
+namespace Gwinn\Boxberry\Tests;
 
 use GuzzleHttp\Exception\GuzzleException;
-use RetailCrm\Boxberry\Exceptions\ApiException;
-use RetailCrm\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest;
+use Gwinn\Boxberry\Exceptions\ApiException;
+use Gwinn\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest;
 use Pock\Enum\RequestMethod;
 use Pock\Exception\JsonException;
 
 /**
  * Class ApiErrorTest.
  *
- * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- *
- * @see     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
+
  *
  * @internal
  * @coversNothing

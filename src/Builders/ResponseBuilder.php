@@ -1,13 +1,13 @@
 <?php
 
-namespace RetailCrm\Boxberry\Builders;
+namespace Gwinn\Boxberry\Builders;
 
-use RetailCrm\Boxberry\EventSubscribers\ResponseFixEventSubscriber;
-use RetailCrm\Boxberry\Exceptions\ApiException;
-use RetailCrm\Boxberry\Exceptions\InvalidJsonException;
-use RetailCrm\Boxberry\Model\Response\ArrayResponse;
-use RetailCrm\Boxberry\Model\Response\Error;
-use RetailCrm\Boxberry\Model\Response\ResponseInterface as Response;
+use Gwinn\Boxberry\EventSubscribers\ResponseFixEventSubscriber;
+use Gwinn\Boxberry\Exceptions\ApiException;
+use Gwinn\Boxberry\Exceptions\InvalidJsonException;
+use Gwinn\Boxberry\Model\Response\ArrayResponse;
+use Gwinn\Boxberry\Model\Response\Error;
+use Gwinn\Boxberry\Model\Response\ResponseInterface as Response;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\Exception\RuntimeException;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;

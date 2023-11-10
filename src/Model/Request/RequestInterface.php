@@ -1,6 +1,6 @@
 <?php
 
-namespace RetailCrm\Boxberry\Model\Request;
+namespace Gwinn\Boxberry\Model\Request;
 
 interface RequestInterface
 {

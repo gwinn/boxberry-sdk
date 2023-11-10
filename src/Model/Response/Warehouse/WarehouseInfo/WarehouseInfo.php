@@ -1,17 +1,13 @@
 <?php
 
-namespace RetailCrm\Boxberry\Model\Response\Warehouse\WarehouseInfo;
+namespace Gwinn\Boxberry\Model\Response\Warehouse\WarehouseInfo;
 
 /**
  * Class WarehouseInfoResponse.
  *
  * @category Models
  *
- * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- *
- * @see     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
+
  */
 class WarehouseInfo
 {

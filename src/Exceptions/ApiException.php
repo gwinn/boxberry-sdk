@@ -1,6 +1,6 @@
 <?php
 
-namespace RetailCrm\Boxberry\Exceptions;
+namespace Gwinn\Boxberry\Exceptions;
 
 class ApiException extends \Exception
 {

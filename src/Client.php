@@ -1,14 +1,14 @@
 <?php
 
-namespace RetailCrm\Boxberry;
+namespace Gwinn\Boxberry;
 
-use RetailCrm\Boxberry\Builders\RequestBuilder;
-use RetailCrm\Boxberry\Model\Request\RequestInterface;
-use RetailCrm\Boxberry\Traits\Lists;
-use RetailCrm\Boxberry\Traits\Order;
-use RetailCrm\Boxberry\Traits\Parcel;
-use RetailCrm\Boxberry\Traits\Service;
-use RetailCrm\Boxberry\Traits\Warehouse;
+use Gwinn\Boxberry\Builders\RequestBuilder;
+use Gwinn\Boxberry\Model\Request\RequestInterface;
+use Gwinn\Boxberry\Traits\Lists;
+use Gwinn\Boxberry\Traits\Order;
+use Gwinn\Boxberry\Traits\Parcel;
+use Gwinn\Boxberry\Traits\Service;
+use Gwinn\Boxberry\Traits\Warehouse;
 use InvalidArgumentException;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;

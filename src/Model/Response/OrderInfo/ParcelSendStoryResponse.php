@@ -1,9 +1,9 @@
 <?php
 
-namespace RetailCrm\Boxberry\Model\Response\OrderInfo;
+namespace Gwinn\Boxberry\Model\Response\OrderInfo;
 
-use RetailCrm\Boxberry\Model\Response\ArrayResponse;
-use RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelSendStory\ParcelSendStory;
+use Gwinn\Boxberry\Model\Response\ArrayResponse;
+use Gwinn\Boxberry\Model\Response\OrderInfo\ParcelSendStory\ParcelSendStory;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -11,18 +11,14 @@ use JMS\Serializer\Annotation as JMS;
  *
  * @category Models
  *
- * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- *
- * @see     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
+
  */
 class ParcelSendStoryResponse extends ArrayResponse
 {
     /**
      * @var ParcelSendStory[]
      *
-     * @JMS\Type("array<RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelSendStory\ParcelSendStory>")
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\OrderInfo\ParcelSendStory\ParcelSendStory>")
      */
     public $result;
 }

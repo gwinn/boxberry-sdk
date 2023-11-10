@@ -1,6 +1,6 @@
 <?php
 
-namespace RetailCrm\Boxberry\Model\Request\ChangeOrder;
+namespace Gwinn\Boxberry\Model\Request\ChangeOrder;
 
 use JMS\Serializer\Annotation as JMS;
 
@@ -9,11 +9,7 @@ use JMS\Serializer\Annotation as JMS;
  *
  * @category Models
  *
- * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- *
- * @see     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
+
  */
 trait ChangeOrder
 {

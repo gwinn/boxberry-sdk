@@ -1,6 +1,6 @@
 <?php
 
-namespace RetailCrm\Boxberry\Builders;
+namespace Gwinn\Boxberry\Builders;
 
 use GuzzleHttp\Psr7\Request;
 use http\Exception\InvalidArgumentException;

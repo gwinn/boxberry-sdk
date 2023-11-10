@@ -1,8 +1,8 @@
 <?php
 
-namespace RetailCrm\Boxberry\Model\Response\CreateOrder;
+namespace Gwinn\Boxberry\Model\Response\CreateOrder;
 
-use RetailCrm\Boxberry\Model\Response\ResponseInterface;
+use Gwinn\Boxberry\Model\Response\ResponseInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -10,11 +10,7 @@ use JMS\Serializer\Annotation as JMS;
  *
  * @category Models
  *
- * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- *
- * @see     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
+
  */
 class ParcelCreateResponse implements ResponseInterface
 {

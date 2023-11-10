@@ -1,6 +1,6 @@
 <?php
 
-namespace RetailCrm\Boxberry\Model\Response;
+namespace Gwinn\Boxberry\Model\Response;
 
 abstract class ArrayResponse implements ResponseInterface
 {

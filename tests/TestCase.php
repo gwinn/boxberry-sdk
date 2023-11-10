@@ -1,9 +1,9 @@
 <?php
 
-namespace RetailCrm\Boxberry\Tests;
+namespace Gwinn\Boxberry\Tests;
 
-use RetailCrm\Boxberry\Client;
-use RetailCrm\Boxberry\Model\Response\ResponseInterface;
+use Gwinn\Boxberry\Client;
+use Gwinn\Boxberry\Model\Response\ResponseInterface;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\Serializer;
@@ -16,11 +16,7 @@ use Pock\PockBuilder;
 /**
  * Class TestCase.
  *
- * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- *
- * @see     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
+
  *
  * @internal
  * @coversNothing

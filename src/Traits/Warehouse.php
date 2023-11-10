@@ -1,26 +1,22 @@
 <?php
 
-namespace RetailCrm\Boxberry\Traits;
+namespace Gwinn\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
-use RetailCrm\Boxberry\Builders\ResponseBuilder;
-use RetailCrm\Boxberry\Exceptions\ApiException;
-use RetailCrm\Boxberry\Model\Request\Warehouse\WarehouseCreateRequest;
-use RetailCrm\Boxberry\Model\Request\Warehouse\WarehouseDeleteRequest;
-use RetailCrm\Boxberry\Model\Request\Warehouse\WarehouseInfoRequest;
-use RetailCrm\Boxberry\Model\Request\Warehouse\WarehouseUpdateRequest;
-use RetailCrm\Boxberry\Model\Response\Warehouse\WarehouseInfo\WarehouseInfo;
-use RetailCrm\Boxberry\Model\Response\Warehouse\WarehouseInfoResponse;
+use Gwinn\Boxberry\Builders\ResponseBuilder;
+use Gwinn\Boxberry\Exceptions\ApiException;
+use Gwinn\Boxberry\Model\Request\Warehouse\WarehouseCreateRequest;
+use Gwinn\Boxberry\Model\Request\Warehouse\WarehouseDeleteRequest;
+use Gwinn\Boxberry\Model\Request\Warehouse\WarehouseInfoRequest;
+use Gwinn\Boxberry\Model\Request\Warehouse\WarehouseUpdateRequest;
+use Gwinn\Boxberry\Model\Response\Warehouse\WarehouseInfo\WarehouseInfo;
+use Gwinn\Boxberry\Model\Response\Warehouse\WarehouseInfoResponse;
 use Psr\Http\Client\ClientExceptionInterface;
 
 /**
  * Class Warehouse.
  *
- * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- *
- * @see     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
+
  */
 trait Warehouse
 {

@@ -1,25 +1,21 @@
 <?php
 
-namespace RetailCrm\Boxberry\Traits;
+namespace Gwinn\Boxberry\Traits;
 
 use GuzzleHttp\Exception\GuzzleException;
-use RetailCrm\Boxberry\Builders\ResponseBuilder;
-use RetailCrm\Boxberry\Exceptions\ApiException;
-use RetailCrm\Boxberry\Model\Request\ChangeOrder\CancelOrderRequest;
-use RetailCrm\Boxberry\Model\Request\ChangeOrder\ChangeOrderDeliveryTypeRequest;
-use RetailCrm\Boxberry\Model\Request\ChangeOrder\ChangeOrderDetailsRequest;
-use RetailCrm\Boxberry\Model\Request\ChangeOrder\ChangeOrderIssueRequest;
-use RetailCrm\Boxberry\Model\Request\ChangeOrder\ChangeOrderStorageDateRequest;
+use Gwinn\Boxberry\Builders\ResponseBuilder;
+use Gwinn\Boxberry\Exceptions\ApiException;
+use Gwinn\Boxberry\Model\Request\ChangeOrder\CancelOrderRequest;
+use Gwinn\Boxberry\Model\Request\ChangeOrder\ChangeOrderDeliveryTypeRequest;
+use Gwinn\Boxberry\Model\Request\ChangeOrder\ChangeOrderDetailsRequest;
+use Gwinn\Boxberry\Model\Request\ChangeOrder\ChangeOrderIssueRequest;
+use Gwinn\Boxberry\Model\Request\ChangeOrder\ChangeOrderStorageDateRequest;
 use Psr\Http\Client\ClientExceptionInterface;
 
 /**
  * Class Order.
  *
- * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- *
- * @see     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
+
  */
 trait Order
 {

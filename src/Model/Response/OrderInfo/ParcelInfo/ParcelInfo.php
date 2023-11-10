@@ -1,6 +1,6 @@
 <?php
 
-namespace RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelInfo;
+namespace Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo;
 
 use JMS\Serializer\Annotation as JMS;
 
@@ -9,11 +9,7 @@ use JMS\Serializer\Annotation as JMS;
  *
  * @category Models
  *
- * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- *
- * @see     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
+
  */
 class ParcelInfo
 {
@@ -82,7 +78,7 @@ class ParcelInfo
      *
      * @var CourierDelivery
      *
-     * @JMS\Type("RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelInfo\CourierDelivery")
+     * @JMS\Type("Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo\CourierDelivery")
      * @JMS\SerializedName("courier_delivery")
      */
     public $courierDelivery;
@@ -92,7 +88,7 @@ class ParcelInfo
      *
      * @var PickupPoint
      *
-     * @JMS\Type("RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelInfo\PickupPoint")
+     * @JMS\Type("Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo\PickupPoint")
      * @JMS\SerializedName("pickup_point")
      */
     public $pickupPoint;
@@ -102,7 +98,7 @@ class ParcelInfo
      *
      * @var RecipientData
      *
-     * @JMS\Type("RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelInfo\RecipientData")
+     * @JMS\Type("Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo\RecipientData")
      * @JMS\SerializedName("recipient_data")
      */
     public $recipientData;
@@ -112,7 +108,7 @@ class ParcelInfo
      *
      * @var Products[]
      *
-     * @JMS\Type("array<RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelInfo\Products>")
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo\Products>")
      * @JMS\SerializedName("products")
      */
     public $products = [];
@@ -122,7 +118,7 @@ class ParcelInfo
      *
      * @var BoxesData[]
      *
-     * @JMS\Type("array<RetailCrm\Boxberry\Model\Response\OrderInfo\ParcelInfo\BoxesData>")
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\OrderInfo\ParcelInfo\BoxesData>")
      * @JMS\SerializedName("boxes_data")
      */
     public $boxesData = [];

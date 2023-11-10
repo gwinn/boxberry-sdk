@@ -1,7 +1,13 @@
 # boxberry-sdk
+
+[![Build Status](https://github.com/gwinn/boxberry-sdk/workflows/CI/badge.svg)](https://github.com/gwinn/boxberry-sdk/actions)
+[![Coverage](https://img.shields.io/codecov/c/gh/gwinn/boxberry-sdk/master.svg?logo=github&logoColor=white)](https://codecov.io/gh/gwinn/boxberry-sdk)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/retailcrm/boxberry-sdk.svg?logo=php&logoColor=white)](https://packagist.org/packages/retailcrm/boxberry-sdk)
+[![Latest stable](https://img.shields.io/packagist/v/retailcrm/boxberry-sdk.svg)](https://packagist.org/packages/retailcrm/boxberry-sdk)
+
 SDK службы доставки Boxberry
 
-Методы:
+## Методы:
 
 - ListCities. Список городов доставки
 - ListCitiesFull. Список городов доставки (полный)
@@ -36,26 +42,25 @@ SDK службы доставки Boxberry
 - WarehouseInfo. Информация о складе
 - WarehouseUpdate. Обновление склада
 
-***
-### Требования
+## Требования
+
 PHP 7.3 или выше.
-***
-### Установка
-Установка осуществляется с помощью менеджера пакетов Composer
+
+## Установка
 
 ```bash
-composer require retailcrm/boxberry-sdk
+composer require Gwinn/boxberry-sdk
 ```
 
-***
-### Примеры использования
+## Примеры использования
 
 ```php
 $yourHttpClient = new \GuzzleHttp\Client();
-$boxberryClient = new \Boxberry\Client(TEST_API_TOKEN, $yourHttpClient);
+$boxberryClient = new \Gwinn\Boxberry\Client(TEST_API_TOKEN, $yourHttpClient);
 
-$listCitiesRequest = new \RetailCrm\Boxberry\Model\Request\Geography\ListCitiesRequest();
+$listCitiesRequest = new \Gwinn\Boxberry\Model\Request\Geography\ListCitiesRequest();
 $listCitiesRequest->countryCode = '643';
+
 try{
     // получение городов
     $response = $boxberryClient->listCities($listCitiesRequest);
@@ -64,14 +69,16 @@ try{
     exit(255);
 }
 ```
+
 ```php
 $yourHttpClient = new \GuzzleHttp\Client();
-$boxberryClient = new \Boxberry\Client(TEST_API_TOKEN, $yourHttpClient);
+$boxberryClient = new \Gwinn\Boxberry\Client(TEST_API_TOKEN, $yourHttpClient);
 
-$parcel = new \RetailCrm\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel();
+$parcel = new \Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel();
 $parcel->orderId = '123';
-$parcelInfoRequest = new \RetailCrm\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest();
+$parcelInfoRequest = new \Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest();
 $parcelInfoRequest->parcels = [$parcel];
+
 try{
     // получение информации о посылке
     $response = $boxberryClient->parcelInfo($parcelInfoRequest);

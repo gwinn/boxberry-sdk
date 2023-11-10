@@ -1,9 +1,9 @@
 <?php
 
-namespace RetailCrm\Boxberry\Model\Request\OrderInfo;
+namespace Gwinn\Boxberry\Model\Request\OrderInfo;
 
-use RetailCrm\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel;
-use RetailCrm\Boxberry\Model\Request\RequestInterface;
+use Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel;
+use Gwinn\Boxberry\Model\Request\RequestInterface;
 use JMS\Serializer\Annotation as JMS;
 
 /**
@@ -11,11 +11,7 @@ use JMS\Serializer\Annotation as JMS;
  *
  * @category Models
  *
- * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- *
- * @see     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
+
  */
 class ParcelInfoRequest implements RequestInterface
 {
@@ -24,7 +20,7 @@ class ParcelInfoRequest implements RequestInterface
      *
      * @var Parcel[]
      *
-     * @JMS\Type("array<RetailCrm\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel>")
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel>")
      * @JMS\SerializedName("parcels")
      */
     public $parcels;

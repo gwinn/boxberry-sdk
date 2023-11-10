@@ -1,6 +1,6 @@
 <?php
 
-namespace RetailCrm\Boxberry\Model\Response\AccrualOfServices\ListServices;
+namespace Gwinn\Boxberry\Model\Response\AccrualOfServices\ListServices;
 
 use JMS\Serializer\Annotation as JMS;
 
@@ -9,11 +9,7 @@ use JMS\Serializer\Annotation as JMS;
  *
  * @category Models
  *
- * @author   RetailDriver LLC <integration@retailcrm.ru>
- * @license  https://retailcrm.ru Proprietary
- *
- * @see     http://retailcrm.ru
- * @see      https://help.retailcrm.ru
+
  */
 class ListServices
 {
