@@ -1,0 +1,29 @@
+[
+  {
+    "Code": "99451",
+    "Name": "Москва Булатниковская_9945_С",
+    "CityCode": "68",
+    "Address": "117403, Москва г, Булатниковская ул, д.2А",
+    "Phone": "+7(499)391-56-22",
+    "WorkShedule": "пн-вс: 10.00-20.30",
+    "TripDescription": "Остановка  -\"  Аптека\".\nПримерное расстояние от остановки до Отделения  -  50м.\nНежилое 2-этажное здание. \nКрупные вывески  -  Торговый комплекс \"Бирюза\"\nЭтаж  -  1\nЦентральный вход.\nПавильон № 35. \n",
+    "DeliveryPeriod": 1,
+    "CityName": "Москва",
+    "TariffZone": "1М",
+    "Settlement": "Москва",
+    "Area": "Москва",
+    "Country": "РОССИЯ",
+    "GPS": "55.580676,37.651708",
+    "AddressReduce": "Булатниковская ул, д.2А",
+    "Acquiring": "Yes",
+    "DigitalSignature": "No",
+    "TypeOfOffice": "СПВЗ",
+    "Metro": "Пражская",
+    "LoadLimit": 31,
+    "VolumeLimit": "0.19",
+    "CountryCode": "643",
+    "NalKD": "No",
+    "OnlyPrepaidOrders": "No",
+    "Postamat": false
+  }
+]

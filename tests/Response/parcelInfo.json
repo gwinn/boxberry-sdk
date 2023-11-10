@@ -1,0 +1,67 @@
+[
+  {
+    "order_id": "testovski-140",
+    "track_number": "AAP114630687",
+    "declared_cost": "1595",
+    "payment_amount": "1595",
+    "delivery_cost": "547",
+    "delivery_type": 1,
+    "courier_delivery": {
+      "postcode": "",
+      "city": "Норильск",
+      "address_recipient": null
+    },
+    "pickup_point": {
+      "pickup_point_code": "24151",
+      "pickup_point_address": "663330, Норильск г, Ленинский пр-кт, д.35"
+    },
+    "recipient_data": {
+      "full_name": "Tectов Тест Тестович",
+      "email": null,
+      "phone": "79067900011"
+    },
+    "products": [
+      {
+        "vendor_code": "8680943099044",
+        "name": "Набор Кухонных Полотенец Arya 45X70 2 Пр. Simin 4",
+        "nds": "20",
+        "price": 439,
+        "quantity": 1,
+        "marking_crpt": ""
+      },
+      {
+        "vendor_code": "8680943093059",
+        "name": "Носки Arya Женские Подследники Nara Чёрный",
+        "nds": "20",
+        "price": 110,
+        "quantity": 1,
+        "marking_crpt": ""
+      },
+      {
+        "vendor_code": "8680943090980",
+        "name": "Полотенце Arya Жаккард Бархат 50X90 Angel Лиловый",
+        "nds": "20",
+        "price": 499,
+        "quantity": 1,
+        "marking_crpt": ""
+      }
+    ],
+    "boxes_data": [
+      {
+        "weight": 4019,
+        "barcode": "",
+        "x": null,
+        "y": null,
+        "z": null
+      },
+      {
+        "weight": 240,
+        "barcode": "",
+        "x": null,
+        "y": null,
+        "z": null
+      }
+    ],
+    "issue_type": 0
+  }
+]

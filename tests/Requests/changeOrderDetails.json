@@ -1,0 +1,8 @@
+{
+  "token": "d6f33e419c16131e5325cbd84d5d6000",
+  "method": "ChangeOrderDetails",
+  "orderid": "Тестовый заказ 666",
+  "fio": "Петров Иван Иванович",
+  "phone": "9001122334",
+  "email": "petrovII@mn.ru"
+}

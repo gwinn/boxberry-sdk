@@ -1,0 +1,14 @@
+{
+  "method":"DeliveryCosts",
+  "weight":"500",
+  "targetstart":"010",
+  "target":"19733",
+  "ordersum":"0",
+  "deliverysum":"0",
+  "paysum":"100",
+  "height":"120",
+  "width":"80",
+  "depth":"50",
+  "zip":"624000",
+  "sucrh":"1"
+}

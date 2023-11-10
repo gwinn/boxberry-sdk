@@ -1,0 +1,12 @@
+{
+  "token": "d6f33e419c16131e5325cbd84d5d6000",
+  "method": "ParcelInfo",
+  "parcels": [
+    {
+      "track": "AAP277793647"
+    },
+    {
+      "track": "AAP277728592"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "Code": "68",
+    "Name": "Москва",
+    "ReceptionLaP": "1",
+    "DeliveryLaP": "1",
+    "Reception": "1",
+    "CourierDelivery": "1",
+    "ForeignReceptionReturns": "1",
+    "Terminal": "1",
+    "Kladr": "7700000000000",
+    "Region": "Москва",
+    "CountryCode": "643",
+    "UniqName": "Москва (Москва)",
+    "District": "",
+    "Prefix": "г",
+    "CourierReception": "1"
+  }
+]

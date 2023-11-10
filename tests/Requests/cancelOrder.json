@@ -1,0 +1,5 @@
+{
+  "method":"CancelOrder",
+  "orderid": "Тестовый заказ 666",
+  "cancelType":"1"
+}

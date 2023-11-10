@@ -1,0 +1,18 @@
+[
+  {
+    "Zip": "143411",
+    "City": "Красногорск",
+    "Region": "Красногорский",
+    "Area": "Московская обл",
+    "ZoneExpressDelivery": "2",
+    "Remoteness": 2
+  },
+  {
+    "Zip": "614020",
+    "City": "Пермь",
+    "Region": "",
+    "Area": "Пермский край",
+    "ZoneExpressDelivery": "1",
+    "Remoteness": 0
+  }
+]

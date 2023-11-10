@@ -1,0 +1,14 @@
+{
+  "PD": false,
+  "sum": 1595,
+  "deliveryDate": "0001-01-01",
+  "Weight": 4.26,
+  "PaymentMethod": "Касса",
+  "statuses": [
+    {
+      "Date": "26.12.2020 12:23",
+      "Name": "Загружен реестр ИМ",
+      "Comment": ""
+    }
+  ]
+}
