@@ -25,7 +25,7 @@
     "require": {
         "php": ">=7.3.0",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^7.8",
+        "guzzlehttp/guzzle": "^6.5|^7.8",
         "jms/serializer": "^3.28",
         "doctrine/annotations": "^1.2",
         "symfony/validator": "*"
