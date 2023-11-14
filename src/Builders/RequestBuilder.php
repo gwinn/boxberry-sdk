@@ -16,7 +16,7 @@ class RequestBuilder
         if (!isset($options['json'])) {
             throw new InvalidArgumentException('no arguments for post request');
         }
-        $body = \GuzzleHttp\Utils::jsonEncode($options['json']);
+        $body = http_build_query($options['json'], '', '&');
 
         return new Request('POST', $url, $headers, $body);
     }

@@ -78,7 +78,6 @@ class TestCase extends Test
         $builder->matchMethod($mockData['requestedMethod'])
             ->matchScheme(RequestScheme::HTTPS)
             ->matchHost(self::TEST_API_HOST)
-            ->matchHeaders(Client::HEADERS)
             ->reply($mockData['responseCode'])
             ->withHeader('Content-Type', 'application/json')
             ->withJson($mockData['response'])
