@@ -93,7 +93,7 @@ class DeliveryCalculationRequest implements RequestInterface
     public $deliverySum;
 
     /**
-     * Контактное лицо.
+     * Сумма, которую необходимо взять с получателя, руб.
      *
      * @var string
      *
