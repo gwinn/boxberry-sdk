@@ -74,7 +74,7 @@ try{
 ```php
 $yourHttpClientFactory = new \Gwinn\Boxberry\Factory\HttpClientFactory();
 $apiClientFactory = new \Gwinn\Boxberry\Factory\ApiClientFactory($yourHttpClientFactory);
-$boxberryClient = $apiClientFactory->create(TEST_API_TOKEN);
+$boxberryClient = $apiClientFactory->create(API_TOKEN);
 
 $parcel = new \Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel();
 $parcel->orderId = '123';
