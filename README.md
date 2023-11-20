@@ -57,7 +57,7 @@ composer require Gwinn/boxberry-sdk
 ```php
 $yourHttpClientFactory = new \Gwinn\Boxberry\Factory\HttpClientFactory();
 $apiClientFactory = new \Gwinn\Boxberry\Factory\ApiClientFactory($yourHttpClientFactory);
-$boxberryClient = $apiClientFactory->create(TEST_API_TOKEN);
+$boxberryClient = $apiClientFactory->create(API_TOKEN);
 
 $listCitiesRequest = new \Gwinn\Boxberry\Model\Request\Geography\ListCitiesRequest();
 $listCitiesRequest->countryCode = '643';
