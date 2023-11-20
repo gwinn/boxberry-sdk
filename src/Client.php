@@ -34,8 +34,17 @@ class Client
     /**
      * @var array<string, string>
      */
-    public const HEADERS = [
+    public const GET_HEADERS = [
         'Content-type' => 'application/json',
+        'Accept' => 'application/json',
+        'Cache-Control' => 'no-cache',
+    ];
+
+    /**
+     * @var array<string, string>
+     */
+    public const POST_HEADERS = [
+        'Content-type' => 'application/x-www-form-urlencoded',
         'Accept' => 'application/json',
         'Cache-Control' => 'no-cache',
     ];
@@ -92,7 +101,7 @@ class Client
     public function post(array $options): ResponseInterface
     {
         $builder = new RequestBuilder();
-        $request = $builder->buildPostQuery(self::API_URL, self::HEADERS, $options);
+        $request = $builder->buildPostQuery(self::API_URL, self::POST_HEADERS, $options);
 
         return $this->client->sendRequest($request);
     }
@@ -105,7 +114,7 @@ class Client
     public function get(array $options): ResponseInterface
     {
         $builder = new RequestBuilder();
-        $request = $builder->buildGetQuery(self::API_URL, self::HEADERS, $options);
+        $request = $builder->buildGetQuery(self::API_URL, self::GET_HEADERS, $options);
 
         return $this->client->sendRequest($request);
     }

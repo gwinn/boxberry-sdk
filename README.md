@@ -55,8 +55,9 @@ composer require Gwinn/boxberry-sdk
 ## Примеры использования
 
 ```php
-$yourHttpClient = new \GuzzleHttp\Client();
-$boxberryClient = new \Gwinn\Boxberry\Client(TEST_API_TOKEN, $yourHttpClient);
+$yourHttpClientFactory = new \Gwinn\Boxberry\Factory\HttpClientFactory();
+$apiClientFactory = new \Gwinn\Boxberry\Factory\ApiClientFactory($yourHttpClientFactory);
+$boxberryClient = $apiClientFactory->create(API_TOKEN);
 
 $listCitiesRequest = new \Gwinn\Boxberry\Model\Request\Geography\ListCitiesRequest();
 $listCitiesRequest->countryCode = '643';
@@ -71,8 +72,9 @@ try{
 ```
 
 ```php
-$yourHttpClient = new \GuzzleHttp\Client();
-$boxberryClient = new \Gwinn\Boxberry\Client(TEST_API_TOKEN, $yourHttpClient);
+$yourHttpClientFactory = new \Gwinn\Boxberry\Factory\HttpClientFactory();
+$apiClientFactory = new \Gwinn\Boxberry\Factory\ApiClientFactory($yourHttpClientFactory);
+$boxberryClient = $apiClientFactory->create(API_TOKEN);
 
 $parcel = new \Gwinn\Boxberry\Model\Request\OrderInfo\ParcelInfoRequest\Parcel();
 $parcel->orderId = '123';

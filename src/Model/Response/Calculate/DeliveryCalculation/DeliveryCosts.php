@@ -38,7 +38,7 @@ class DeliveryCosts
      * 1 склад-склад
      * 2 склад-дверь.
      *
-     * @var string
+     * @var integer
      *
      * @JMS\Type("integer")
      * @JMS\SerializedName("DeliveryTypeId")
