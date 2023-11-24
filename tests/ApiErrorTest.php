@@ -4,6 +4,7 @@ namespace Gwinn\Boxberry\Tests;
 
 use GuzzleHttp\Exception\GuzzleException;
 use Gwinn\Boxberry\Exceptions\ApiException;
+use Gwinn\Boxberry\Exceptions\InvalidJsonException;
 use Gwinn\Boxberry\Model\Request\Calculate\DeliveryCalculationRequest;
 use Pock\Enum\RequestMethod;
 use Pock\Exception\JsonException;
@@ -25,9 +26,9 @@ class ApiErrorTest extends TestCase
      * @throws GuzzleException
      * @throws JsonException
      */
-    public function test(string $method, array $mockData, array $requestData): void
+    public function test(string $method, array $mockData, array $requestData, $exception): void
     {
-        $this->expectException(ApiException::class);
+        $this->expectException($exception);
         $this->client = $this->getMock($mockData);
         $request = $this->serializer->deserialize(
             file_get_contents(
@@ -55,6 +56,7 @@ class ApiErrorTest extends TestCase
                     'filename' => 'deliveryCalculation.json',
                     'className' => DeliveryCalculationRequest::class,
                 ],
+                'exception' => ApiException::class,
             ],
             'ErrorMessage' => [
                 'method' => 'deliveryCalculation',
@@ -69,6 +71,7 @@ class ApiErrorTest extends TestCase
                     'filename' => 'deliveryCalculation.json',
                     'className' => DeliveryCalculationRequest::class,
                 ],
+                'exception' => ApiException::class,
             ],
             'ErrBool' => [
                 'method' => 'deliveryCalculation',
@@ -83,6 +86,22 @@ class ApiErrorTest extends TestCase
                     'filename' => 'deliveryCalculation.json',
                     'className' => DeliveryCalculationRequest::class,
                 ],
+                'exception' => ApiException::class,
+            ],
+            'InvalidJson' => [
+                'method' => 'deliveryCalculation',
+                'mockData' => [
+                    'requestedMethod' => RequestMethod::POST,
+                    'responseCode' => 200,
+                    'response' => file_get_contents(
+                        self::ERROR_RESPONSE_FOLDER . 'invalidJson.json'
+                    ),
+                ],
+                'requestData' => [
+                    'filename' => 'deliveryCalculation.json',
+                    'className' => DeliveryCalculationRequest::class,
+                ],
+                'exception' => InvalidJsonException::class,
             ],
         ];
     }

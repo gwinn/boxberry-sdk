@@ -102,8 +102,19 @@ class ResponseBuilder
      */
     public function errorProcessing(): void
     {
-        /** @var Error $errors */
-        $errors = $this->serializer->deserialize($this->rawResponse, Error::class, 'json');
+        try {
+            /** @var Error $errors */
+            $errors = $this->serializer->deserialize($this->rawResponse, Error::class, 'json');
+        } catch (RuntimeException $exception) {
+            throw new InvalidJsonException(
+                sprintf(
+                    'Error json: %s (raw: %s)',
+                    $exception->getMessage(),
+                    $this->rawResponse
+                ),
+                400
+            );
+        }
         if (!empty($errors->message) && ($errors->error || $errors->errBool)) {
             throw new ApiException($errors->message, 400);
         }
