@@ -137,9 +137,9 @@ class CreateIntakeRequest implements RequestInterface
     /**
      * Кол-во мест
      *
-     * @var string
+     * @var integer
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("seats_count")
      */
     public $seatsCount;
@@ -147,9 +147,9 @@ class CreateIntakeRequest implements RequestInterface
     /**
      * Объем (м3).
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("volume")
      */
     public $volume;
@@ -157,9 +157,9 @@ class CreateIntakeRequest implements RequestInterface
     /**
      * Вес (кг).
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("weight")
      */
     public $weight;

@@ -56,9 +56,9 @@ class ListZips
     /**
      * Зона курьерской доставки.
      *
-     * @var int
+     * @var string
      *
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("ZoneExpressDelivery")
      */
     public $zoneExpressDelivery;

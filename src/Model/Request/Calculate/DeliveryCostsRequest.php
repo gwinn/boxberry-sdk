@@ -47,9 +47,9 @@ class DeliveryCostsRequest implements RequestInterface
     /**
      * Объявленная стоимость посылки (страховая стоимость).
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("ordersum")
      */
     public $orderSum;
@@ -57,9 +57,9 @@ class DeliveryCostsRequest implements RequestInterface
     /**
      * Заявленная стоимость доставки (на расчет не влияет).
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("deliverysum")
      */
     public $deliverySum;
@@ -67,9 +67,9 @@ class DeliveryCostsRequest implements RequestInterface
     /**
      * сумма к оплате с получателя.
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("paysum")
      */
     public $paySum;

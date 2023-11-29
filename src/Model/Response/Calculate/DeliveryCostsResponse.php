@@ -17,9 +17,9 @@ class DeliveryCostsResponse implements ResponseInterface
     /**
      * Итоговая стоимость доставки (равна price_base + price_service).
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("price")
      */
     public $price;
@@ -27,9 +27,9 @@ class DeliveryCostsResponse implements ResponseInterface
     /**
      * Стоимость базового тарифа.
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("price_base")
      */
     public $priceBase;
@@ -42,9 +42,9 @@ class DeliveryCostsResponse implements ResponseInterface
      * - примерка,
      * - курьерская доставка, если передан почтовый индекс, по которому оказывается курьерская доставка и т.д.
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("price_service")
      */
     public $priceService;
@@ -54,9 +54,9 @@ class DeliveryCostsResponse implements ResponseInterface
      * Если параметр sucrh не указан или равен нулю, то отдает значение с типом string.
      * Если параметр sucrh равен 1, то отдает значение с типом integer.
      *
-     * @var string
+     * @var int
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("delivery_period")
      */
     public $deliveryPeriod;

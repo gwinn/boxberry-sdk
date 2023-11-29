@@ -46,9 +46,9 @@ class ListServices
     /**
      * Способ оплаты. Возможные значения: "Касса", "Банк", "Эквайринг".
      *
-     * @var int
+     * @var string
      *
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("PaymentMethod")
      */
     public $paymentMethod;

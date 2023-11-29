@@ -214,9 +214,9 @@ class ParcelCreateRequest implements RequestInterface
     /**
      * Тарифная зона (по умолчанию для города отправления - Москва).
      *
-     * @var string
+     * @var int
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("issue")
      */
     public $issue;
@@ -227,9 +227,9 @@ class ParcelCreateRequest implements RequestInterface
      * 0 - нет примерки
      * 1 - подключена примерка
      *
-     * @var string
+     * @var int
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("fitting")
      */
     public $fitting;

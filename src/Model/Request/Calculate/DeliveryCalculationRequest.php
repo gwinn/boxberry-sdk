@@ -75,9 +75,9 @@ class DeliveryCalculationRequest implements RequestInterface
     /**
      * Объявленная стоимость заказа, руб.
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("OrderSum")
      */
     public $orderSum;
@@ -85,9 +85,9 @@ class DeliveryCalculationRequest implements RequestInterface
     /**
      * Стоимость доставки объявленная получателю ИМ, руб.
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("DeliverySum")
      */
     public $deliverySum;
@@ -95,9 +95,9 @@ class DeliveryCalculationRequest implements RequestInterface
     /**
      * Сумма, которую необходимо взять с получателя, руб.
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("PaySum")
      */
     public $paySum;

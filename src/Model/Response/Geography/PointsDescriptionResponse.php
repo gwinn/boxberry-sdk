@@ -43,9 +43,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Почтовый индекс
      *
-     * @var int
+     * @var string
      *
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("ZipCode")
      */
     public $zipCode;
@@ -213,9 +213,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Выдача посылок только из зарубежных интернет-магазинов (true/false).
      *
-     * @var bool
+     * @var string
      *
-     * @JMS\Type("boolean")
+     * @JMS\Type("string")
      * @JMS\SerializedName("ForeignOnlineStoresOnly")
      */
     public $foreignOnlineStoresOnly;
@@ -225,9 +225,9 @@ class PointsDescriptionResponse implements ResponseInterface
      * true - только выдача посылок без приема оплаты,
      * false - выдача любых посылок.
      *
-     * @var bool
+     * @var string
      *
-     * @JMS\Type("boolean")
+     * @JMS\Type("string")
      * @JMS\SerializedName("PrepaidOrdersOnly")
      */
     public $prepaidOrdersOnly;
@@ -235,9 +235,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Возможность оплаты банковской картой (true/false).
      *
-     * @var bool
+     * @var string
      *
-     * @JMS\Type("boolean")
+     * @JMS\Type("string")
      * @JMS\SerializedName("Acquiring")
      */
     public $acquiring;
@@ -247,9 +247,9 @@ class PointsDescriptionResponse implements ResponseInterface
      * true - Подпись получателя будет хранится в системе boxberry в электронном виде,
      * false - отсутствуют подписи в электронном виде.
      *
-     * @var bool
+     * @var string
      *
-     * @JMS\Type("boolean")
+     * @JMS\Type("string")
      * @JMS\SerializedName("DigitalSignature")
      */
     public $digitalSignature;
@@ -257,9 +257,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Тип пункта выдачи: 1- собственное отделение, 2- партнерское.
      *
-     * @var int
+     * @var string
      *
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("TypeOfOffice")
      */
     public $typeOfOffice;
@@ -267,9 +267,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Пункт выдачи осуществляет курьерскую доставку (true/false).
      *
-     * @var bool
+     * @var string
      *
-     * @JMS\Type("boolean")
+     * @JMS\Type("string")
      * @JMS\SerializedName("CourierDelivery")
      */
     public $courierDelivery;
@@ -287,9 +287,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Прием писем и посылок от физ.лиц (true/false).
      *
-     * @var bool
+     * @var string
      *
-     * @JMS\Type("boolean")
+     * @JMS\Type("string")
      * @JMS\SerializedName("ReceptionLaP")
      */
     public $receptionLaP;
@@ -297,9 +297,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Выдача писем и посылок физ.лиц (true/false).
      *
-     * @var bool
+     * @var string
      *
-     * @JMS\Type("boolean")
+     * @JMS\Type("string")
      * @JMS\SerializedName("DeliveryLaP")
      */
     public $deliveryLaP;
@@ -307,9 +307,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Ограничение веса, кг.
      *
-     * @var int
+     * @var string
      *
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("LoadLimit")
      */
     public $loadLimit;
@@ -317,9 +317,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Ограничение объема, м3.
      *
-     * @var int
+     * @var string
      *
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("VolumeLimit")
      */
     public $volumeLimit;
@@ -327,9 +327,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Возможность частичной выдачи заказа (true/false).
      *
-     * @var bool
+     * @var string
      *
-     * @JMS\Type("boolean")
+     * @JMS\Type("string")
      * @JMS\SerializedName("EnablePartialDelivery")
      */
     public $enablePartialDelivery;
@@ -337,9 +337,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Возможность примерки (true/false).
      *
-     * @var bool
+     * @var string
      *
-     * @JMS\Type("boolean")
+     * @JMS\Type("string")
      * @JMS\SerializedName("EnableFitting")
      */
     public $enableFitting;
@@ -380,9 +380,9 @@ class PointsDescriptionResponse implements ResponseInterface
      * 1 - автотранспорт,
      * 2 - авиадоставка.
      *
-     * @var int
+     * @var string
      *
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("TransType")
      */
     public $transType;
@@ -390,9 +390,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Прием международных возвратов (0/1).
      *
-     * @var int
+     * @var string
      *
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("InterRefunds")
      */
     public $interRefunds;
@@ -400,9 +400,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Экспресс-прием заказов от интернет-магазинов (0/1).
      *
-     * @var int
+     * @var string
      *
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("ExpressReception")
      */
     public $expressReception;
@@ -410,9 +410,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Отделение является терминалом (0/1).
      *
-     * @var int
+     * @var string
      *
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("Terminal")
      */
     public $terminal;
@@ -420,9 +420,9 @@ class PointsDescriptionResponse implements ResponseInterface
     /**
      * Отделение осуществляет выдачу посылок (0/1).
      *
-     * @var int
+     * @var string
      *
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("IssuanceBoxberry")
      */
     public $issuanceBoxberry;

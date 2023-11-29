@@ -21,9 +21,9 @@ class ChangeOrderDeliveryTypeRequest implements RequestInterface
      * 1- доставка до ПВЗ
      * 2 - доставка курьером
      *
-     * @var string
+     * @var int
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("deliveryType")
      */
     public $deliveryType;
