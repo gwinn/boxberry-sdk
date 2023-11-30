@@ -16,9 +16,9 @@ class DeliveryCosts
     /**
      * Рассчитывается как TotalPrice – PriceBase.
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("PriceService")
      */
     public $priceService;
@@ -26,9 +26,9 @@ class DeliveryCosts
     /**
      * Стоимость всех начисленных  услуг с учетом скидки, руб.
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("TotalPrice")
      */
     public $totalPrice;
@@ -48,7 +48,7 @@ class DeliveryCosts
     /**
      * Срок доставки в календарных днях.
      *
-     * @var string
+     * @var integer
      *
      * @JMS\Type("integer")
      * @JMS\SerializedName("DeliveryPeriod")
@@ -58,9 +58,9 @@ class DeliveryCosts
     /**
      * Стоимость базовой услуги.
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("PriceBase")
      */
     public $priceBase;

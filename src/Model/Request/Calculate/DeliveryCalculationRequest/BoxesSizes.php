@@ -16,9 +16,9 @@ class BoxesSizes
     /**
      * Ширина, см
      *
-     * @var string
+     * @var int
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("Width")
      */
     public $width;
@@ -26,9 +26,9 @@ class BoxesSizes
     /**
      * Высота, см
      *
-     * @var string
+     * @var int
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("Height")
      */
     public $height;
@@ -36,9 +36,9 @@ class BoxesSizes
     /**
      * Длина, см
      *
-     * @var string
+     * @var int
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("Depth")
      */
     public $depth;

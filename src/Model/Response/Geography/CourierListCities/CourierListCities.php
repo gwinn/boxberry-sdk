@@ -46,9 +46,9 @@ class CourierListCities
     /**
      * Срок доставки.
      *
-     * @var int
+     * @var string
      *
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("DeliveryPeriod")
      */
     public $deliveryPeriod;

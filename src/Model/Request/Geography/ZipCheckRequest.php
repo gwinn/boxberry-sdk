@@ -17,9 +17,9 @@ class ZipCheckRequest implements RequestInterface
     /**
      * Почтовый индекс
      *
-     * @var string
+     * @var int
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("Zip")
      */
     public $zip;

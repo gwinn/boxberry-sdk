@@ -22,7 +22,7 @@ class PointsDescriptionRequest implements RequestInterface
      * @JMS\Type("string")
      * @JMS\SerializedName("code")
      */
-    public $code = '';
+    public $code;
 
     /**
      * Получить фото (true/false или 0/1).

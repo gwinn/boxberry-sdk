@@ -108,30 +108,6 @@ class Kurdost
     public $timesTo2;
 
     /**
-     * Время доставки текстовый формат(не используется).
-     *
-     * @var string
-     *
-     * @deprecated
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("timep")
-     */
-    public $timep;
-
-    /**
-     * Комментарий по доставке(не используется).
-     *
-     * @var string
-     *
-     * @deprecated
-     *
-     * @JMS\Type("string")
-     * @JMS\SerializedName("comentk")
-     */
-    public $comentk;
-
-    /**
      * Тип отправления, возможные значения:
      * 0 - Посылка,
      * 2 - Курьер Онлайн,

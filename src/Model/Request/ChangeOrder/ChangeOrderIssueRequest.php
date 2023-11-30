@@ -23,9 +23,9 @@ class ChangeOrderIssueRequest implements RequestInterface
      * 1 - со вскрытием
      * 2 - частичная выдача.
      *
-     * @var string
+     * @var int
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("issue")
      */
     public $issue;

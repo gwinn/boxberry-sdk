@@ -70,9 +70,9 @@ class ListStatusesFullResponse implements ResponseInterface
     /**
      * Вес заказа фактический, кг.
      *
-     * @var string
+     * @var float
      *
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\SerializedName("Weight")
      */
     public $weight;

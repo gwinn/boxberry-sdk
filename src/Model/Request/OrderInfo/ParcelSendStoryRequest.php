@@ -17,9 +17,9 @@ class ParcelSendStoryRequest implements RequestInterface
     /**
      * период с в формате YYYYMMDD.
      *
-     * @var string
+     * @var int
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("from")
      */
     public $from;
@@ -27,9 +27,9 @@ class ParcelSendStoryRequest implements RequestInterface
     /**
      * период до в формате YYYYMMDD.
      *
-     * @var string
+     * @var int
      *
-     * @JMS\Type("string")
+     * @JMS\Type("integer")
      * @JMS\SerializedName("to")
      */
     public $to;
