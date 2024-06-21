@@ -82,7 +82,7 @@ class ListStatusesFullResponse implements ResponseInterface
      *
      * @var Products[]
      *
-     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Tracking\ListStatusesFullResponse\Products>")
+     * @JMS\Type("array<Gwinn\Boxberry\Model\Response\Tracking\ListStatusesFull\Products>")
      * @JMS\SerializedName("products")
      */
     public $products = [];
