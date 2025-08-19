@@ -4,6 +4,7 @@ namespace Gwinn\Boxberry;
 
 use Gwinn\Boxberry\Builders\RequestBuilder;
 use Gwinn\Boxberry\Model\Request\RequestInterface;
+use Gwinn\Boxberry\Traits\Company;
 use Gwinn\Boxberry\Traits\Lists;
 use Gwinn\Boxberry\Traits\Order;
 use Gwinn\Boxberry\Traits\Parcel;
@@ -20,6 +21,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class Client
 {
+    use Company;
     use Lists;
     use Order;
     use Parcel;
